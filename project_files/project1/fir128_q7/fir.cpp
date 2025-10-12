@@ -29,6 +29,7 @@ void fir (
     TDL:
     for (i = N; i >= 0; i--){
         #pragma HLS unroll skip_exit_check factor=32
+        #pragma HLS pipeline
         shift_reg[i] = shift_reg[i - 1];
     }
     shift_reg[0] = x;
@@ -37,6 +38,7 @@ void fir (
     MAC:
 	for (i = N; i >= 0 ; i--){
         #pragma HLS unroll skip_exit_check factor=32
+        #pragma HLS pipeline
         acc += shift_reg[i] * c[i];
     }
 
