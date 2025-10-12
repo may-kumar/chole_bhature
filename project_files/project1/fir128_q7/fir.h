@@ -7,11 +7,15 @@
 #ifndef FIR_H_
 #define FIR_H_
 
-const int N=128;
+#include "ap_int.h"
 
-typedef int	coef_t;
+const int N=128;
+#define BW_VAL 16
+
+typedef ap_int<BW_VAL>	coef_t;
+typedef ap_int<BW_VAL>	acc_t;
+
 typedef int	data_t;
-typedef int	acc_t;
 
 void fir (
   data_t *y,

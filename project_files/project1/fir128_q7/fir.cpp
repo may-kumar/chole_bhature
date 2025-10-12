@@ -28,7 +28,7 @@ void fir (
     #pragma HLS array_partition variable = shift_reg complete
     TDL:
     for (i = N; i >= 0; i--){
-        #pragma HLS unroll skip_exit_check factor=4
+        #pragma HLS unroll skip_exit_check factor=32
         shift_reg[i] = shift_reg[i - 1];
     }
     shift_reg[0] = x;
@@ -36,7 +36,7 @@ void fir (
     acc = 0;
     MAC:
 	for (i = N; i >= 0 ; i--){
-        #pragma HLS unroll skip_exit_check factor=4
+        #pragma HLS unroll skip_exit_check factor=32
         acc += shift_reg[i] * c[i];
     }
 
