@@ -10,9 +10,8 @@
 #include "ap_int.h"
 
 const int N=128;
-#define BW_VAL 16
 
-typedef int	coef_t;
+typedef ap_int<5>	coef_t;
 typedef ap_int<16>	acc_t;
 
 typedef int	data_t;
