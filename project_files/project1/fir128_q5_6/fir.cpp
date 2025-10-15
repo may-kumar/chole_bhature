@@ -26,6 +26,7 @@ void fir (
     acc_t acc;
     int i;
     #pragma HLS array_partition variable = shift_reg complete
+    #pragma HLS array_partition variable = c complete
     TDL:
     for (i = N - 1; i > 0; i--){
         #pragma HLS unroll
