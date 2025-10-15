@@ -26,7 +26,7 @@ void fir (
     acc_t acc;
     int i;
     #pragma HLS array_partition variable = shift_reg complete
-    #pragma HLS array_partition variable = c complete
+    #pragma HLS array_partition variable = c cyclic factor = 32
     TDL:
     for (i = N - 1; i > 0; i--){
         #pragma HLS unroll
@@ -37,7 +37,7 @@ void fir (
     acc = 0;
     MAC:
 	for (i = N - 1; i >= 0; i--){
-        #pragma HLS unroll
+        #pragma HLS unroll factor=32
         acc += shift_reg[i] * c[i];
     }
 
