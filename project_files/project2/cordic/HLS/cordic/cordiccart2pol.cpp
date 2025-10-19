@@ -104,7 +104,7 @@ void cordiccart2pol(data_t x, data_t y, data_t * r,  data_t * theta)
     debug_printf("Results so far theta : %0f, x: %0f, y: %0f\n", ans_theta, x, y);
 
     int i;
-    for (i = 0; (i < NO_ITER) && (y != 0); i++) {
+    for (i = 0; (i < NO_ITER); i++) {
         int sigma = (y > 0) ? -1 : 1; // if y is +ve, we want to do a "negative" rotation, i.e. clockwise
 
         data_t x_shift = y*sigma*Kvalues[i];
