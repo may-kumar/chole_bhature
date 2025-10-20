@@ -1,6 +1,6 @@
 #include "cordiccart2pol.h"
 
-data_t Kvalues[NO_ITER] = {
+data_table_t Kvalues[NO_ITER] = {
     1.000000000000000000e+00,
     5.000000000000000000e-01,
     2.500000000000000000e-01,
@@ -43,7 +43,7 @@ data_t Kvalues[NO_ITER] = {
 #endif
 };
 
-data_t angles[NO_ITER] = {
+data_table_t angles[NO_ITER] = {
     7.853981633974479459e-01,
     4.636476090008059825e-01,
     2.449786631268640047e-01,
@@ -87,16 +87,16 @@ data_t angles[NO_ITER] = {
 };
 
 
-void cordiccart2pol(data_t x, data_t y, data_t * r,  data_t * theta)
+void cordiccart2pol(data_var_t x, data_var_t y, data_var_t * r,  data_var_t * theta)
 {
     // Write your code here
-    data_t ans_theta;
+    data_var_t ans_theta;
     ans_theta = (y > 0) ? 1.5707963267948966 : -1.5707963267948966;
     debug_printf("\n\n\n");
 
     debug_printf("START x: %0f, y: %0f\n", x, y);
 
-    data_t tmp;
+    data_var_t tmp;
     tmp = (y < 0) ? -y : y;
     y = (y < 0) ? x : -x;
     x = tmp;
@@ -104,11 +104,12 @@ void cordiccart2pol(data_t x, data_t y, data_t * r,  data_t * theta)
     debug_printf("Results so far theta : %0f, x: %0f, y: %0f\n", ans_theta, x, y);
 
     int i;
-    for (i = 0; (i < NO_ITER); i++) {
+    data_var_t x_shift, y_shift; 
+    for (i = 0; i < NO_ITER; i++) {
         int sigma = (y > 0) ? -1 : 1; // if y is +ve, we want to do a "negative" rotation, i.e. clockwise
 
-        data_t x_shift = y*sigma*Kvalues[i];
-        data_t y_shift = x*sigma*Kvalues[i];
+        x_shift = y*sigma*Kvalues[i];
+        y_shift = x*sigma*Kvalues[i];
         x = x - x_shift;
         y = y + y_shift;
 

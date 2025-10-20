@@ -7,7 +7,7 @@
 #ifndef FIR_H_
 #define FIR_H_
 
-#include "ap_int.h"
+#include "ap_fixed.h"
 
 const int N=128;
 #define BW_VAL 16
