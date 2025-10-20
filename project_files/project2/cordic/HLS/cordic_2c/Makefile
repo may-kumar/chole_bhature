@@ -76,9 +76,9 @@ HLS_TARGETS = $(patsubst %.cpp,%.comp,$(CXX_HLS_TARGET_FILES))
 	./$< > $@ 2>&1 || { s=$$?; echo "./$< > $@ failed $$s" >&2; exit $$s; }
 
 
-hls: test $(HLS_TARGETS)
+hls: $(HLS_TARGETS)
 
-test: clean $(EXAMPLES_LOG)
+test: $(EXAMPLES_LOG)
 
 report: hls
 	cp -f $(TOP).comp/hls/syn/report/$(TOP)_csynth.rpt $(CURDIR) || true
