@@ -11,7 +11,7 @@
 typedef ap_fixed<TOTAL_BITS_VAR, 3> data_var_t;
 typedef data_var_t data_t;
 
-typedef float data_table_t;
+typedef data_var_t data_table_t;
 
 void cordiccart2pol(data_var_t x, data_var_t y, data_var_t * r,  data_var_t * theta);
 
