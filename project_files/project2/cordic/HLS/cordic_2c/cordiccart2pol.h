@@ -6,7 +6,7 @@
 #define NO_ITER 12
 
 #define TOTAL_BITS_VAR   16
-#define TOTAL_BITS_TABLE 4
+#define TOTAL_BITS_TABLE 32
 
 typedef ap_fixed<TOTAL_BITS_VAR, 3> data_var_t;
 typedef data_var_t data_t;
