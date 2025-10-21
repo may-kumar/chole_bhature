@@ -3,7 +3,7 @@
 
 #include <ap_fixed.h>
 
-#define NO_ITER 12
+#define NO_ITER 14
 
 #define TOTAL_BITS_VAR 32
 #define TOTAL_BITS_TABLE 8

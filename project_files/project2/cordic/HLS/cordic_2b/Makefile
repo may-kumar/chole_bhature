@@ -5,6 +5,7 @@
 
 # select the HLS compiler to use (vivado_hls or vitis)
 TOP = cordiccart2pol
+NAME = $(TOP)_csynth
 
 USE_VITIS=1
 
@@ -76,16 +77,16 @@ HLS_TARGETS = $(patsubst %.cpp,%.comp,$(CXX_HLS_TARGET_FILES))
 	./$< > $@ 2>&1 || { s=$$?; echo "./$< > $@ failed $$s" >&2; exit $$s; }
 
 
-hls: test $(HLS_TARGETS)
+hls: $(HLS_TARGETS)
 
 test: clean $(EXAMPLES_LOG)
 
 report: hls
-	cp -f $(TOP).comp/hls/syn/report/$(TOP)_csynth.rpt $(CURDIR) || true
+	cp -f $(TOP).comp/hls/syn/report/$(TOP)_csynth.rpt reports/$(NAME).rpt || true
 
 
 clean:
-	rm -rf *.o *.log *.bin *.tcl *.comp *.rpt logs hls out.dat
+	rm -rf *.o *.log *.bin *.tcl *.comp hls/syn/report/$(TOP)_csynth.rpt logs hls out.dat
 
 .PHONY: clean hls test report
 
