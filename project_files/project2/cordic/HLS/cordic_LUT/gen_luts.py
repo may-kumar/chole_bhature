@@ -77,7 +77,7 @@ def main():
             LUT_SIZE = all_LUT_sizes[idx]
             my_LUT_th, my_LUT_r = init_cart2pol_LUTs(LUT_SIZE, W, I)
 
-            f.write(f"#if W == {W}\n\n")
+            f.write(f"#if W1 == {W}\n\n")
             f.write(f"const data_t my_LUT_th[] = {{")
             for i in range(LUT_SIZE):
                 f.write(f"{my_LUT_th[i]}, ")

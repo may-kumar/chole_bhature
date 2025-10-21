@@ -4,22 +4,17 @@
 #include <ap_fixed.h>
 
 #define DEBUG 0
-//#define SYNTHESIS // uncomment me for synthesis; comment me for simulation
 
-typedef ap_fixed<8,3> data_t; // Data type of a value in the LUT
+#define W_i			8  // Total size of fixed-point representation for input
+#define W_o			8  // Total size of fixed-point representation for output
+#define I_i			2  // Number of integer bits of fixed-point representation for input
+#define I_o			3  // Number of integer bits of fixed-point representation for output
+#define LUT_SIZE	(1 << (W_o << 1)) // Size of the LUT = 2^(2*W)
 
-#define W			8  // Total size of fixed-point representation
-#define I			2  // Number of integer bits of fixed-point representation
-#define FRACTIONAL_BITS	W-I  // Number of fractional bits
-#define LUT_SIZE	(1 << (W << 1)) // Size of the LUT = 2^(2*W)
+typedef ap_fixed<W_o,I_o> data_t; // Data type of a value in the LUT
 
-//#ifdef __SYNTHESIS__
 extern const data_t my_LUT_th[LUT_SIZE]; // External declaration for synthesis
 extern const data_t my_LUT_r[LUT_SIZE];  // External declaration for synthesis
-//#else
-//extern data_t my_LUT_th[LUT_SIZE]; // External declaration for simulation
-//extern data_t my_LUT_r[LUT_SIZE];  // External declaration for simulation
-//#endif
 
 void cordiccart2pol(data_t x, data_t y, data_t * r,  data_t * theta);
 void init_cart2pol_LUTs(data_t my_LUT_th[LUT_SIZE], data_t my_LUT_r[LUT_SIZE]);
