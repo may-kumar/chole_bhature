@@ -1,0 +1,139 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Mon Oct 20 21:06:18 2025
+# Process ID         : 2998792
+# Current directory  : /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab
+# Command line       : vivado
+# Log file           : /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/vivado.log
+# Journal file       : /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/vivado.jou
+# Running On         : ieng6-307.ucsd.edu
+# Platform           : Linuxmint
+# Operating System   : Linux Mint 22.1
+# Processor Detail   : Intel(R) Xeon(R) Gold 5220 CPU @ 2.20GHz
+# CPU Frequency      : 2194.843 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 8
+# Host memory        : 67426 MB
+# Swap memory        : 1023 MB
+# Total Virtual      : 68450 MB
+# Available Virtual  : 62565 MB
+#-----------------------------------------------------------
+start_gui
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /software/common/Xilinx_Vitis/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /software/common/Xilinx_Vitis/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /software/common/Xilinx_Vitis/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /software/common/Xilinx_Vitis/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /software/common/Xilinx_Vitis/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /software/common/Xilinx_Vitis/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /software/common/Xilinx_Vitis/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /software/common/Xilinx_Vitis/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /software/common/Xilinx_Vitis/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /software/common/Xilinx_Vitis/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /software/common/Xilinx_Vitis/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /software/common/Xilinx_Vitis/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+create_project cordic /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic -part xc7z020clg400-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/software/common/Xilinx_Vitis/Vivado/2024.2/data/ip'.
+create_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:05 . Memory (MB): peak = 7908.781 ; gain = 170.000 ; free physical = 47977 ; free virtual = 58740
+create_bd_design "cordic"
+Wrote  : </home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.srcs/sources_1/bd/cordic/cordic.bd> 
+update_compile_order -fileset sources_1
+set_property  ip_repo_paths  /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordiccart2pol.comp/hls/impl/ip [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordiccart2pol.comp/hls/impl/ip'.
+open_bd_design {/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.srcs/sources_1/bd/cordic/cordic.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:hls:cordiccart2pol:1.0 cordiccart2pol_0
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0
+endgroup
+WARNING: [Boardtcl 53-1] No current board_part set.
+apply_bd_automation -rule xilinx.com:bd_rule:processing_system7 -config {make_external "FIXED_IO, DDR" Master "Disable" Slave "Disable" }  [get_bd_cells processing_system7_0]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/cordiccart2pol_0/s_axi_control} ddr_seg {Auto} intc_ip {New AXI SmartConnect} master_apm {0}}  [get_bd_intf_pins cordiccart2pol_0/s_axi_control]
+Slave segment '/cordiccart2pol_0/s_axi_control/Reg' is being assigned into address space '/processing_system7_0/Data' at <0x4000_0000 [ 64K ]>.
+make_wrapper -files [get_files /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.srcs/sources_1/bd/cordic/cordic.bd] -top
+INFO: [BD 5-943] Reserving offset range <0x4000_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [xilinx.com:ip:smartconnect:1.0-1] cordic_axi_smc_0: SmartConnect cordic_axi_smc_0 is in Low-Area Mode.
+WARNING: [xilinx.com:ip:smartconnect:1.0-1] cordic_axi_smc_0: IP cordic_axi_smc_0 is configured in Low-area mode as all propagated traffic is low-bandwidth (AXI4LITE). SI S00_AXI has property HAS_BURST == 1. WRAP bursts are not supported in Low-area mode and will result in DECERR if received.
+WARNING: [xilinx.com:ip:smartconnect:1.0-1] cordic_axi_smc_0: If WRAP transactions are required then turn off Low-area mode using ADVANCED_PROPERTIES. Execute following: set_property CONFIG.ADVANCED_PROPERTIES {__experimental_features__ {disable_low_area_mode 1}} [get_bd_cells /cordic_axi_smc_0]
+Wrote  : </home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.srcs/sources_1/bd/cordic/cordic.bd> 
+Wrote  : </home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.srcs/sources_1/bd/cordic/ui/bd_9ac83a38.ui> 
+Verilog Output written to : /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/synth/cordic.v
+Verilog Output written to : /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/sim/cordic.v
+Verilog Output written to : /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/hdl/cordic_wrapper.v
+make_wrapper: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 8182.789 ; gain = 88.184 ; free physical = 47706 ; free virtual = 58521
+add_files -norecurse /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/hdl/cordic_wrapper.v
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [BD 41-1662] The design 'cordic.bd' is already validated. Therefore parameter propagation will not be re-run.
+Wrote  : </home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.srcs/sources_1/bd/cordic/ui/bd_9ac83a38.ui> 
+Verilog Output written to : /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/synth/cordic.v
+Verilog Output written to : /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/sim/cordic.v
+Verilog Output written to : /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/hdl/cordic_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block cordiccart2pol_0 .
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI_GP0'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+Exporting to file /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ip/cordic_axi_smc_0/bd_0/hw_handoff/cordic_axi_smc_0.hwh
+Generated Hardware Definition File /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ip/cordic_axi_smc_0/bd_0/synth/cordic_axi_smc_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_50M .
+Exporting to file /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/hw_handoff/cordic.hwh
+Generated Hardware Definition File /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/synth/cordic.hwdef
+INFO: [IP_Flow 19-6930] IPCACHE: runCacheChecks() number of threads = 8
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP cordic_axi_smc_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP cordic_cordiccart2pol_0_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP cordic_rst_ps7_0_50M_0
+INFO: [IP_Flow 19-8020] IPCACHE: runCacheChecks() calling threadPool finishWork()
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: cordic_axi_smc_0
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: cordic_cordiccart2pol_0_0
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: cordic_rst_ps7_0_50M_0
+[Mon Oct 20 21:12:49 2025] Launched cordic_axi_smc_0_synth_1, cordic_rst_ps7_0_50M_0_synth_1, cordic_cordiccart2pol_0_0_synth_1, cordic_processing_system7_0_0_synth_1, synth_1...
+Run output will be captured here:
+cordic_axi_smc_0_synth_1: /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.runs/cordic_axi_smc_0_synth_1/runme.log
+cordic_rst_ps7_0_50M_0_synth_1: /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.runs/cordic_rst_ps7_0_50M_0_synth_1/runme.log
+cordic_cordiccart2pol_0_0_synth_1: /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.runs/cordic_cordiccart2pol_0_0_synth_1/runme.log
+cordic_processing_system7_0_0_synth_1: /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.runs/cordic_processing_system7_0_0_synth_1/runme.log
+synth_1: /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.runs/synth_1/runme.log
+[Mon Oct 20 21:12:49 2025] Launched impl_1...
+Run output will be captured here: /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:35 ; elapsed = 00:00:30 . Memory (MB): peak = 8439.629 ; gain = 205.820 ; free physical = 47568 ; free virtual = 58416
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ipshared/4008/hdl/verilog/cordiccart2pol_control_s_axi.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ipshared/4008/hdl/verilog/cordiccart2pol_mul_16s_14ns_29_1_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ipshared/4008/hdl/verilog/cordiccart2pol_control_s_axi.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ipshared/4008/hdl/verilog/cordiccart2pol_control_s_axi.v:]
+open_run impl_1
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+Netlist sorting complete. Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.07 . Memory (MB): peak = 8681.109 ; gain = 0.000 ; free physical = 47315 ; free virtual = 58286
+INFO: [Netlist 29-17] Analyzing 49 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2024.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 8774.766 ; gain = 1.000 ; free physical = 47192 ; free virtual = 58164
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 9310.773 ; gain = 0.000 ; free physical = 46733 ; free virtual = 57704
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 9310.773 ; gain = 0.000 ; free physical = 46733 ; free virtual = 57704
+Read PlaceDB: Time (s): cpu = 00:00:00.2 ; elapsed = 00:00:00.18 . Memory (MB): peak = 9310.773 ; gain = 0.000 ; free physical = 46733 ; free virtual = 57704
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 9310.773 ; gain = 0.000 ; free physical = 46733 ; free virtual = 57704
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.03 . Memory (MB): peak = 9310.773 ; gain = 0.000 ; free physical = 46733 ; free virtual = 57704
+Read Physdb Files: Time (s): cpu = 00:00:00.3 ; elapsed = 00:00:00.25 . Memory (MB): peak = 9310.773 ; gain = 0.000 ; free physical = 46733 ; free virtual = 57704
+Restored from archive | CPU: 0.310000 secs | Memory: 2.651550 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.3 ; elapsed = 00:00:00.25 . Memory (MB): peak = 9310.773 ; gain = 0.000 ; free physical = 46733 ; free virtual = 57704
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 9310.773 ; gain = 0.000 ; free physical = 46733 ; free virtual = 57704
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:30 ; elapsed = 00:00:22 . Memory (MB): peak = 9589.098 ; gain = 962.289 ; free physical = 46386 ; free virtual = 57361
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Oct 20 21:24:35 2025...

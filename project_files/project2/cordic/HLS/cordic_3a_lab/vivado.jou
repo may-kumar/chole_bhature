@@ -1,0 +1,43 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Mon Oct 20 21:06:18 2025
+# Process ID         : 2998792
+# Current directory  : /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab
+# Command line       : vivado
+# Log file           : /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/vivado.log
+# Journal file       : /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/vivado.jou
+# Running On         : ieng6-307.ucsd.edu
+# Platform           : Linuxmint
+# Operating System   : Linux Mint 22.1
+# Processor Detail   : Intel(R) Xeon(R) Gold 5220 CPU @ 2.20GHz
+# CPU Frequency      : 2194.843 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 8
+# Host memory        : 67426 MB
+# Swap memory        : 1023 MB
+# Total Virtual      : 68450 MB
+# Available Virtual  : 62565 MB
+#-----------------------------------------------------------
+start_gui
+create_project cordic /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic -part xc7z020clg400-1
+create_bd_design "cordic"
+update_compile_order -fileset sources_1
+set_property  ip_repo_paths  /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordiccart2pol.comp/hls/impl/ip [current_project]
+update_ip_catalog
+open_bd_design {/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.srcs/sources_1/bd/cordic/cordic.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:hls:cordiccart2pol:1.0 cordiccart2pol_0
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:processing_system7 -config {make_external "FIXED_IO, DDR" Master "Disable" Slave "Disable" }  [get_bd_cells processing_system7_0]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/cordiccart2pol_0/s_axi_control} ddr_seg {Auto} intc_ip {New AXI SmartConnect} master_apm {0}}  [get_bd_intf_pins cordiccart2pol_0/s_axi_control]
+make_wrapper -files [get_files /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.srcs/sources_1/bd/cordic/cordic.bd] -top
+add_files -norecurse /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/hdl/cordic_wrapper.v
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_run impl_1
