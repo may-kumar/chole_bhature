@@ -13,8 +13,13 @@ typedef ap_fixed<8,3> data_t; // Data type of a value in the LUT
 #define FRACTIONAL_BITS	W-I  // Number of fractional bits
 #define LUT_SIZE	(1 << (W << 1)) // Size of the LUT = 2^(2*W)
 
-extern data_t my_LUT_r[LUT_SIZE];
-extern data_t my_LUT_th[LUT_SIZE];
+#ifdef __SYNTHESIS__
+extern volatile data_t my_LUT_th[LUT_SIZE]; // External declaration for synthesis
+extern volatile data_t my_LUT_r[LUT_SIZE];  // External declaration for synthesis
+#else
+extern data_t my_LUT_th[LUT_SIZE]; // External declaration for simulation
+extern data_t my_LUT_r[LUT_SIZE];  // External declaration for simulation
+#endif
 
 void cordiccart2pol(data_t x, data_t y, data_t * r,  data_t * theta);
 void init_cart2pol_LUTs(data_t my_LUT_th[LUT_SIZE], data_t my_LUT_r[LUT_SIZE]);

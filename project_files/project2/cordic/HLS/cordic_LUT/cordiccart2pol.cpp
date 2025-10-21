@@ -1,6 +1,16 @@
 #include "cordiccart2pol.h"
 #include <math.h>
 
+// Define the LUT arrays for both synthesis and simulation
+#ifdef __SYNTHESIS__
+volatile data_t my_LUT_th[LUT_SIZE] = {0};
+volatile data_t my_LUT_r[LUT_SIZE] = {0};
+#else
+data_t my_LUT_th[LUT_SIZE] = {0};
+data_t my_LUT_r[LUT_SIZE] = {0};
+#endif
+
+
 void init_cart2pol_LUTs(data_t my_LUT_th[LUT_SIZE], data_t my_LUT_r[LUT_SIZE])
 {
 	// Fill the LUT values with their appropriate R and theta values
@@ -31,11 +41,19 @@ void init_cart2pol_LUTs(data_t my_LUT_th[LUT_SIZE], data_t my_LUT_r[LUT_SIZE])
 
 void cordiccart2pol(data_t x, data_t y, data_t * r,  data_t * theta)
 {
-#ifdef SYNTHESIS
-	data_t my_LUT_th[LUT_SIZE] = {0}; //  use dummy values to get synthesis results (major hack). Would need to explicitly set these to pass co-sim
-	data_t my_LUT_r[LUT_SIZE] = {0};  // I'm sure there is a better way to do this. 
+#ifdef __SYNTHESIS__
+	#pragma HLS bind_storage variable=my_LUT_th type=RAM_1P    
+	#pragma HLS bind_storage variable=my_LUT_r type=RAM_1P
+	// Initialize LUTs with actual values to prevent optimization
+	static bool initialized = false;
+	if (!initialized) {
+		for (int i = 0; i < LUT_SIZE; i++) {
+			my_LUT_th[i] = 0;
+			my_LUT_r[i] = 0;
+		}
+		initialized = true;
+	}
 #endif
-
 	// Convert the inputs to internal fixed point representation
 	ap_fixed<W, I, AP_RND, AP_WRAP, 1> fixed_x = x;
 	ap_fixed<W, I, AP_RND, AP_WRAP, 1> fixed_y = y;
