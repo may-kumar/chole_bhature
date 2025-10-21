@@ -29,10 +29,6 @@ Rmse rmse_r;
 int main()
 {
 
-#ifndef SYNTHESIS
-	init_cart2pol_LUTs(my_LUT_th, my_LUT_r); // Fill in the LUT for simulation results
-#endif
-
 	// Compare results from cordiccart2pol against the ground truth
 	float x;
 	float y;
@@ -40,7 +36,7 @@ int main()
 	data_t theta;
 	float min_theta, max_theta, min_r, max_r = 0;
 
-	float step = .01; //Testbench step size. Smaller means more extensive testbench.
+	float step = .5; //Testbench step size. Smaller means more extensive testbench.
 	int num_steps = (int) 2/step; // assumes x and y are normalized and are between -1 and 1
 	for(int i = 0; i < num_steps+1; i++)
 	{
