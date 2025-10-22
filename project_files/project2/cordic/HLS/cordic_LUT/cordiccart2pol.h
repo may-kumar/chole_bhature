@@ -6,10 +6,10 @@
 #define DEBUG 0
 
 #define W_i			8  // Total size of fixed-point representation for input
-#define W_o			8  // Total size of fixed-point representation for output
+#define W_o			7  // Total size of fixed-point representation for output
 #define I_i			2  // Number of integer bits of fixed-point representation for input
 #define I_o			3  // Number of integer bits of fixed-point representation for output
-#define LUT_SIZE	(1 << (W_o << 1)) // Size of the LUT = 2^(2*W)
+#define LUT_SIZE	(1 << (W_i << 1)) // Size of the LUT = 2^(2*W)
 
 typedef ap_fixed<W_o,I_o> data_t; // Data type of a value in the LUT
 
