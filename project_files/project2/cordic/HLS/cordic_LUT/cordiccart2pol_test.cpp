@@ -4,12 +4,6 @@
 #include <stdio.h>
 #include <ap_fixed.h>
 
-// Look-up tables used in simulation
-#ifndef SYNTHESIS
-data_t my_LUT_th[LUT_SIZE];
-data_t my_LUT_r[LUT_SIZE];
-#endif
-
 /// Struct to calculate the error
 struct Rmse
 {
@@ -34,10 +28,6 @@ Rmse rmse_r;
 
 int main()
 {
-
-#ifndef SYNTHESIS
-	init_cart2pol_LUTs(my_LUT_th, my_LUT_r); // Fill in the LUT for simulation results
-#endif
 
 	// Compare results from cordiccart2pol against the ground truth
 	float x;

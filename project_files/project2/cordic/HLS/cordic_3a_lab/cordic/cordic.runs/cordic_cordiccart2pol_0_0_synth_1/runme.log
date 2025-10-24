@@ -1,0 +1,371 @@
+
+*** Running vivado
+    with args -log cordic_cordiccart2pol_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source cordic_cordiccart2pol_0_0.tcl
+
+
+****** Vivado v2024.2 (64-bit)
+  **** SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Mon Oct 20 21:12:53 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source cordic_cordiccart2pol_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1494.812 ; gain = 58.879 ; free physical = 45537 ; free virtual = 56384
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordiccart2pol.comp/hls/impl/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/software/common/Xilinx_Vitis/Vivado/2024.2/data/ip'.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: cordic_cordiccart2pol_0_0
+Command: synth_design -top cordic_cordiccart2pol_0_0 -part xc7z020clg400-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 3003796
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2140.270 ; gain = 419.797 ; free physical = 41863 ; free virtual = 52742
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'cordic_cordiccart2pol_0_0' [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ip/cordic_cordiccart2pol_0_0/synth/cordic_cordiccart2pol_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'cordiccart2pol' [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ipshared/4008/hdl/verilog/cordiccart2pol.v:9]
+INFO: [Synth 8-6157] synthesizing module 'cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_115_1' [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ipshared/4008/hdl/verilog/cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_115_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_115_1_angles_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ipshared/4008/hdl/verilog/cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_115_1_angles_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_115_1_angles_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ipshared/4008/hdl/verilog/cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_115_1_angles_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_115_1_angles_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ipshared/4008/hdl/verilog/cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_115_1_angles_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'cordiccart2pol_flow_control_loop_pipe_sequential_init' [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ipshared/4008/hdl/verilog/cordiccart2pol_flow_control_loop_pipe_sequential_init.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'cordiccart2pol_flow_control_loop_pipe_sequential_init' (0#1) [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ipshared/4008/hdl/verilog/cordiccart2pol_flow_control_loop_pipe_sequential_init.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_115_1' (0#1) [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ipshared/4008/hdl/verilog/cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_115_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'cordiccart2pol_control_s_axi' [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ipshared/4008/hdl/verilog/cordiccart2pol_control_s_axi.v:9]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ipshared/4008/hdl/verilog/cordiccart2pol_control_s_axi.v:237]
+INFO: [Synth 8-6155] done synthesizing module 'cordiccart2pol_control_s_axi' (0#1) [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ipshared/4008/hdl/verilog/cordiccart2pol_control_s_axi.v:9]
+INFO: [Synth 8-6157] synthesizing module 'cordiccart2pol_sparsemux_7_2_16_1_1' [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ipshared/4008/hdl/verilog/cordiccart2pol_sparsemux_7_2_16_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'cordiccart2pol_sparsemux_7_2_16_1_1' (0#1) [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ipshared/4008/hdl/verilog/cordiccart2pol_sparsemux_7_2_16_1_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'cordiccart2pol_mul_16s_14ns_29_1_1' [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ipshared/4008/hdl/verilog/cordiccart2pol_mul_16s_14ns_29_1_1.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'cordiccart2pol_mul_16s_14ns_29_1_1' (0#1) [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ipshared/4008/hdl/verilog/cordiccart2pol_mul_16s_14ns_29_1_1.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'cordiccart2pol' (0#1) [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ipshared/4008/hdl/verilog/cordiccart2pol.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'cordic_cordiccart2pol_0_0' (0#1) [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ip/cordic_cordiccart2pol_0_0/synth/cordic_cordiccart2pol_0_0.v:53]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+WARNING: [Synth 8-6014] Unused sequential element int_ap_done_reg was removed.  [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ipshared/4008/hdl/verilog/cordiccart2pol_control_s_axi.v:314]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+WARNING: [Synth 8-7129] Port AWADDR[1] in module cordiccart2pol_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AWADDR[0] in module cordiccart2pol_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[31] in module cordiccart2pol_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[30] in module cordiccart2pol_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[29] in module cordiccart2pol_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[28] in module cordiccart2pol_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[27] in module cordiccart2pol_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[26] in module cordiccart2pol_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[25] in module cordiccart2pol_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[24] in module cordiccart2pol_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[23] in module cordiccart2pol_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[22] in module cordiccart2pol_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[21] in module cordiccart2pol_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[20] in module cordiccart2pol_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[19] in module cordiccart2pol_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[18] in module cordiccart2pol_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[17] in module cordiccart2pol_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[16] in module cordiccart2pol_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_115_1_angles_ROM_AUTO_1R is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2220.238 ; gain = 499.766 ; free physical = 41628 ; free virtual = 52511
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2232.113 ; gain = 511.641 ; free physical = 41620 ; free virtual = 52503
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2232.113 ; gain = 511.641 ; free physical = 41620 ; free virtual = 52503
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2232.113 ; gain = 0.000 ; free physical = 41604 ; free virtual = 52487
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ip/cordic_cordiccart2pol_0_0/constraints/cordiccart2pol_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.gen/sources_1/bd/cordic/ip/cordic_cordiccart2pol_0_0/constraints/cordiccart2pol_ooc.xdc] for cell 'inst'
+Parsing XDC File [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.runs/cordic_cordiccart2pol_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.runs/cordic_cordiccart2pol_0_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2387.863 ; gain = 0.000 ; free physical = 41586 ; free virtual = 52484
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2387.863 ; gain = 0.000 ; free physical = 41574 ; free virtual = 52472
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2387.863 ; gain = 667.391 ; free physical = 41593 ; free virtual = 52496
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2395.867 ; gain = 675.395 ; free physical = 41593 ; free virtual = 52496
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  /home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.runs/cordic_cordiccart2pol_0_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2395.867 ; gain = 675.395 ; free physical = 41592 ; free virtual = 52497
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-802] inferred FSM for state register 'wstate_reg' in module 'cordiccart2pol_control_s_axi'
+INFO: [Synth 8-802] inferred FSM for state register 'rstate_reg' in module 'cordiccart2pol_control_s_axi'
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                             0001 |                               11
+*
+                  WRIDLE |                             0010 |                               00
+                  WRDATA |                             0100 |                               01
+                  WRRESP |                             1000 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'wstate_reg' using encoding 'one-hot' in module 'cordiccart2pol_control_s_axi'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              001 |                               10
+*
+                  RDIDLE |                              010 |                               00
+                  RDDATA |                              100 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'rstate_reg' using encoding 'one-hot' in module 'cordiccart2pol_control_s_axi'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2395.867 ; gain = 675.395 ; free physical = 41600 ; free virtual = 52507
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   16 Bit       Adders := 4     
+	   3 Input   16 Bit       Adders := 2     
+	   2 Input   14 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 3     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               16 Bit    Registers := 18    
+	               13 Bit    Registers := 2     
+	               12 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                6 Bit    Registers := 2     
+	                4 Bit    Registers := 3     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 26    
++---Muxes : 
+	   2 Input   64 Bit        Muxes := 1     
+	   2 Input   54 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 6     
+	   4 Input   16 Bit        Muxes := 1     
+	   2 Input   14 Bit        Muxes := 1     
+	  17 Input   13 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 3     
+	   3 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 2     
+	   5 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 14    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP control_s_axi_U/int_r_reg, operation Mode is: (A2*(B:0x136e))'.
+DSP Report: register x_3_loc_fu_112_reg is absorbed into DSP control_s_axi_U/int_r_reg.
+DSP Report: register control_s_axi_U/int_r_reg is absorbed into DSP control_s_axi_U/int_r_reg.
+DSP Report: operator mul_16s_14ns_29_1_1_U8/tmp_product is absorbed into DSP control_s_axi_U/int_r_reg.
+WARNING: [Synth 8-7129] Port s_axi_control_AWADDR[1] in module cordiccart2pol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_control_AWADDR[0] in module cordiccart2pol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_control_WDATA[31] in module cordiccart2pol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_control_WDATA[30] in module cordiccart2pol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_control_WDATA[29] in module cordiccart2pol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_control_WDATA[28] in module cordiccart2pol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_control_WDATA[27] in module cordiccart2pol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_control_WDATA[26] in module cordiccart2pol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_control_WDATA[25] in module cordiccart2pol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_control_WDATA[24] in module cordiccart2pol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_control_WDATA[23] in module cordiccart2pol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_control_WDATA[22] in module cordiccart2pol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_control_WDATA[21] in module cordiccart2pol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_control_WDATA[20] in module cordiccart2pol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_control_WDATA[19] in module cordiccart2pol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_control_WDATA[18] in module cordiccart2pol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_control_WDATA[17] in module cordiccart2pol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_control_WDATA[16] in module cordiccart2pol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_control_WSTRB[3] in module cordiccart2pol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_control_WSTRB[2] in module cordiccart2pol is either unconnected or has no load
+WARNING: [Synth 8-3332] Sequential element (control_s_axi_U/FSM_onehot_wstate_reg[0]) is unused and will be removed from module cordiccart2pol.
+WARNING: [Synth 8-3332] Sequential element (control_s_axi_U/FSM_onehot_rstate_reg[0]) is unused and will be removed from module cordiccart2pol.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2395.867 ; gain = 675.395 ; free physical = 41506 ; free virtual = 52420
+---------------------------------------------------------------------------------
+ Sort Area is  control_s_axi_U/int_r_reg_0 : 0 0 : 981 981 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++---------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name    | DSP Mapping      | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++---------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|cordiccart2pol | (A2*(B:0x136e))' | 16     | 14     | -      | -      | 29     | 1    | 0    | -    | -    | -     | 1    | 0    | 
++---------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 2456.867 ; gain = 736.395 ; free physical = 40897 ; free virtual = 51815
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 2490.914 ; gain = 770.441 ; free physical = 40834 ; free virtual = 51752
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 2490.914 ; gain = 770.441 ; free physical = 40834 ; free virtual = 51753
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 2635.727 ; gain = 915.254 ; free physical = 40999 ; free virtual = 51917
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 2635.727 ; gain = 915.254 ; free physical = 40999 ; free virtual = 51917
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 2635.727 ; gain = 915.254 ; free physical = 40999 ; free virtual = 51917
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 2635.727 ; gain = 915.254 ; free physical = 40999 ; free virtual = 51917
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 2635.727 ; gain = 915.254 ; free physical = 40999 ; free virtual = 51917
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 2635.727 ; gain = 915.254 ; free physical = 40999 ; free virtual = 51917
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++---------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name    | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++---------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|cordiccart2pol | (A'*B)'     | 30     | 13     | -      | -      | 29     | 1    | 0    | -    | -    | -     | 0    | 1    | 
++---------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |CARRY4  |    44|
+|2     |DSP48E1 |     1|
+|3     |LUT1    |    50|
+|4     |LUT2    |    89|
+|5     |LUT3    |   109|
+|6     |LUT4    |    33|
+|7     |LUT5    |    83|
+|8     |LUT6    |   115|
+|9     |FDRE    |   301|
+|10    |FDSE    |     2|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 2635.727 ; gain = 915.254 ; free physical = 40999 ; free virtual = 51917
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 23 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 2635.727 ; gain = 759.504 ; free physical = 40991 ; free virtual = 51909
+Synthesis Optimization Complete : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 2635.734 ; gain = 915.254 ; free physical = 40991 ; free virtual = 51909
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2635.734 ; gain = 0.000 ; free physical = 41128 ; free virtual = 52046
+INFO: [Netlist 29-17] Analyzing 45 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 4 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2691.754 ; gain = 0.000 ; free physical = 41155 ; free virtual = 52073
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 20853b39
+INFO: [Common 17-83] Releasing license: Synthesis
+47 Infos, 43 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:52 ; elapsed = 00:00:51 . Memory (MB): peak = 2691.754 ; gain = 1177.129 ; free physical = 41151 ; free virtual = 52070
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1794.246; main = 1655.991; forked = 215.517
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3459.961; main = 2691.758; forked = 917.043
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2715.766 ; gain = 0.000 ; free physical = 41146 ; free virtual = 52064
+INFO: [Common 17-1381] The checkpoint '/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.runs/cordic_cordiccart2pol_0_0_synth_1/cordic_cordiccart2pol_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP cordic_cordiccart2pol_0_0, cache-ID = 81f183d50bcff353
+INFO: [Coretcl 2-1174] Renamed 5 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2715.766 ; gain = 0.000 ; free physical = 41171 ; free virtual = 52090
+INFO: [Common 17-1381] The checkpoint '/home/linux/ieng6/students/162/mak025/Read_the_docs/project_files/project2/cordic/HLS/cordic_3a_lab/cordic/cordic.runs/cordic_cordiccart2pol_0_0_synth_1/cordic_cordiccart2pol_0_0.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file cordic_cordiccart2pol_0_0_utilization_synth.rpt -pb cordic_cordiccart2pol_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Oct 20 21:14:07 2025...
