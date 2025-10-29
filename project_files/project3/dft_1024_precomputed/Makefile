@@ -4,7 +4,7 @@
 #
 
 # select the HLS compiler to use (vivado_hls or vitis)
-TOP = cordiccart2pol
+TOP = dft
 # -------------------------------------------------------
 
 USE_VITIS=1
@@ -43,7 +43,7 @@ LD_PATH_NEW = /usr/lib/x86_64-linux-gnu
 LD_LIBRARY_PATH := $(shell echo $(value LD_LIBRARY_PATH) | grep -q $(LD_PATH_NEW) || echo $(LD_PATH_NEW):)$(value LD_LIBRARY_PATH)
 
 # ------------ Set the script path to generate tcl scripts ----------------
-GEN_TCL = $(CURDIR)/../../../../scripts/gen_hls_runner_script.py
+GEN_TCL = $(CURDIR)/../../scripts/gen_hls_runner_script.py
 # -------------------------------------------------------------------------
 
 #HLS_CONFIG_FILE = $(CURDIR)/__hls_config__.ini

@@ -6,6 +6,9 @@
 Project: Discrete Fourier Transform (DFT)
 ============================================
 
+This assignment is not yet released
+------------------------------------
+
 1) Introduction
 ---------------
 
@@ -43,11 +46,11 @@ Demo folder contains one file:
 3) Project Goal
 ---------------
 
-You should modify the code to create a number of different architectures that perform tradeoffs between performance and resource utilization. For dft_256_precomputed and dft_1024_precomputed designs, you need to use precomputed values from coefficients256.h and coefficients1024.h
+You should modify the code to create a number of different architectures that perform tradeoffs between performance and resource utilization. For dft_32_precomputed and dft_1024_precomputed designs, you need to use precomputed values from coefficients32_2D.h and coefficients1024.h
 
-For 256-point and 1024-point DFTs, you will create a report describing how you generated these different architectures (code restructuring, pragmas utilized, etc.). For each architecture you should provide its results including the resource utilization (BRAMs, DSP48, LUT, FF), and performance in terms of throughput (number of DFT operations/second), latency, clock cycles, clock frequency (which is fixed to 10 ns). You can do most of the design space exploration on the 256 point DFT. You should pick your “best” 256 architecture and synthesize that as a 1024 DFT.
+For 32-point and 1024-point DFTs, you will create a report describing how you generated these different architectures (code restructuring, pragmas utilized, etc.). For each architecture you should provide its results including the resource utilization (BRAMs, DSP48, LUT, FF), and performance in terms of throughput (number of DFT operations/second), latency, clock cycles, clock frequency (which is fixed to 10 ns).
 
-The 8 and 32 point folders are provided for your convenience. If you would like, you can do some of your initial design space optimization on these smaller architectures. But it is not necessary to use these at all.
+The 8 and 256 point folders are provided for your convenience. If you would like, you can do some of your initial design space optimization on these smaller architectures. But it is not necessary to use these at all.
 
 The key in this project is to understand the tradeoffs between loop optimizations (unrolling and pipelining) and data partitioning. Therefore you should focus on these optimizations.
 
@@ -60,7 +63,7 @@ The key in this project is to understand the tradeoffs between loop optimization
 
 * You may want to start implementing DFT by using HLS math functions for cos() and sin(). Then you can optimize your code based on this baseline code.
 
-* There are many different ways to generate the DFT coefficients including using HLS math functions. These can be implemented as constants when the DFT size is fixed. We have given you the coefficients for both 256 (in coefficients256.h) and 1024 (in coefficients1024.h). They each have two constant arrays, sin_table and cos_table. You can use these coefficient arrays directly as memories in your architectures. You are also free to create your own arrays using a different structure (e.g., 2D array, reordering of elements in the given 1D arrays, etc.). Or you could dynamically generate the coefficients.
+* There are many different ways to generate the DFT coefficients including using HLS math functions. These can be implemented as constants when the DFT size is fixed. We have given you the coefficients for both 32 (in coefficients32_2D.h) and 1024 (in coefficients1024.h). They each have two constant arrays, sin_table and cos_table. You can use these coefficient arrays directly as memories in your architectures. You are also free to create your own arrays using a different structure (e.g., 2D array, reordering of elements in the given 1D arrays, etc.). Or you could dynamically generate the coefficients.
 
 * There is significant amount of parallelism that can be exploited by (partially) unrolling the for-loops. Pipelining these (partially) unrolled for-loops should lead to higher throughputs. However, you may find that pipelining does not make a difference once you have loop unrolling and array partitioning handled well. When you try to incorporate pipelining, the major issue you will face is data dependencies. You can read more about them `here <https://docs.xilinx.com/r/2022.2-English/ug1399-vitis-hls/Managing-Pipeline-Dependencies>`_. Since you have some data dependencies, accessing memory will be the major overhead. This is why your estimated clock period may go beyond 10ns; to perform some task within N clock cycles each clock cycle needs to be high for the task to be completed. For example, at clock cycle 1 you might write a[1] and at clock cycle 2 you will need to read a[1] which would not be ready as the operation might take 4 clock cycles. This is a data dependency issue which is very common in pipelining. This is why pipelining does not seem to work well even though your loop unrolling and partitioning is the best you can find. Another reason is that the overhead might not be because of the task (it might take only 1 clock cycle), but the memory it is stored in might have only 2 ports or 1 port and this would mean that the memory cannot be accessed in parallel. You can see the critical path in the Synthesis log itself. Otherwise you can open the Analysis view and view which operation(s) or data path is critical and causing this delay, which in turn limits the performance of pipelining. There is a slightly different conversation `here <https://support.xilinx.com/s/question/0D52E00006hpjyTSAQ/pipeline-and-unroll-in-the-for-loop-which-is-better?language=en_US>`_ that may be helpful to read through. This paragraph might make more sense after you complete the project, so be sure to read through it again when you're finalizing your report.
 
@@ -70,45 +73,61 @@ The key in this project is to understand the tradeoffs between loop optimization
 
 * There are more efficient methods for performing the DFT that exploit the symmetries of the Fourier constants, e.g., the Fast Fourier Transform (FFT). **Do not use these symmetries.** In other words, treat this like a matrix-vector multiply with unknown matrix values. The :doc:`Fast Fourier Transform (FFT) Project <project4>` uses an FFT architecture that provides substantial improvement to this DFT architecture.
 
-* You do not need to report your optimizations for your 8 point and 32 point DFT; these folders are provided for your convenience. Since these will very likely synthesize much faster than larger point DFT functions, it may be useful to use these to debug your code or in your initial design space exploration.
+* You do not need to report your optimizations for your 8 point and 256 point DFT; these folders are provided for your convenience. Since these will very likely synthesize much faster than larger point DFT functions, it may be useful to use these to debug your code or in your initial design space exploration.
 
 * Your report must explicitly state how you calculated the throughput results.
 
 * Here are samples for throughput results achieved by previous students for the DFT project:
 
-		+-----------------------------+--------+---------+
-		| Examples of max throughput: | DFT256 | DFT1024 |
-		+-----------------------------+--------+---------+
-		| Hz                          | 1370   | 89      |
-		+-----------------------------+--------+---------+
+		+-----------------------------+---------+
+		| Examples of max throughput: | DFT1024 |
+		+-----------------------------+---------+
+		| Hz                          | 89      |
+		+-----------------------------+---------+
 
 5) Questions
 ------------
 
-* **Question 1:** What changes would this code require if you were to use a custom CORDIC similar to what you designed for Project: CORDIC? Compared to a baseline code with HLS math functions for cos() and sin(), would changing the accuracy of your CORDIC core make the DFT hardware resource usage change? How would it affect the performance? Note that you do not need to implement the CORDIC in your code, we are just asking you to discuss potential tradeoffs that would be possible if you used a CORDIC that you designed instead of the one from Xilinx.
+Questions 1-5 refers to DFT 32.
 
-* **Question 2:** Rewrite the code to eliminate these math function calls (i.e. `cos()` and `sin()`) by utilizing a table lookup. How does this change the throughput and resource utilization? What happens to the table lookup when you change the size of your DFT?
+* **Question 1: DFT32 Baseline** Implement a baseline HLS implementation for `dft_32`. You may use the `cos()` and `sin()` functions from the math library.
+	* **(a)** Now think about if you were to use a custom CORDIC algorithm to calculate `cos()` and `sin()` (you don't have to implement this). Would changing the accuracy of your CORDIC core make the DFT hardware resource usage change? How would it affect the performance?
+* **Question 2: DFT32 Table Lookup** Rewrite the code to eliminate these math function calls (i.e. `cos()` and `sin()`) by utilizing a table lookup. Use the provided `*_2D.h` file.
+	* **(a)** Make a table that shows the change in resource utilization and performance with between Question 1 and 2.
+* **Question 3: DFT32 Interface Change** Modify the DFT function interface so that the input and outputs are stored in separate arrays. Modify the testbench to accommodate this change to DFT interface.
+	* **(a)** Why did we do this? Does it affect what optimizations you can perform?
+	* **(b)** Make a table that shows the resource utilization and performance from before and after this change.
+	* **(c)** Describe the results you see.
+* **Question 4: DFT32 Array Partitioning** Experiment with array partitioning. Partition all arrays in your implementation. For now, make sure that your loops are being pipelined with a target II of 1.
+	* **(a)** Use block partitioning. Try factors of 1 (i.e. without partitioning), 2, 4, 8, 16, and 32. Make a table showing the achieved II, resource utilization, and performance of each of these implementations.
+	* **(b)** Plot resource utilization vs the partition factor on one plot.
+	* **(c)** Plot throughput & latency vs the partition factor on separate plots.
+* **Question 5: DFT32 Loop Unrolling** Experiment with loop unrolling. Unroll the inner loop only. Use the best array partitioning from Question 4.
+	* **(a)** Try factors of 1 (i.e. without unrolling), 2, 4, 8, 16, and 32. Make a table showing the achieved II, resource utilization, and performance of each of these implementations.
+	* **(b)** Plot resource utilization vs the partition factor on one plot.
+	* **(c)** Plot throughput & latency vs the partition factor on separate plots.
 
-* **Question 3:** Modify the DFT function interface so that the input and outputs are stored in separate arrays. Modify the testbench to accommodate this change to DFT interface. How does this affect the optimizations that you can perform? How does it change the performance? And how does the resource usage change? **You should use this modified interface for the remaining questions.**
+Questions 6-9 refers to DFT 1024.
 
-* **Question 4: Loop Optimizations:** Examine the effects of loop unrolling and array partitioning on the performance and resource utilization. What is the relationship between array partitioning and loop unrolling? Does it help to perform one without the other? Plot the performance in terms of number of DFT operations per second (throughput) versus the unroll and array partitioning factor. Plot the same trend for resources (showing LUTs, FFs, DSP blocks, BRAMs). What is the general trend in both cases?  Which design would you select? Why?
-..
-	* **Question 5: Dataflow:** Apply dataflow pragma to your design to improve throughput. You may need to change your code and make submodules so that it aligns with the task-level or function-level modularity that dataflow can exploit; Xilinx provides `some examples of dataflow code <https://github.com/Xilinx/Vitis-HLS-Introductory-Examples/tree/master/Task_level_Parallelism/Control_driven>`_. The `Vitis HLS User Guide <https://docs.xilinx.com/r/2021.2-English/ug1399-vitis-hls/Exploiting-Task-Level-Parallelism-Dataflow-Optimization>`_ and `this summary <https://docs.xilinx.com/r/2022.2-English/ug1399-vitis-hls/pragma-HLS-dataflow>`_ provide more information.  How much improvement does dataflow provide? How does  dataflow affect resource usage? What about BRAM usage specifically? Did you modify the code to make it more amenable to dataflow? If so, how? Please describe your architecture(s) with figures on your report.
+* **Question 6: DFT1024 Baseline** You should refer to the baseline DFT code at Figure 4.15 of the textbook.
 
-* **Question 5: Best architecture:** Briefly describe your "best" architecture. In what way is it the best? What optimizations did you use to obtain this result? What are the tradeoffs that you considered in order to obtain this architecture?
+ - **(a)** Write a basline DFT1024 using the ``sin()`` and ``cos()`` math functions. Do not apply any HLS pragmas. Report latency, throughput, and resource utilization.
+ - **(b)** A full 2D lookup table no longer fits on a PYNQ-Z2 board. We can only store a 1D array of precomputed ``sin()`` and ``cos()`` values. Re-write the baseline DFT1024 to use the pre-computed values. Report the latency, throughput and resource utilization.
 
-* **Question 6: Streaming Interface Synthesis:** Modify your design to allow for streaming inputs and outputs using hls::stream.  You must write your own testbench to account for the function interface change from DTYPE to hls::stream.  NOTE: your design must pass Co-Simulation (not just C-Simulation). You can learn about hls::stream from the `HLS Stream Library <https://docs.xilinx.com/r/2022.2-English/ug1399-vitis-hls/HLS-Stream-Library>`_. An example of code with both hls::stream and dataflow is available (along with its testbench) `here <https://github.com/Xilinx/SDAccel_Examples/blob/master/getting_started/dataflow/dataflow_stream_array_c/src/N_stage_adders.cpp>`_, and another `example showing hls::stream between functions <https://github.com/Xilinx/Vitis_Accel_Examples/blob/main/cpp_kernels/dataflow_stream/src/adder.cpp>`_. Describe the major changes that you made to your code to implement the streaming interface. What benefits does the streaming interface provide? What are the drawbacks?
+* **Question 7: DFT1024 Loop optimization**  The baseline DFT1024 from Figure 4.15 of the textbook has data dependencies in the inside loop, which could limit parallelism. One way to tackle this issue is to interchange the two loops. Implement this change and report the latency, throughput, and resource.
+
+* **Question 8: DFT1024 Best Design:** Now that you have explored different optimizations for DFT32, we can go ahead and try their ideas on DFT1024.
+
+ - **(a)** Try any optimization techniques and describe your methodology.
+ - **(b)** Report the latency, throughput, and resource utilization of your best design. Your design **must** fit on the PYNQ-Z2 board, which mean all resource utilizations must be less than 100%.
+ - **Warning:** Avoid agressively unrolling loops, partionging arrays, or pipelining. This could lead to long design synthesis time, and your design may not fit on board.
+
+* **Question 9: Streaming Interface Synthesis:** Modify your design to allow for streaming inputs and outputs using ``hls::stream``.  You must write your own testbench to account for the function interface change from DTYPE to proper ``hls::stream``.  You can learn about ``hls::stream`` from the `HLS Stream Library <https://docs.amd.com/r/en-US/ug1399-vitis-hls/HLS-Stream-Library>`_. You should also follow the :doc:`Lab: Axistream Multiple DMAs <axidma2>` example. Report the latency, throughput, and resource utilization of your design. Resource utilization must be under 100%. Using your optmized DFT1024 is optional, you can also just convert the baseline DFT1024 to streaming interface.
 
 6) PYNQ Demo
 ------------
 
 For this demo, your will create an IP for the DFT 1024, and run it from the Jupyter notebook using two DMAs. You need to follow the :doc:`Lab: Axistream Multiple DMAs <axidma2>` example, with the major difference being that you will have 2 inputs and 2 outputs instead of 2 inputs and 1 output. Therefore you will have to enable read and write for both the DMAs, which is different from the lab instructions.
-
-You will additionally need to change the depth of your variable interface ports (you can read more about that `here <https://docs.xilinx.com/r/2022.2-English/ug1399-vitis-hls/pragma-HLS-interface>`_). For the single `s_axilite` port, you can either choose to do `port=length` like we did for the lab (in which case you will need to add a constant to your block diagram like we do in the lab, and you will need to write the length from Jupyter to the appropriate address), or you can choose to do `port=return` (in which case `ap_start` will not appear in your HLS IP, and you will need to write 1 to the appropriate address from Jupyter to start the process like in previous projects and labs).
-
-Note that you will need to change the axis data type from the one in the lab. The lab uses an int; the project uses float.
-
-Unlike the lab here you cannot start computation immediately after you stream an input struct. You must stream in all struct inputs, then compute the DFT using their float components, and finally stream all outputs as structs. When streaming the output structs, the `last` bit should be set to 1 for the last struct to be streamed, indicating end of stream. You may need to explicitly set the other `last` bits to 0, otherwise your stream may terminate early and without warning since there may be garbage data at the memory addresses of the struct you create that are streamed out. You do not need to do this for inputs, as the tool takes care of it for you. Sometimes, the output streaming's `last` bit is also handled by the tool, but sometimes it may not be, which will cause the DMA to hang (corresponding to a forever-running Jupyter cell) and it is better to hard code it.
 
 Another point worth discussing here is why we use pointers for inputs and outputs, and why we have to post-increment the pointer manually (like we did in the multiple DMA lab) when we stream inputs and outputs, but why it is a bad idea to use pointers in your code. You cannot use pointers in HLS; pointers are dynamic memory and Vivado HLS will not be able to synthesize it since it is not a deterministic thing (datapath could change depending on inputs). Arrays, on the other hand, are fixed memory locations and therefore they can be synthesized to vectors in RTL. You can use pointers only as ports and even then you have to specify axistream, otherwise that will lead to synthesis issues as well.
 
@@ -118,7 +137,7 @@ High Performance (HP) AXI ports can be accessed by multiple manager/subordinates
 7) Submission Procedure
 -----------------------
 
-You must submit your code (and only your code, not other files). Your code should have everything in it so that we can synthesize it directly. This means that you should use pragmas in your code, and not use the GUI to insert optimization directives. We must be able to use what is provided (``*.cpp``, ``*.h`` files, and ``*.tcl``) and directly synthesize it. We must be able to only import your source file and directly synthesize it. If you change test benches to answer questions, please submit them as well.
+You must submit your code and .rpt files for each question. Your code should have everything in it so that we can synthesize it directly. This means that you should use pragmas in your code, and not use the GUI to insert optimization directives. We must be able to use what is provided (``*.cpp``, ``*.h`` files, and ``*.ini`` and ``Makefile``) and directly synthesize it. We must be able to only import your source file and directly synthesize it. If you change test benches to answer questions, please submit them as well.
 
 You must follow the file structure below. We use automated scripts to pull your data, so **DOUBLE CHECK** your file/folder names to make sure it corresponds to the instructions.
 
@@ -128,31 +147,48 @@ Your repo must contain a folder named "dft" at the top-level. This folder must b
 
 * **Report.pdf**
 
-* Folder **dft256_baseline**
+* Folder **Q1**
+  - coefficients32_2D.h | dft.h | dft.cpp | dft_test.cpp | Makefile | __hls_config.ini | output.gold.dat
+  - Reports subfolder
+    - .rpt files with intelligible naming (i.e. ``baseline.rpt``)
 
-* Folder **dft256_optimized1**
+* Folder **Q2**
+  - coefficients32_2D.h | dft.h | dft.cpp | dft_test.cpp | Makefile | __hls_config.ini | output.gold.dat
+  - Reports subfolder
+    - .rpt files with intelligible naming (i.e. ``table_lookup.rpt``)
 
-* Folder **dft256_optimized2**
+* Folder **Q3**
+  - coefficients32_2D.h | dft.h | dft.cpp | dft_test.cpp | Makefile | __hls_config.ini | output.gold.dat
+  - Reports subfolder
+    - .rpt files with intelligible naming (i.e. ``interface_change.rpt``)
 
-* ...
+* Folder **Q4**
+  - coefficients32_2D.h | dft.h | dft.cpp | dft_test.cpp | Makefile | __hls_config.ini | output.gold.dat
+  - Reports subfolder
+    - .rpt files with intelligible naming (i.e. ``array_partition_1.rpt``)
 
-* Folder **dft256_dataflow**
+* Folder **Q5**
+  - coefficients32_2D.h | dft.h | dft.cpp | dft_test.cpp | Makefile | __hls_config.ini | output.gold.dat
+  - Reports subfolder
+    - .rpt files with intelligible naming (i.e. ``loop_unrolling_2.rpt``)
 
-* Folder **dft256_best**
+* Folder **Q6b** Your answer to question **6.(b)**: coefficients1024.h | dft.h | dft.cpp | dft_test.cpp | Makefile | __hls_config.ini | output.gold.dat | dft_csynth.rpt
 
-* Folder **dft1024_best**
+* Folder **Q7** Your answer to question **7**: coefficients1024.h | dft.h | dft.cpp | dft_test.cpp | Makefile | __hls_config.ini | output.gold.dat | dft_csynth.rpt
+
+* Folder **Q8** Your best DFT1024 design: coefficients1024.h | dft.h | dft.cpp | dft_test.cpp | Makefile | __hls_config.ini | output.gold.dat | dft_csynth.rpt
+
+* Folder **Q9** Your DFT1024 with streaming interfaces and streaming testbench: coefficients1024.h | dft.h | dft.cpp | dft_test.cpp | Makefile | __hls_config.ini | output.gold.dat | dft_csynth.rpt
 
 * Folder **Demo**: ``DFT.ipynb`` | ``dft.bit`` | ``dft.hwh``
 
-* **Note**: Provide every architecture that you used to answer the questions: make sure each folder contains the source code (``*.cpp``, ``*.h``, ``*.tcl`` only) and the reports (``.rpt`` and ``.xml``).
 
-* **Note**: Do **not** submit DFT 8 and 32.
 
 
 
 8) Grading Rubric
 -----------------
 
-**50 points:** Response to the questions in your report. Your answers should be well written and clearly delineated (for example: by copying the questions into the report before answering them, or placing each question under a separate subheading). Additional points (up to 20) will be subtracted for poor formatting and/or answers that are hard to understand. Examples of issues include any spelling errors, multiple/egregious grammar errors, poor presentation of results, lack of written comparison of the results, etc. Report the throughput and resource usage for each design you discuss in your report, and include the files for these designs in your submission. We encourage the use of tables for stating results and the changes that produced them, and figures to draw comparisons between different designs. Use these figures and tables in your discussion. A well-written report is informative but not overly verbose. You will be deducted points if you do not follow the instructions on directory naming and file structure.
+**70 points:** Response to the questions in your report. 
 
-**50 points:** Correct working project on PYNQ.
+**30 points:** Full points for correct working DFT1024 on PYNQ. If you have difficulty getting it to work, you can get partial credit (25) for a correctly working DFT32 design on PYNQ.
