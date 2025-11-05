@@ -101,7 +101,7 @@ Questions 1-5 refers to DFT 32.
 	* **(a)** Use block partitioning. Try factors of 1 (i.e. without partitioning), 2, 4, 8, 16, and 32. Make a table showing the achieved II, resource utilization, and performance of each of these implementations.
 	* **(b)** Plot resource utilization vs the partition factor on one plot.
 	* **(c)** Plot throughput & latency vs the partition factor on separate plots.
-* **Question 5: DFT32 Loop Unrolling** Experiment with loop unrolling. Unroll the inner loop only. Use the best array partitioning from Question 4.
+* **Question 5: DFT32 Loop Unrolling** Experiment with loop unrolling. Unroll the inner loop only. Use the best array partitioning from Question 4. In order to prevent automatic unrolling by Vitis HLS, you will need to remove the ``#pragma HLS PIPELINE`` pragmas from both loops. Double check that your explicit unrolling is being applied by looking at the synthesis report.
 	* **(a)** Try factors of 1 (i.e. without unrolling), 2, 4, 8, 16, and 32. Make a table showing the achieved II, resource utilization, and performance of each of these implementations.
 	* **(b)** Plot resource utilization vs the partition factor on one plot.
 	* **(c)** Plot throughput & latency vs the partition factor on separate plots.
@@ -126,7 +126,7 @@ Questions 6-9 refers to DFT 1024.
 6) PYNQ Demo
 ------------
 
-For this demo, your will create an IP for the DFT 1024, and run it from the Jupyter notebook using two DMAs. You need to follow the :doc:`Lab: Axistream Multiple DMAs <axidma2>` example, with the major difference being that you will have 2 inputs and 2 outputs instead of 2 inputs and 1 output. Therefore you will have to enable read and write for both the DMAs, which is different from the lab instructions.
+For this demo, your will create an IP for the DFT 1024, and run it from the Jupyter notebook using two DMAs. You should follow the :doc:`Lab: Axistream Multiple DMAs <axidma2>` example.
 
 Another point worth discussing here is why we use pointers for inputs and outputs, and why we have to post-increment the pointer manually (like we did in the multiple DMA lab) when we stream inputs and outputs, but why it is a bad idea to use pointers in your code. You cannot use pointers in HLS; pointers are dynamic memory and Vivado HLS will not be able to synthesize it since it is not a deterministic thing (datapath could change depending on inputs). Arrays, on the other hand, are fixed memory locations and therefore they can be synthesized to vectors in RTL. You can use pointers only as ports and even then you have to specify axistream, otherwise that will lead to synthesis issues as well.
 
@@ -135,6 +135,8 @@ High Performance (HP) AXI ports can be accessed by multiple manager/subordinates
 
 7) Submission Procedure
 -----------------------
+
+For this project, you must submit a report (PDF) and your code via gradescope. You can find the link to the gradescope assignment in Canvas. Be sure to mark the appropriate page for each question. Be sure to include a link to your github repo and a video for the demo **in the PDF** and mark it accordingly on gradescope. Follow the same instructions for the demo video as in Project: CORDIC.
 
 You must submit your code and .rpt files for each question. Your code should have everything in it so that we can synthesize it directly. This means that you should use pragmas in your code, and not use the GUI to insert optimization directives. We must be able to use what is provided (``*.cpp``, ``*.h`` files, and ``*.ini`` and ``Makefile``) and directly synthesize it. We must be able to only import your source file and directly synthesize it. If you change test benches to answer questions, please submit them as well.
 
