@@ -48,7 +48,6 @@ int main()
 	{
 		In_R[i] = i;
 		In_I[i] = 0.0;
-
 	}
 	
 
