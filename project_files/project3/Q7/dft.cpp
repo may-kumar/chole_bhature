@@ -10,9 +10,9 @@ void dft(DTYPE real_sample[SIZE], DTYPE imag_sample[SIZE],DTYPE real_op[SIZE],DT
     DTYPE c, s;
 
     // Calculate each frequency domain sample_iteratively
-    for (i = 0; i < SIZE; i += 1) {
+    for (j = 0; j < SIZE; j += 1) {
         // Calculate the jth frequency sample sequentially
-        for (j = 0; j < SIZE; j += 1) {
+        for (i = 0; i < SIZE; i += 1) {
             c = cos_coefficients_table[(j * i) & (SIZE - 1)];
             s = sin_coefficients_table[(j * i) & (SIZE - 1)];
             // running sum
