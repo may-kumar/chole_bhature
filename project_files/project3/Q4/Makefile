@@ -98,7 +98,7 @@ ip: hls $(CURDIR)/export_$(TOP).tcl
 	$(HLS_COMPILER) $(CURDIR)/export_$(TOP).tcl || { s=$$?; echo "$(HLS_COMPILER) -source $(CURDIR)/export_$(TOP).tcl failed $$s" >&2; exit $$s; }
 
 clean:
-	rm -rf *.o *.log *.bin *.tcl *.comp *.rpt logs hls out.dat *.jou
+	rm -rf *.o *.log *.bin *.tcl *.comp logs hls out.dat *.jou
 
 .PHONY: clean hls test report ip
 
