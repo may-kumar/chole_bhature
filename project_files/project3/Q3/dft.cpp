@@ -1,6 +1,6 @@
 #include<math.h>
 #include "dft.h"
-#include"coefficients32.h"
+#include"coefficients32_2D.h"
 
 void dft(DTYPE real_sample[SIZE], DTYPE imag_sample[SIZE], DTYPE real_op[SIZE], DTYPE imag_op[SIZE]) {
     int i, j;
@@ -18,8 +18,8 @@ void dft(DTYPE real_sample[SIZE], DTYPE imag_sample[SIZE], DTYPE real_op[SIZE], 
             // Utilize HLS tool to calculate sine and cosine values
             // c = cos(j * w);
             // s = -sin(j * w);
-            c = cos_coefficients_table[(j * i) & (SIZE - 1)];
-            s = sin_coefficients_table[(j * i) & (SIZE - 1)];
+            c = cos_coeff_table[i][j];
+            s = sin_coeff_table[i][j];
             // Multiply the current phasor with the appropriate input sample and keep
             // running sum
             real_op[i] += (real_sample[j] * c - imag_sample[j] * s);
