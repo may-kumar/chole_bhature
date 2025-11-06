@@ -6,12 +6,12 @@ void dft(DTYPE real_sample[SIZE], DTYPE imag_sample[SIZE], DTYPE real_op[SIZE], 
     int i, j;
     DTYPE w;
     DTYPE c, s;
-    #pragma HLS array_partition variable=real_sample block factor=4
-    #pragma HLS array_partition variable=imag_sample block factor=4
-    #pragma HLS array_partition variable=real_op block factor=4
-    #pragma HLS array_partition variable=imag_op block factor=4
-    #pragma HLS array_partition variable=cos_coeff_table block factor=4
-    #pragma HLS array_partition variable=sin_coeff_table block factor=4
+    #pragma HLS array_partition variable=real_sample block factor=32
+    #pragma HLS array_partition variable=imag_sample block factor=32
+    #pragma HLS array_partition variable=real_op block factor=32
+    #pragma HLS array_partition variable=imag_op block factor=32
+    #pragma HLS array_partition variable=cos_coeff_table dim=2 block factor=32
+    #pragma HLS array_partition variable=sin_coeff_table dim=2 block factor=32
 
     // Temporary arrays to hold the intermediate frequency domain results
     // Calculate each frequency domain sample_iteratively
