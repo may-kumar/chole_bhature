@@ -22,7 +22,7 @@ void dft(DTYPE real_sample[SIZE], DTYPE imag_sample[SIZE], DTYPE real_op[SIZE], 
         // w = (2.0 * 3.141592653589 / SIZE) * (DTYPE)i;
         // Calculate the jth frequency sample sequentially
         for (j = 0; j < SIZE; j += 1) {
-            #pragma HLS unroll factor=4
+            #pragma HLS unroll factor=32
             // Utilize HLS tool to calculate sine and cosine values
             // c = cos(j * w);
             // s = -sin(j * w);
