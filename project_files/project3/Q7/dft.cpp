@@ -6,12 +6,9 @@ void dft(DTYPE real_sample[SIZE], DTYPE imag_sample[SIZE],DTYPE real_op[SIZE],DT
 {
 	//Write your code here
     int i, j;
-    DTYPE w;
     DTYPE c, s;
 
-    // Calculate each frequency domain sample_iteratively
     for (j = 0; j < SIZE; j += 1) {
-        // Calculate the jth frequency sample sequentially
         for (i = 0; i < SIZE; i += 1) {
             c = cos_coefficients_table[(j * i) & (SIZE - 1)];
             s = sin_coefficients_table[(j * i) & (SIZE - 1)];
