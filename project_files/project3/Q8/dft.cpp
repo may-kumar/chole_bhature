@@ -41,4 +41,24 @@ void dft(DTYPE real_sample[SIZE], DTYPE imag_sample[SIZE],DTYPE real_op[SIZE],DT
             imag_op[i] += imag_result;
         }
     }
+    // FLATTENED_LOOP:
+    // for (ap_uint<21> k = 0; k < SIZE*SIZE; k++) {
+    //     #pragma HLS loop_tripcount min=SIZE*SIZE max=SIZE*SIZE
+    //     #pragma HLS unroll factor=8 skip_exit_check
+    //     // #pragma HLS expression_balance
+
+    //     ap_uint<10> i = k;
+    //     ap_uint<10> j = (k >> 10);
+
+    //     DTYPE rs = real_sample[j];
+    //     DTYPE is = imag_sample[j];
+
+    //     DTYPE c = cos_coefficients_table[(j * i) & (SIZE - 1)];
+    //     DTYPE s = sin_coefficients_table[(j * i) & (SIZE - 1)];
+
+    //     // running sum
+    //     real_op[i] += (rs*c - is*s);
+    //     imag_op[i] += (rs*s + is*c);
+
+    // }
 }

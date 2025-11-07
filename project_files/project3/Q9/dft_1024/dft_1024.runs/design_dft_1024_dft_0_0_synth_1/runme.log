@@ -1,0 +1,523 @@
+
+*** Running vivado
+    with args -log design_dft_1024_dft_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_dft_1024_dft_0_0.tcl
+
+
+****** Vivado v2024.2 (64-bit)
+  **** SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Thu Nov  6 15:14:27 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source design_dft_1024_dft_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1494.664 ; gain = 89.863 ; free physical = 14970 ; free virtual = 22457
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft.comp/hls/impl/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/software/common/Xilinx_Vitis/Vivado/2024.2/data/ip'.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_dft_1024_dft_0_0
+Command: synth_design -top design_dft_1024_dft_0_0 -part xc7z020clg400-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 3468565
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:15 . Memory (MB): peak = 2143.090 ; gain = 421.734 ; free physical = 11452 ; free virtual = 18939
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_dft_1024_dft_0_0' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ip/design_dft_1024_dft_0_0/synth/design_dft_1024_dft_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'dft' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft.v:9]
+INFO: [Synth 8-6157] synthesizing module 'dft_real_sample_RAM_AUTO_1R1W' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_real_sample_RAM_AUTO_1R1W.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'dft_real_sample_RAM_AUTO_1R1W' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_real_sample_RAM_AUTO_1R1W.v:7]
+INFO: [Synth 8-6157] synthesizing module 'dft_real_op_RAM_AUTO_1R1W' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_real_op_RAM_AUTO_1R1W.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'dft_real_op_RAM_AUTO_1R1W' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_real_op_RAM_AUTO_1R1W.v:7]
+INFO: [Synth 8-6157] synthesizing module 'dft_dft_Pipeline_VITIS_LOOP_25_1' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_25_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'dft_flow_control_loop_pipe_sequential_init' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_flow_control_loop_pipe_sequential_init.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'dft_flow_control_loop_pipe_sequential_init' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_flow_control_loop_pipe_sequential_init.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'dft_dft_Pipeline_VITIS_LOOP_25_1' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_25_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3.v:9]
+INFO: [Synth 8-6157] synthesizing module 'dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3_cos_coefficients_table_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3_cos_coefficients_table_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3_cos_coefficients_table_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3_cos_coefficients_table_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3_cos_coefficients_table_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3_cos_coefficients_table_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3_sin_coefficients_table_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3_sin_coefficients_table_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3_sin_coefficients_table_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3_sin_coefficients_table_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3_sin_coefficients_table_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3_sin_coefficients_table_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'dft_fsub_32ns_32ns_32_5_full_dsp_1' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_fsub_32ns_32ns_32_5_full_dsp_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'dft_fsub_32ns_32ns_32_5_full_dsp_1_ip' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/ip/dft_fsub_32ns_32ns_32_5_full_dsp_1_ip.v:53]
+INFO: [Synth 8-6157] synthesizing module 'LUT1' [/software/common/Xilinx_Vitis/Vivado/2024.2/scripts/rt/data/unisim_comp.v:84087]
+INFO: [Synth 8-6155] done synthesizing module 'LUT1' (0#1) [/software/common/Xilinx_Vitis/Vivado/2024.2/scripts/rt/data/unisim_comp.v:84087]
+INFO: [Synth 8-6155] done synthesizing module 'dft_fsub_32ns_32ns_32_5_full_dsp_1_ip' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/ip/dft_fsub_32ns_32ns_32_5_full_dsp_1_ip.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'dft_fsub_32ns_32ns_32_5_full_dsp_1' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_fsub_32ns_32ns_32_5_full_dsp_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'dft_fadd_32ns_32ns_32_5_full_dsp_1' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_fadd_32ns_32ns_32_5_full_dsp_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'dft_fadd_32ns_32ns_32_5_full_dsp_1_ip' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/ip/dft_fadd_32ns_32ns_32_5_full_dsp_1_ip.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'dft_fadd_32ns_32ns_32_5_full_dsp_1_ip' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/ip/dft_fadd_32ns_32ns_32_5_full_dsp_1_ip.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'dft_fadd_32ns_32ns_32_5_full_dsp_1' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_fadd_32ns_32ns_32_5_full_dsp_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'dft_fmul_32ns_32ns_32_4_max_dsp_1' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_fmul_32ns_32ns_32_4_max_dsp_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'dft_fmul_32ns_32ns_32_4_max_dsp_1_ip' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/ip/dft_fmul_32ns_32ns_32_4_max_dsp_1_ip.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'dft_fmul_32ns_32ns_32_4_max_dsp_1_ip' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/ip/dft_fmul_32ns_32ns_32_4_max_dsp_1_ip.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'dft_fmul_32ns_32ns_32_4_max_dsp_1' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_fmul_32ns_32ns_32_4_max_dsp_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'dft_mul_10s_10s_10_1_1' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_mul_10s_10s_10_1_1.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'dft_mul_10s_10s_10_1_1' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_mul_10s_10s_10_1_1.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3.v:9]
+INFO: [Synth 8-6157] synthesizing module 'dft_dft_Pipeline_VITIS_LOOP_50_4' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_50_4.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'dft_dft_Pipeline_VITIS_LOOP_50_4' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_50_4.v:9]
+INFO: [Synth 8-6157] synthesizing module 'dft_control_s_axi' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_control_s_axi.v:9]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_control_s_axi.v:197]
+INFO: [Synth 8-6155] done synthesizing module 'dft_control_s_axi' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_control_s_axi.v:9]
+INFO: [Synth 8-6157] synthesizing module 'dft_regslice_both' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_regslice_both.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'dft_regslice_both' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_regslice_both.v:8]
+INFO: [Synth 8-6157] synthesizing module 'dft_regslice_both__parameterized0' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_regslice_both.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'dft_regslice_both__parameterized0' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_regslice_both.v:8]
+INFO: [Synth 8-6157] synthesizing module 'dft_regslice_both__parameterized1' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_regslice_both.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'dft_regslice_both__parameterized1' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_regslice_both.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'dft' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'design_dft_1024_dft_0_0' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ip/design_dft_1024_dft_0_0/synth/design_dft_1024_dft_0_0.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'select_ln17_reg_313_pp0_iter10_reg_reg' and it is trimmed from '11' to '10' bits. [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3.v:676]
+WARNING: [Synth 8-3936] Found unconnected internal register 'select_ln17_reg_313_pp0_iter9_reg_reg' and it is trimmed from '11' to '10' bits. [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3.v:676]
+WARNING: [Synth 8-3936] Found unconnected internal register 'select_ln17_reg_313_pp0_iter8_reg_reg' and it is trimmed from '11' to '10' bits. [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3.v:683]
+WARNING: [Synth 8-3936] Found unconnected internal register 'select_ln17_reg_313_pp0_iter7_reg_reg' and it is trimmed from '11' to '10' bits. [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3.v:682]
+WARNING: [Synth 8-3936] Found unconnected internal register 'select_ln17_reg_313_pp0_iter6_reg_reg' and it is trimmed from '11' to '10' bits. [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3.v:681]
+WARNING: [Synth 8-3936] Found unconnected internal register 'select_ln17_reg_313_pp0_iter5_reg_reg' and it is trimmed from '11' to '10' bits. [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3.v:680]
+WARNING: [Synth 8-3936] Found unconnected internal register 'select_ln17_reg_313_pp0_iter4_reg_reg' and it is trimmed from '11' to '10' bits. [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3.v:679]
+WARNING: [Synth 8-3936] Found unconnected internal register 'select_ln17_reg_313_pp0_iter3_reg_reg' and it is trimmed from '11' to '10' bits. [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3.v:678]
+WARNING: [Synth 8-3936] Found unconnected internal register 'select_ln17_reg_313_pp0_iter2_reg_reg' and it is trimmed from '11' to '10' bits. [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3.v:677]
+WARNING: [Synth 8-6014] Unused sequential element real_op_addr_reg_392_reg was removed.  [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3.v:667]
+WARNING: [Synth 8-6014] Unused sequential element real_op_addr_reg_392_pp0_iter12_reg_reg was removed.  [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3.v:668]
+WARNING: [Synth 8-6014] Unused sequential element real_op_addr_reg_392_pp0_iter13_reg_reg was removed.  [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3.v:669]
+WARNING: [Synth 8-6014] Unused sequential element real_op_addr_reg_392_pp0_iter14_reg_reg was removed.  [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3.v:670]
+WARNING: [Synth 8-6014] Unused sequential element real_op_addr_reg_392_pp0_iter15_reg_reg was removed.  [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3.v:671]
+WARNING: [Synth 8-6014] Unused sequential element real_op_addr_reg_392_pp0_iter16_reg_reg was removed.  [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3.v:672]
+WARNING: [Synth 8-6014] Unused sequential element real_op_addr_reg_392_pp0_iter17_reg_reg was removed.  [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3.v:673]
+WARNING: [Synth 8-6014] Unused sequential element int_ap_done_reg was removed.  [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_control_s_axi.v:254]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+WARNING: [Synth 8-7129] Port AWADDR[1] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AWADDR[0] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[31] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[30] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[29] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[28] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[27] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[26] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[25] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[24] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[23] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[22] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[21] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[20] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[19] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[18] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[17] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[16] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[15] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[14] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[13] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[12] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[11] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[10] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[9] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[8] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[6] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[5] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[4] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[3] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[2] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WSTRB[3] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WSTRB[2] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WSTRB[1] in module dft_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CLK in module xbip_pipe_v3_0_10_viv__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module xbip_pipe_v3_0_10_viv__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module xbip_pipe_v3_0_10_viv__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSET in module xbip_pipe_v3_0_10_viv__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SINIT in module xbip_pipe_v3_0_10_viv__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CLK in module xbip_pipe_v3_0_10_viv__parameterized55 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module xbip_pipe_v3_0_10_viv__parameterized55 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module xbip_pipe_v3_0_10_viv__parameterized55 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSET in module xbip_pipe_v3_0_10_viv__parameterized55 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SINIT in module xbip_pipe_v3_0_10_viv__parameterized55 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DEC_OP_STATE[11] in module flt_dec_op_lat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DEC_OP_STATE[10] in module flt_dec_op_lat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DEC_OP_STATE[9] in module flt_dec_op_lat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DEC_OP_STATE[8] in module flt_dec_op_lat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DIVIDE_BY_ZERO_IN in module flt_dec_op_lat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CLK in module xbip_pipe_v3_0_10_viv__parameterized29 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module xbip_pipe_v3_0_10_viv__parameterized29 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module xbip_pipe_v3_0_10_viv__parameterized29 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSET in module xbip_pipe_v3_0_10_viv__parameterized29 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SINIT in module xbip_pipe_v3_0_10_viv__parameterized29 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CLK in module xbip_pipe_v3_0_10_viv__parameterized72 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module xbip_pipe_v3_0_10_viv__parameterized72 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module xbip_pipe_v3_0_10_viv__parameterized72 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSET in module xbip_pipe_v3_0_10_viv__parameterized72 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SINIT in module xbip_pipe_v3_0_10_viv__parameterized72 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CLK in module xbip_pipe_v3_0_10_viv__parameterized70 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module xbip_pipe_v3_0_10_viv__parameterized70 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module xbip_pipe_v3_0_10_viv__parameterized70 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSET in module xbip_pipe_v3_0_10_viv__parameterized70 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SINIT in module xbip_pipe_v3_0_10_viv__parameterized70 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CLK in module xbip_pipe_v3_0_10_viv__parameterized13 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module xbip_pipe_v3_0_10_viv__parameterized13 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module xbip_pipe_v3_0_10_viv__parameterized13 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSET in module xbip_pipe_v3_0_10_viv__parameterized13 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SINIT in module xbip_pipe_v3_0_10_viv__parameterized13 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CLK in module xbip_pipe_v3_0_10_viv__parameterized11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module xbip_pipe_v3_0_10_viv__parameterized11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module xbip_pipe_v3_0_10_viv__parameterized11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSET in module xbip_pipe_v3_0_10_viv__parameterized11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SINIT in module xbip_pipe_v3_0_10_viv__parameterized11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CLK in module xbip_pipe_v3_0_10_viv__parameterized7 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module xbip_pipe_v3_0_10_viv__parameterized7 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module xbip_pipe_v3_0_10_viv__parameterized7 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSET in module xbip_pipe_v3_0_10_viv__parameterized7 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SINIT in module xbip_pipe_v3_0_10_viv__parameterized7 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module dsp48e1_wrapper__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SIGN in module flt_round_dsp_opt_full is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CLK in module xbip_pipe_v3_0_10_viv__parameterized68 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module xbip_pipe_v3_0_10_viv__parameterized68 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module xbip_pipe_v3_0_10_viv__parameterized68 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSET in module xbip_pipe_v3_0_10_viv__parameterized68 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SINIT in module xbip_pipe_v3_0_10_viv__parameterized68 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CLK in module xbip_pipe_v3_0_10_viv__parameterized49 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module xbip_pipe_v3_0_10_viv__parameterized49 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module xbip_pipe_v3_0_10_viv__parameterized49 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSET in module xbip_pipe_v3_0_10_viv__parameterized49 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SINIT in module xbip_pipe_v3_0_10_viv__parameterized49 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CLK in module xbip_pipe_v3_0_10_viv__parameterized47 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module xbip_pipe_v3_0_10_viv__parameterized47 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module xbip_pipe_v3_0_10_viv__parameterized47 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSET in module xbip_pipe_v3_0_10_viv__parameterized47 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SINIT in module xbip_pipe_v3_0_10_viv__parameterized47 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CLK in module xbip_pipe_v3_0_10_viv__parameterized66 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module xbip_pipe_v3_0_10_viv__parameterized66 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module xbip_pipe_v3_0_10_viv__parameterized66 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSET in module xbip_pipe_v3_0_10_viv__parameterized66 is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:16 ; elapsed = 00:00:26 . Memory (MB): peak = 2333.129 ; gain = 611.773 ; free physical = 11019 ; free virtual = 18511
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:27 . Memory (MB): peak = 2345.004 ; gain = 623.648 ; free physical = 11018 ; free virtual = 18510
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:27 . Memory (MB): peak = 2345.004 ; gain = 623.648 ; free physical = 11018 ; free virtual = 18510
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.36 . Memory (MB): peak = 2350.941 ; gain = 0.000 ; free physical = 11014 ; free virtual = 18508
+INFO: [Netlist 29-17] Analyzing 440 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ip/design_dft_1024_dft_0_0/constraints/dft_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ip/design_dft_1024_dft_0_0/constraints/dft_ooc.xdc] for cell 'inst'
+Parsing XDC File [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.runs/design_dft_1024_dft_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.runs/design_dft_1024_dft_0_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2454.785 ; gain = 0.000 ; free physical = 11008 ; free virtual = 18502
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 12 instances were transformed.
+  FDE => FDRE: 12 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.31 . Memory (MB): peak = 2454.785 ; gain = 0.000 ; free physical = 11008 ; free virtual = 18502
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:28 ; elapsed = 00:00:44 . Memory (MB): peak = 2454.785 ; gain = 733.430 ; free physical = 10792 ; free virtual = 18287
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:28 ; elapsed = 00:00:44 . Memory (MB): peak = 2462.789 ; gain = 741.434 ; free physical = 10792 ; free virtual = 18287
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  /home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.runs/design_dft_1024_dft_0_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:44 . Memory (MB): peak = 2462.789 ; gain = 741.434 ; free physical = 10784 ; free virtual = 18279
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3936] Found unconnected internal register 'zext_ln25_reg_209_reg' and it is trimmed from '11' to '10' bits. [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_25_1.v:228]
+WARNING: [Synth 8-3936] Found unconnected internal register 'select_ln17_reg_313_reg' and it is trimmed from '11' to '10' bits. [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3.v:694]
+WARNING: [Synth 8-3936] Found unconnected internal register 'select_ln37_reg_318_reg' and it is trimmed from '11' to '10' bits. [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.gen/sources_1/bd/design_dft_1024/ipshared/d0b1/hdl/verilog/dft_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3.v:695]
+INFO: [Synth 8-802] inferred FSM for state register 'wstate_reg' in module 'dft_control_s_axi'
+INFO: [Synth 8-802] inferred FSM for state register 'rstate_reg' in module 'dft_control_s_axi'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'dft_regslice_both'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'dft_regslice_both__parameterized0'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'dft_regslice_both__parameterized1'
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                             0001 |                               11
+*
+                  WRIDLE |                             0010 |                               00
+                  WRDATA |                             0100 |                               01
+                  WRRESP |                             1000 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'wstate_reg' using encoding 'one-hot' in module 'dft_control_s_axi'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              001 |                               10
+*
+                  RDIDLE |                              010 |                               00
+                  RDDATA |                              100 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'rstate_reg' using encoding 'one-hot' in module 'dft_control_s_axi'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                               00 |                               00
+*
+                    ZERO |                               01 |                               10
+                     ONE |                               11 |                               11
+                     TWO |                               10 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'dft_regslice_both'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                               00 |                               00
+*
+                    ZERO |                               01 |                               10
+                     ONE |                               11 |                               11
+                     TWO |                               10 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'dft_regslice_both__parameterized0'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                               00 |                               00
+*
+                    ZERO |                               01 |                               10
+                     ONE |                               11 |                               11
+                     TWO |                               10 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'dft_regslice_both__parameterized1'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:30 ; elapsed = 00:00:48 . Memory (MB): peak = 2462.789 ; gain = 741.434 ; free physical = 10479 ; free virtual = 17976
+---------------------------------------------------------------------------------
+INFO: [Synth 8-223] decloning instance 'flt_add_dsp:/DSP48E1_BODY.ALIGN_ADD/SUB_DELAY' (delay__parameterized0) to 'flt_add_dsp:/DSP48E1_BODY.ALIGN_ADD/SUB_ADD_IP_DELAY'
+INFO: [Synth 8-223] decloning instance 'inst/grp_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3_fu_120/fsub_32ns_32ns_32_5_full_dsp_1_U13/dft_fsub_32ns_32ns_32_5_full_dsp_1_ip_u/inst/i_synth/DELAY_DIVIDE_BY_ZERO' (delay__parameterized0) to 'inst/grp_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3_fu_120/fsub_32ns_32ns_32_5_full_dsp_1_U13/dft_fsub_32ns_32ns_32_5_full_dsp_1_ip_u/inst/i_synth/DELAY_ACCUM_OVERFLOW'
+INFO: [Synth 8-223] decloning instance 'inst/grp_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3_fu_120/fsub_32ns_32ns_32_5_full_dsp_1_U13/dft_fsub_32ns_32ns_32_5_full_dsp_1_ip_u/inst/i_synth/DELAY_DIVIDE_BY_ZERO' (delay__parameterized0) to 'inst/grp_dft_Pipeline_VITIS_LOOP_37_2_VITIS_LOOP_41_3_fu_120/fsub_32ns_32ns_32_5_full_dsp_1_U13/dft_fsub_32ns_32ns_32_5_full_dsp_1_ip_u/inst/i_synth/DELAY_ACCUM_INPUT_OVERFLOW'
+INFO: [Synth 8-223] decloning instance 'dft_fadd_32ns_32ns_32_5_full_dsp_1:/dft_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/inst/i_synth/DELAY_DIVIDE_BY_ZERO' (delay__parameterized0) to 'dft_fadd_32ns_32ns_32_5_full_dsp_1:/dft_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/inst/i_synth/DELAY_ACCUM_OVERFLOW'
+INFO: [Synth 8-223] decloning instance 'dft_fadd_32ns_32ns_32_5_full_dsp_1:/dft_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/inst/i_synth/DELAY_DIVIDE_BY_ZERO' (delay__parameterized0) to 'dft_fadd_32ns_32ns_32_5_full_dsp_1:/dft_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/inst/i_synth/DELAY_ACCUM_INPUT_OVERFLOW'
+INFO: [Synth 8-223] decloning instance 'dft_fmul_32ns_32ns_32_4_max_dsp_1:/dft_fmul_32ns_32ns_32_4_max_dsp_1_ip_u/inst/i_synth/DELAY_DIVIDE_BY_ZERO' (delay__parameterized0) to 'dft_fmul_32ns_32ns_32_4_max_dsp_1:/dft_fmul_32ns_32ns_32_4_max_dsp_1_ip_u/inst/i_synth/DELAY_ACCUM_OVERFLOW'
+INFO: [Synth 8-223] decloning instance 'dft_fmul_32ns_32ns_32_4_max_dsp_1:/dft_fmul_32ns_32ns_32_4_max_dsp_1_ip_u/inst/i_synth/DELAY_DIVIDE_BY_ZERO' (delay__parameterized0) to 'dft_fmul_32ns_32ns_32_4_max_dsp_1:/dft_fmul_32ns_32ns_32_4_max_dsp_1_ip_u/inst/i_synth/DELAY_ACCUM_INPUT_OVERFLOW'
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+INFO: [Synth 8-3332] Sequential element (ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.LOD/dist_norm_reg[1]) is unused and will be removed from module floating_point_v7_1_19_viv.
+INFO: [Synth 8-3332] Sequential element (ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.LOD/dist_norm_reg[0]) is unused and will be removed from module floating_point_v7_1_19_viv.
+INFO: [Synth 8-3332] Sequential element (ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.LOD/dist_norm_reg[1]) is unused and will be removed from module floating_point_v7_1_19_viv__parameterized1__1.
+INFO: [Synth 8-3332] Sequential element (ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.LOD/dist_norm_reg[0]) is unused and will be removed from module floating_point_v7_1_19_viv__parameterized1__1.
+INFO: [Synth 8-3332] Sequential element (ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.LOD/dist_norm_reg[1]) is unused and will be removed from module floating_point_v7_1_19_viv__parameterized1__2.
+INFO: [Synth 8-3332] Sequential element (ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.LOD/dist_norm_reg[0]) is unused and will be removed from module floating_point_v7_1_19_viv__parameterized1__2.
+INFO: [Synth 8-3332] Sequential element (ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.LOD/dist_norm_reg[1]) is unused and will be removed from module floating_point_v7_1_19_viv__parameterized1.
+INFO: [Synth 8-3332] Sequential element (ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.LOD/dist_norm_reg[0]) is unused and will be removed from module floating_point_v7_1_19_viv__parameterized1.
+WARNING: [Synth 8-3332] Sequential element (control_s_axi_U/FSM_onehot_wstate_reg[0]) is unused and will be removed from module dft.
+WARNING: [Synth 8-3332] Sequential element (control_s_axi_U/FSM_onehot_rstate_reg[0]) is unused and will be removed from module dft.
+WARNING: [Synth 8-3332] Sequential element (regslice_both_real_sample_stream_V_keep_V_U/FSM_sequential_state_reg[1]) is unused and will be removed from module dft.
+WARNING: [Synth 8-3332] Sequential element (regslice_both_real_sample_stream_V_keep_V_U/FSM_sequential_state_reg[0]) is unused and will be removed from module dft.
+WARNING: [Synth 8-3332] Sequential element (regslice_both_real_sample_stream_V_strb_V_U/FSM_sequential_state_reg[1]) is unused and will be removed from module dft.
+WARNING: [Synth 8-3332] Sequential element (regslice_both_real_sample_stream_V_strb_V_U/FSM_sequential_state_reg[0]) is unused and will be removed from module dft.
+WARNING: [Synth 8-3332] Sequential element (regslice_both_real_sample_stream_V_last_V_U/FSM_sequential_state_reg[1]) is unused and will be removed from module dft.
+WARNING: [Synth 8-3332] Sequential element (regslice_both_real_sample_stream_V_last_V_U/FSM_sequential_state_reg[0]) is unused and will be removed from module dft.
+WARNING: [Synth 8-3332] Sequential element (regslice_both_imag_sample_stream_V_keep_V_U/FSM_sequential_state_reg[1]) is unused and will be removed from module dft.
+WARNING: [Synth 8-3332] Sequential element (regslice_both_imag_sample_stream_V_keep_V_U/FSM_sequential_state_reg[0]) is unused and will be removed from module dft.
+WARNING: [Synth 8-3332] Sequential element (regslice_both_imag_sample_stream_V_strb_V_U/FSM_sequential_state_reg[1]) is unused and will be removed from module dft.
+WARNING: [Synth 8-3332] Sequential element (regslice_both_imag_sample_stream_V_strb_V_U/FSM_sequential_state_reg[0]) is unused and will be removed from module dft.
+WARNING: [Synth 8-3332] Sequential element (regslice_both_imag_sample_stream_V_last_V_U/FSM_sequential_state_reg[1]) is unused and will be removed from module dft.
+WARNING: [Synth 8-3332] Sequential element (regslice_both_imag_sample_stream_V_last_V_U/FSM_sequential_state_reg[0]) is unused and will be removed from module dft.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:01:03 . Memory (MB): peak = 2462.789 ; gain = 741.434 ; free physical = 10626 ; free virtual = 18108
+---------------------------------------------------------------------------------
+ Sort Area is  mul_10s_10s_10_1_1_U21/tmp_product_0 : 0 0 : 713 713 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:52 ; elapsed = 00:01:15 . Memory (MB): peak = 2517.789 ; gain = 796.434 ; free physical = 13100 ; free virtual = 20492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:57 ; elapsed = 00:01:21 . Memory (MB): peak = 2573.391 ; gain = 852.035 ; free physical = 12838 ; free virtual = 20233
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (regslice_both_real_op_stream_V_strb_V_U/FSM_sequential_state_reg[1]) is unused and will be removed from module dft.
+WARNING: [Synth 8-3332] Sequential element (regslice_both_real_op_stream_V_strb_V_U/FSM_sequential_state_reg[0]) is unused and will be removed from module dft.
+WARNING: [Synth 8-3332] Sequential element (regslice_both_imag_op_stream_V_strb_V_U/FSM_sequential_state_reg[1]) is unused and will be removed from module dft.
+WARNING: [Synth 8-3332] Sequential element (regslice_both_imag_op_stream_V_strb_V_U/FSM_sequential_state_reg[0]) is unused and will be removed from module dft.
+INFO: [Synth 8-7052] The timing for the instance inst/real_op_U/ram_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/imag_op_U/ram_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:59 ; elapsed = 00:01:24 . Memory (MB): peak = 2589.406 ; gain = 868.051 ; free physical = 12729 ; free virtual = 20124
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:05 ; elapsed = 00:01:31 . Memory (MB): peak = 2724.219 ; gain = 1002.863 ; free physical = 12445 ; free virtual = 19841
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:05 ; elapsed = 00:01:31 . Memory (MB): peak = 2724.219 ; gain = 1002.863 ; free physical = 12441 ; free virtual = 19837
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:05 ; elapsed = 00:01:32 . Memory (MB): peak = 2724.219 ; gain = 1002.863 ; free physical = 12423 ; free virtual = 19819
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:05 ; elapsed = 00:01:32 . Memory (MB): peak = 2724.219 ; gain = 1002.863 ; free physical = 12423 ; free virtual = 19819
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:06 ; elapsed = 00:01:32 . Memory (MB): peak = 2730.156 ; gain = 1008.801 ; free physical = 12423 ; free virtual = 19818
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:06 ; elapsed = 00:01:32 . Memory (MB): peak = 2730.156 ; gain = 1008.801 ; free physical = 12422 ; free virtual = 19817
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------------------------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name                         | DSP Mapping     | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------------------------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|dsp48e1_wrapper_326                 | Dynamic         | -      | -      | -      | -      | 40     | -    | -    | -    | -    | 0     | 0    | 1    | 
+|dsp48e1_wrapper__parameterized0_280 | C+A'*B'         | 24     | 16     | 35     | -      | 35     | 1    | 1    | 0    | -    | -     | 0    | 0    | 
+|dsp48e1_wrapper_259                 | Dynamic         | -      | -      | -      | -      | 40     | -    | -    | -    | -    | 0     | 0    | 1    | 
+|dsp48e1_wrapper__parameterized0_213 | C+A'*B'         | 24     | 16     | 35     | -      | 35     | 1    | 1    | 0    | -    | -     | 0    | 0    | 
+|dsp48e1_wrapper_192                 | Dynamic         | -      | -      | -      | -      | 40     | -    | -    | -    | -    | 0     | 0    | 1    | 
+|dsp48e1_wrapper__parameterized0_146 | C+A'*B'         | 24     | 16     | 35     | -      | 35     | 1    | 1    | 0    | -    | -     | 0    | 0    | 
+|dsp48e1_wrapper__parameterized1_116 | (A*B)'          | 24     | 17     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp48e1_wrapper__parameterized2_117 | PCIN>>17+(A*B)' | 0      | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|dsp48e1_wrapper__parameterized3_114 | PCIN+A:B+C      | 22     | 0      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp48e1_wrapper__parameterized1_87  | (A*B)'          | 24     | 17     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp48e1_wrapper__parameterized2_88  | PCIN>>17+(A*B)' | 0      | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|dsp48e1_wrapper__parameterized3_85  | PCIN+A:B+C      | 22     | 0      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp48e1_wrapper__parameterized1_58  | (A*B)'          | 24     | 17     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp48e1_wrapper__parameterized2_59  | PCIN>>17+(A*B)' | 0      | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|dsp48e1_wrapper__parameterized3_56  | PCIN+A:B+C      | 22     | 0      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp48e1_wrapper__parameterized1     | (A*B)'          | 24     | 17     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp48e1_wrapper__parameterized2     | PCIN>>17+(A*B)' | 0      | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|dsp48e1_wrapper__parameterized3     | PCIN+A:B+C      | 22     | 0      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp48e1_wrapper                     | Dynamic         | -      | -      | -      | -      | 40     | -    | -    | -    | -    | 0     | 0    | 1    | 
+|dsp48e1_wrapper__parameterized0     | C+A'*B'         | 24     | 16     | 35     | -      | 35     | 1    | 1    | 0    | -    | -     | 0    | 0    | 
+|dft_mul_10s_10s_10_1_1              | A'*B            | 30     | 18     | -      | -      | 20     | 1    | 0    | -    | -    | -     | 0    | 0    | 
++------------------------------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |    23|
+|2     |DSP48E1  |    21|
+|8     |LUT1     |    23|
+|9     |LUT2     |   249|
+|10    |LUT3     |   503|
+|11    |LUT4     |   344|
+|12    |LUT5     |   350|
+|13    |LUT6     |   451|
+|14    |MUXCY    |   296|
+|15    |RAMB36E1 |     6|
+|19    |SRL16E   |    23|
+|20    |XORCY    |   100|
+|21    |FDE      |    12|
+|22    |FDRE     |  1854|
+|23    |FDSE     |    13|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:06 ; elapsed = 00:01:32 . Memory (MB): peak = 2730.156 ; gain = 1008.801 ; free physical = 12419 ; free virtual = 19814
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 490 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:01 ; elapsed = 00:01:26 . Memory (MB): peak = 2730.156 ; gain = 899.020 ; free physical = 12407 ; free virtual = 19802
+Synthesis Optimization Complete : Time (s): cpu = 00:01:06 ; elapsed = 00:01:33 . Memory (MB): peak = 2730.164 ; gain = 1008.801 ; free physical = 12407 ; free virtual = 19802
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.19 . Memory (MB): peak = 2730.164 ; gain = 0.000 ; free physical = 12524 ; free virtual = 19919
+INFO: [Netlist 29-17] Analyzing 458 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2754.168 ; gain = 0.000 ; free physical = 12710 ; free virtual = 20105
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 92 instances were transformed.
+  (MUXCY,XORCY) => CARRY4: 80 instances
+  FDE => FDRE: 12 instances
+
+Synth Design complete | Checksum: 6a626a00
+INFO: [Common 17-83] Releasing license: Synthesis
+100 Infos, 139 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:18 ; elapsed = 00:01:44 . Memory (MB): peak = 2754.168 ; gain = 1239.691 ; free physical = 12709 ; free virtual = 20104
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1960.631; main = 1776.535; forked = 333.357
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3641.262; main = 2754.172; forked = 1045.945
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2778.180 ; gain = 0.000 ; free physical = 12709 ; free virtual = 20105
+INFO: [Common 17-1381] The checkpoint '/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.runs/design_dft_1024_dft_0_0_synth_1/design_dft_1024_dft_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_dft_1024_dft_0_0, cache-ID = 0f7d872d1099aa50
+INFO: [Coretcl 2-1174] Renamed 429 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2778.180 ; gain = 0.000 ; free physical = 12557 ; free virtual = 19963
+INFO: [Common 17-1381] The checkpoint '/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q9/dft_1024/dft_1024.runs/design_dft_1024_dft_0_0_synth_1/design_dft_1024_dft_0_0.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file design_dft_1024_dft_0_0_utilization_synth.rpt -pb design_dft_1024_dft_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  6 15:16:40 2025...
