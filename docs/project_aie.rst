@@ -33,9 +33,10 @@ The new IRON flow aims to increase developer productivity by providing high leve
   * On-campus WiFi: **UCSD_PROTECTED** (not UCSD_GUEST)
   * UCSD VPN using Cisco Secure Client `[More Info] <https://support.eng.ucsd.edu/how-to-guides/new-cisco-secure-client>`_
 
-2. Open a browser and visit `aupcloud.io/aipc-13 <https://aupcloud.io/aipc-13>`_
-3. Sign in with the unique token given to you
+2. Check the **UCSD_2025_Tokens.xlsx** spreadsheets shared as a Canvas Announcement and on Discord #announcement channel, and get the unique token & URL assigned to you.
+3. Open a browser and visit your assigned URL **https://aupcloud.io/aipc-##** and sign in with the unique token **ucsd-iron25-user-##** given to you.
 4. Enter the duration (in minutes) you want the instance to run for (e.g., 180) and launch instance
+5. Copy the files from `AIE Project Directory <https://github.com/KastnerRG/Read_the_docs/tree/master/project_files/aie-project>`_ to `notebooks/mlir-aie/myproject` directory in your AIE instance.
 
 
 1) Mini Tutorial
@@ -71,61 +72,88 @@ Complete the `mini tutorial <https://github.com/Xilinx/mlir-aie/tree/main/progra
   3. Observe a new pattern
 
 
-2) Single Core Matrix Multiplication
-------------------------------------
+2) Understanding Tiled Matrix Multiplication
+------------------------------------------
 
-0. `Single core Tutorial <https://github.com/Xilinx/mlir-aie/tree/main/programming_examples/basic/matrix_multiplication/single_core>`_
-1. `Single core Test code (C++) <https://github.com/Xilinx/mlir-aie/blob/main/programming_examples/basic/matrix_multiplication/test.cpp>`_
-2. `Single core Host + Dataflow code (IRON) <https://github.com/Xilinx/mlir-aie/blob/main/programming_examples/basic/matrix_multiplication/single_core/single_core_iron.py>`_
-3. `Single core Kernel code <https://github.com/Xilinx/mlir-aie/blob/dfad2074779ce69db95f24cf7cf7a2a1fabf299d/aie_kernels/aie2/mm.cc#L27>`_
+The following python code (which you can run) shows how tiled matrix multiplication works. It first generates two random matrices A and B, and computes the expected output matrix C using numpy's built-in matrix multiplication. It then performs tiled matrix multiplication by breaking down the input matrices into smaller tiles, multiplying them, and accumulating the results into the tiled output matrix. Finally, it un-tiles the output matrix to bring it to the original shape and compares the computed output with the expected output to verify correctness.
+
+.. code-block:: python
+
+  import numpy as np
+
+  m,k,n = 64, 32, 16  # Matrix dimensions
+  r,s,t = 8, 4, 2     # Tile dimensions
+
+  '''
+  Matrix Multiplication: A[m x k]  @  B[k x n]  =  C[m x n]
+  '''
+
+  matA = np.random.randint(-10,10,(m,k), np.int32) # Matrix A of size (m x k)
+  matB = np.random.randint(-10,10,(k,n), np.int32) # Matrix B of size (k x n)
+  matC_exp = matA @ matB                           # Output matrix C of size (m x n)
+
+  '''
+  Matrix Multiplication tiled by r,s,t
+
+  matrix A: (m x k) tiled into (m//r, k//s) number of small matrices of size (r x s) each
+  matrix B: (k x n) tiled into (k//s, n//t) number of small matrices of size (s x t) each
+  matrix C: (m x n) tiled into (m//r, n//t) number of small matrices of size (r x t) each
+  '''
+
+  matA_tiled = matA.reshape(m//r,r,k//s,s).transpose(0,2,1,3) # shape (m//r, K//k, r, s)
+  matB_tiled = matB.reshape(k//s,s,n//t,t).transpose(0,2,1,3) # shape (k//s, n//t, s, t)
+  matC_tiled = np.zeros((m//r,n//t,r,t), dtype=np.int32)      # shape (m//r, n//t, r, t)
+
+  for im_tiles in range(m//r):
+      for in_tiles in range(n//t):
+          # each tile
+          out_tile = np.zeros((r,t), dtype=np.int32)
+          for ik_tiles in range (k//s):
+              A_tile = matA_tiled[im_tiles, ik_tiles]
+              B_tile = matB_tiled[ik_tiles, in_tiles]
+              out_tile += A_tile @ B_tile
+          matC_tiled[im_tiles,in_tiles] = out_tile
+  '''
+  Comparing outputs
+  '''
+
+  matC_out = matC_tiled.transpose(0,2,1,3).reshape(m,n)    # un-tile output matrix C to shape (m,n)
+  diff = matC_exp-matC_out
+  error = np.sum(np.abs(diff))
+  print(error)
+
+
+3) Single Core Tiled Matrix Multiplication
+------------------------------------------
+
+To run the basic matrix multiplication:
+   ``cd /notebooks/mlir-aie/myproject``
+
+   ``python basic_mm.py``
 
 The following image shows the dataflow for the single core matrix multiplication:
 
 .. image:: image/single_core.png
 
 
-To run the example
-   ``cd /notebooks/mlir-aie/programming_examples/basic/matrix_multiplication/single_core``
+How it works:
 
-   ``make clean && make run use_iron=True``
-
-
-The dataflow in the Matrix Multiplication design is as follows. Two submatrices of size `r` x `s` from matrix A are broacasted across the each row of the AIE tiles. Similarly, two submatrices of size `s` x `t` from matrix B are broadcasted across each column of the AIE tiles. The compute tiles perform the vector multiply-accumulate operations on the submatrices and store the results in the output matrix C.
-
-
-+---------------+---------------+---------------------+---------------------------+
-| Matrix        | Size          | Submatrix Size (1.) | Vector Intrinsic Size (2.)|
-+===============+===============+=====================+===========================+
-| `A` (Input)   | `M` x `K`     | `m` x `k`           | `r` x `s`                 |
-+---------------+---------------+---------------------+---------------------------+
-| `B` (Input)   | `K` x `N`     | `k` x `n`           | `s` x `t`                 |
-+---------------+---------------+---------------------+---------------------------+
-| `C` (Output)  | `M` x `N`     | `m` x `n`           | `r` x `t`                 |
-+---------------+---------------+---------------------+---------------------------+
-
-
-**Multiple levels of tiling (M,K,N) -> (m,k,n) -> (r,s,t)**
-
-We first specify the dimensions `M`, `K`, `N` for the input matrices `A` (`MxK`), and `B` (`KxN`), and the output matrix `C` (`MxN`), as well as their data type. To enable efficient computation, our design will split large input matrices into smaller sub-matrix blocks on two levels; we thus also define the sizes of those sub-matrices. 
-
-At the first level, the constants `m`, `k`, and `n` define the size of the submatrices processed by each AIE core. This is done in the dataflow code.At the second level, we further subdivide using smaller sizes `r`, `s` and `t` -- these are the sizes of required by the vector computation intrinsics of the AIEs. We leverage the multidimensional DMAs available in AIEs, through a higher level abstraction (object fifo), to automatically tile and load at this level. 
-
-The two levels of tiling of the output matrix `C` (`MxN`) is shown below:
-
-.. image:: image/tiling.png
-
+* ``r=2, s=8, t=8`` are the intrinsic dimensions for the ``MMUL`` API used in the kernel (C++) code.
+* ``m, k, n`` are the dimensions of the matrices we want to multiply. We mulitply matrix ``A`` of size ``m x k`` with matrix ``B`` of size ``k x n`` to get output matrix ``C`` of size ``m x n``.
+* ``main()`` function generates random input matrices, and a reference output matrix. It then calls the ``matrix_multiplication_single_core`` function. This compiles just-in-time (JIT) during the first call and executes.
+* The ``matrix_multiplication_single_core`` function sets up the dataflow through the AI engines via ``ObjectFIFOs``, defines the kernel function and compute tile, then performs the runtime operations to transfer data to/from the AI engines and execute the kernel.
 
 **Vector intrinsic size: (r,s,t)**
 
-Each compute core of the AI Engine is a VLIW vector processor. That is, it can perform 512 int8, or 64 int16 multiply-accumulate operations in parallel, within one clock cycle. It also can perform two loads and one store of vectors in one clock cycle. Therefore, to maximize the performance, the kernel code uses `aie::load_v()` and `aie::store_v()` primitive functions to load entire vectors: a row from matrix A of size `r` and a column from matrix B of size `s`. We also use the `MMUL::mac()` primitive to perform the multiply-accumulate on a pair of vectors. We perform four such vector MACs at once to maximize performance. The APIs and primitives are listed `here <https://www.xilinx.com/htmldocs/xilinx2022_2/aiengine_api/aie_api/doc/modules.html>`_.
+Each compute core of the AI Engine is a VLIW vector processor. That is, it can perform 512 int8, or 64 int16 multiply-accumulate operations in parallel, within one clock cycle. It also can perform two loads and one store of vectors in one clock cycle. Therefore, to maximize the performance, the kernel code uses ``aie::load_v()`` and ``aie::store_v()`` primitive functions to load entire vectors: a row from matrix A of size ``r`` and a column from matrix B of size ``s``. We also use the ``MMUL::mac()`` primitive to perform the multiply-accumulate on a pair of vectors. We perform four such vector MACs at once to maximize performance. The APIs and primitives are listed `here <https://www.xilinx.com/htmldocs/xilinx2022_2/aiengine_api/aie_api/doc/modules.html>`_.
 
 
-**Loading 2nd level tiles using object fifos**
+**Tiling on the fly using ObjectFifos**
 
-The `memA_fifos` and `memB_fifos` receive sub-matrices of size `m` x `k` and `k` x `n`, respectively. The FIFOs translate those matrices from a row-major format (or, alternatively, column-major for `B` if `b_col_maj` is set) into the `r` x `s`-sized and `s` x `t`-sized blocks required by the hardware's vector instrinsics before sending them into the compute cores memory.
+The ``fifo_A`` and ``fifo_B`` receive sub-matrices of size ``m`` x ``k`` and ``k`` x ``n``, respectively. The FIFOs translate those matrices from a row-major format into the ``r`` x ``s``-sized and ``s`` x ``t``-sized blocks required by the hardware's vector instrinsics before sending them into the compute cores memory.
 
-For matrix A (`memA_fifos`), this transformation is expressed using the following wraps and strides as a list of tuples `(wrap, stride)`, given as arguments to the `object_fifo()` operation:
-(Note that `//` denotes integer floor-division in Python.)
+For matrix A (``fifo_A``), this transformation is expressed using the following wraps and strides as a list of tuples ``(wrap, stride)``, given as arguments to the ``object_fifo()`` operation:
+(Note that ``//`` denotes integer floor-division in Python.)
 
     
 * (m // r, r * k),   # Pair 1
@@ -158,36 +186,101 @@ The following image describes the pattern of the object fifos for matrix A:
 .. image:: image/object_fifo.png
 
 
+4) Whole Array Matrix Multiplication
+------------------------------------
 
-3) Questions
--------------
+In this example, the above single core matrix multiplication is extended to use all compute tiles of the 4x4 AI Engine array. To run the whole array matrix multiplication:
 
-1. In Exercise 5.3 of the mini tutorial, generate 3 different tensor access patterns (TAPs) for a 2D array. Write the equivalent nested loops for data access in each of them.
+   ``/notebooks/mlir-aie/programming_examples/basic/matrix_multiplication/whole_array``
 
-2. Explain the two levels of tiling used in the matrix multiplication design. Why are both levels of tiling necessary, and what advantages do they provide?
-
-3. What role do ObjectFIFOs play in the design of the data movement within the AIE array? Describe how ObjectFIFOs facilitate synchronization between compute cores and memory tiles.
-
-4. Discuss the purpose of "ping" and "pong" phases in data transfer. How does this design choice improve performance in handling large matrices?
-
-5. Why are different tiling dimensions (r, s, t) chosen for vector intrinsic instructions? Explain how these values are related to the hardware requirements and how they enhance efficiency.
-
-6. Change the parameters: (m, k, n, r, s, t) in the code, generate performance metrics and compile it into a chart, for int8, int16, int32 and float datatypes. Discuss your observations.
-
-7. Move drain() above fill(). Does the code stall? Explain why.
-
-
-5) Optional Project: Optimizing Whole Array Matrix Multiplication for Small N
-------------------------------------------------------------------------------
+   ``make clean && make run use_iron=1``
 
 0. `Tutorial <https://github.com/Xilinx/mlir-aie/tree/main/programming_examples/basic/matrix_multiplication/whole_array>`_
-1. `Host code <https://github.com/Xilinx/mlir-aie/blob/main/programming_examples/basic/matrix_multiplication/test.cpp>`_
-2. `Dataflow code <https://github.com/Xilinx/mlir-aie/blob/main/programming_examples/basic/matrix_multiplication/whole_array/aie2.py>`_
-3. `Kernel code <https://github.com/Xilinx/mlir-aie/blob/dfad2074779ce69db95f24cf7cf7a2a1fabf299d/aie_kernels/aie2/mm.cc#L42>`_
+1. `Host + Dataflow code <https://github.com/Xilinx/mlir-aie/blob/main/programming_examples/basic/matrix_multiplication/whole_array/whole_array_iron.py>`_
+2. `Kernel code <https://github.com/Xilinx/mlir-aie/blob/main/aie_kernels/aie2/mm.cc>`_
 
 .. image:: image/whole_array_design.png
 
-The above image describes the whole array matrix multiplication design for the Ryzen AI device. 
+The above image describes the whole array matrix multiplication design for the Ryzen AI device. You can visualize the dataflow using `this notebook <https://github.com/Xilinx/mlir-aie/blob/main/programming_examples/basic/matrix_multiplication/whole_array/mat_mul_whole_array_visualization.ipynb>`_
+
+The dataflow in the Matrix Multiplication design is as follows. Two submatrices of size `r` x `s` from matrix A are broacasted across the each row of the AIE tiles. Similarly, two submatrices of size `s` x `t` from matrix B are broadcasted across each column of the AIE tiles. The compute tiles perform the vector multiply-accumulate operations on the submatrices and store the results in the output matrix C.
+
+
++---------------+---------------+---------------------+---------------------------+
+| Matrix        | Size          | Submatrix Size (1.) | Vector Intrinsic Size (2.)|
++===============+===============+=====================+===========================+
+| `A` (Input)   | `M` x `K`     | `m` x `k`           | `r` x `s`                 |
++---------------+---------------+---------------------+---------------------------+
+| `B` (Input)   | `K` x `N`     | `k` x `n`           | `s` x `t`                 |
++---------------+---------------+---------------------+---------------------------+
+| `C` (Output)  | `M` x `N`     | `m` x `n`           | `r` x `t`                 |
++---------------+---------------+---------------------+---------------------------+
+
+
+**Multiple levels of tiling (M,K,N) -> (m,k,n) -> (r,s,t)**
+
+We first specify the dimensions `M`, `K`, `N` for the input matrices `A` (`MxK`), and `B` (`KxN`), and the output matrix `C` (`MxN`), as well as their data type. To enable efficient computation, our design will split large input matrices into smaller sub-matrix blocks on two levels; we thus also define the sizes of those sub-matrices. 
+
+At the first level, the constants `m`, `k`, and `n` define the size of the submatrices processed by each AIE core. This is done in the dataflow code.At the second level, we further subdivide using smaller sizes `r`, `s` and `t` -- these are the sizes of required by the vector computation intrinsics of the AIEs. We leverage the multidimensional DMAs available in AIEs, through a higher level abstraction (object fifo), to automatically tile and load at this level. 
+
+The two levels of tiling of the output matrix `C` (`MxN`) is shown below:
+
+.. image:: image/tiling.png
+
+
+
+
+5) Questions
+-------------
+
+Q1, Q2 are based on mini tutorials. Q3 is a generic question. Q4 is based on the whole array matrix multiplication to observe the full performance of AI Engine. Q5-Q7 are your project, based on the starter code.
+
+1. In Exercise 5b of the mini tutorial, generate 3 different tensor access patterns (TAPs) for a 2D array. Write the equivalent nested loops (pseudocode or Python code) for data access in each of them. Include the code and TAP images in the report.
+
+2. What role do ObjectFIFOs play in the design of the data movement within the AIE array? Describe how ObjectFIFOs facilitate synchronization between compute cores and memory tiles.
+
+3. Discuss the purpose of "ping" and "pong" phases in data transfer. How does this design choice improve performance in handling large matrices?
+
+4. Measure the performance (runtime, GOPS) and limitations of AI Engines using the `Whole Array Matrix Multiplication` example. You may edit the code to do so.
+
+  a. Keep the datatypes and (r,s,t) default. Change the parameters: (m, k, n) only, and plot a graph with workload size (m*k*n) on the x-axis. Draw multiple lines, varying the workload's asymmetry for the same workload sizes. Eg. m doubled, k halved, n unchanged. m doubled, k unchanged, n halved.
+  b. Keep (r,s,t) fixed. For a set of linearly increasing workload size (m*k*n), change input and output datatypes (int8, int16, int32, and float) and plot another graph.
+  c. For the same set of increasing workload sizes, change (r,s,t)s and input/output datatypes, and plot another graph.
+  d. If anything did not work, refer to the documentation to find out why, and explain, citing that reference.
+
+5. Extend the basic passthrough example provided, such that the data passes through two compute tiles sequentially (one after another) instead of one. Measure the performance (runtime, GFLOPs) and compare it with the single compute tile design. To measure performance, study the code for the ``whole array matrix multiplication``, get the idea from there, and write equivalent Python code.
+
+6. Modify ``basic_mm.py`` and ``matmul.cc`` to implement a simple dense layer that performs ``Y = ReLU(X @ W)``. The python file should be named ``dense.py``, kernel function should be named ``dense()`` and the kernel file should be named ``dense.cc``. Hint: Mathematically, ``ReLU(z) = max(z,0)``. In the kernel code, you can create a vector of zeros with ``auto zeros = aie::zeros<DTYPE, MMUL::size_C>();``. You can perform a vectorized max with ``auto vec3 = aie::max(vec1, vec2)``.
+
+7. Combine the dense layer from (Q6) with two tile passthrough (Q5) to create a two layer neural network. Fill the blanks in ``nn.py`` and get it working. Measure the performance and compare it with the single tile matrix multiplication design. Change the intrinsic sizes from ``2,8,8`` to ``4,8,4`` and describe your observations. If it passes, good. If it fails, explain why.
+
+
+6) Submission Procedure
+-------------------------
+
+You must submit 
+
+* Report.pdf to gradescope
+* Code to a public repo.
+
+Your github repo must be public after the deadline (do not invite me). Include the link to the repo in the report. Keep it private, and make it public a day after the deadline. 
+
+You must submit your code (and only your code, not generated files). We must be able to use what is provided (*.cpp, *.py files) and directly run your design in NPU Cloud. If you change test benches to answer questions, please submit them as well. You must follow the file structure below. We use automated scripts to pull your data, so **DOUBLE CHECK** your file/folder names to make sure it corresponds to the instructions. Your repo must contain a folder named "aie" at the top-level. This folder must be organized as follows:
+
+* **passthrough_two_tiles.py**
+
+* **dense.cc**
+
+* **dense.py**
+
+* **nn.py**
+
+
+
+Optimizing Whole Array Matrix Multiplication for Small N
+---------------------------------------------------------------------------------------------------------
+
+**NOTE: This is not a part of Project 4. You can choose to do this part as Project 5, if you prefer.**
 
 The whole array design is efficient for matrices that are much bigger than the 4x4 AI Engine array. However, if the N dimension is small, it would be wasteful to pad the matrix with zeros. The following is a design that would be more efficient for small N dimensions:
 
