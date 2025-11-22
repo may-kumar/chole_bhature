@@ -24,11 +24,11 @@ def chain_two_tiles(X, W1, W2, Y2_out):
 
     # -------- DDR → A (Tile A inputs) --------
     of_X_DDR = iron.ObjectFifo(A_ty, name="X_DDR")
-    tap_X_to_A = 
+    tap_X_to_A = TensorTiler2D.group_tiler((m, k), (r, s), (m // r, k // s))[0]
     of_X_to_A = of_X_DDR.cons().forward(dims_to_stream=tap_X_to_A.transformation_dims, name="X_to_A")
 
     of_W1_DDR = iron.ObjectFifo(W1_ty, name="W1_DDR")
-    tap_W1_to_A = 
+    tap_W1_to_A = TensorTiler2D.group_tiler((k, n), (s, t), (k // s, n // t))[0]
     of_W1_to_A = of_W1_DDR.cons().forward(dims_to_stream=tap_W1_to_A.transformation_dims, name="W1_to_A")
 
     # -------- A → B --------
@@ -36,12 +36,17 @@ def chain_two_tiles(X, W1, W2, Y2_out):
 
     # -------- DDR → B (Tile B W2 input) --------
     of_W2_DDR = iron.ObjectFifo(W2_ty, name="W2_DDR")
-    tap_W2_to_B = 
+    tap_W2_to_B = TensorTiler2D.group_tiler((k, n), (s, t), (k // s, n // t))[0]
     of_W2_to_B = of_W2_DDR.cons().forward(dims_to_stream=tap_W2_to_B.transformation_dims, name="W2_to_B")
 
     # -------- B → DDR --------
     of_Y2_B = iron.ObjectFifo(Y2_ty, name="Y2_B")
-    tap_Y2_to_DDR = 
+    tap_Y2_to_DDR = TensorAccessPattern(
+        tensor_dims=(m, n),
+        offset=0,
+        sizes=[m // r, r, n // t, t],
+        strides=[r * n, t, r * t, 1],
+    )
     of_Y2_to_DDR = of_Y2_B.cons().forward(dims_to_stream=tap_Y2_to_DDR.transformation_dims, name="Y2_to_DDR")
 
     # kernel used by both tiles
@@ -63,8 +68,8 @@ def chain_two_tiles(X, W1, W2, Y2_out):
         of_a.release(1); of_b.release(1); of_c.release(1)
 
     # tiles
-    tile_A = Worker(mm, )  # Y1 = X*W1
-    tile_B = Worker(mm, )   # Y2 = Y1*W2
+    tile_A = Worker(mm,  [of_X_to_A.cons(), of_W1_to_A.cons(), of_Y1_A_to_B.prod(), dense])  # Y1 = X*W1
+    tile_B = Worker(mm,  [of_Y1_A_to_B.cons(), of_W2_to_B.cons(), of_Y2_B.prod(), dense])   # Y2 = Y1*W2
 
     # runtime: DDR→A, DDR→B, B→DDR
     tap_A_DDR  = TensorTiler2D.group_tiler((m, k), (m, k), (1, 1))[0]
@@ -96,10 +101,12 @@ def main():
 
     # reference
     dense_1 = X.numpy() @ W1.numpy()
-    relu_1 = np.maximum(dense_1,0)
-    dense_2 = relu_1 @ W2.numpy()
-    relu_2 = np.maximum(dense_2,0)
-    ref = relu_2 
+    #relu_1 = np.maximum(dense_1,0)
+    #dense_2 = relu_1 @ W2.numpy()
+    dense_2 = dense_1 @ W2.numpy()
+    #relu_2 = np.maximum(dense_2,0)
+    #ref = relu_2 
+    ref = dense_2 
 
     # run
     chain_two_tiles(X, W1, W2, Y2)
