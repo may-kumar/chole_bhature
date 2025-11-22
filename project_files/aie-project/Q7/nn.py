@@ -101,12 +101,14 @@ def main():
 
     # reference
     dense_1 = X.numpy() @ W1.numpy()
-    #relu_1 = np.maximum(dense_1,0)
-    #dense_2 = relu_1 @ W2.numpy()
-    dense_2 = dense_1 @ W2.numpy()
-    #relu_2 = np.maximum(dense_2,0)
-    #ref = relu_2 
-    ref = dense_2 
+    
+    relu_1 = np.maximum(dense_1,0)
+    dense_2 = relu_1 @ W2.numpy()
+    relu_2 = np.maximum(dense_2,0)
+    ref = relu_2
+    
+    #dense_2 = dense_1 @ W2.numpy()
+    #ref = dense_2 
 
     # run
     chain_two_tiles(X, W1, W2, Y2)
