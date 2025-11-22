@@ -248,7 +248,7 @@ Q1, Q2 are based on mini tutorials. Q3 is a generic question. Q4 is based on the
   c. For the same set of increasing workload sizes, change (r,s,t)s and input/output datatypes, and plot another graph.
   d. If anything did not work, refer to the documentation to find out why, and explain, citing that reference.
 
-5. Extend the basic passthrough example provided, such that the data passes through two compute tiles sequentially (one after another) instead of one. Measure the performance (runtime, GFLOPs) and compare it with the single compute tile design. To measure performance, study the code for the ``whole array matrix multiplication``, get the idea from there, and write equivalent Python code.
+5. Extend the basic passthrough example provided, such that the data passes through two compute tiles sequentially (one after another) instead of one. Measure the performance (runtime, GB/s) and compare it with the single compute tile design. To measure performance, study the code for the ``whole array matrix multiplication``, get the idea from there, and write equivalent Python code.
 
 6. Modify ``basic_mm.py`` and ``matmul.cc`` to implement a simple dense layer that performs ``Y = ReLU(X @ W)``. The python file should be named ``dense.py``, kernel function should be named ``dense()`` and the kernel file should be named ``dense.cc``. Hint: Mathematically, ``ReLU(z) = max(z,0)``. In the kernel code, you can create a vector of zeros with ``auto zeros = aie::zeros<DTYPE, MMUL::size_C>();``. You can perform a vectorized max with ``auto vec3 = aie::max(vec1, vec2)``.
 
@@ -261,9 +261,9 @@ Q1, Q2 are based on mini tutorials. Q3 is a generic question. Q4 is based on the
 You must submit 
 
 * Report.pdf to gradescope
-* Code to a public repo.
+* Code to a PRIVATE repo.
 
-Your github repo must be public after the deadline (do not invite me). Include the link to the repo in the report. Keep it private, and make it public a day after the deadline. 
+Keep your GitHub repo PRIVATE and invite me (abarajithan11). Include the link to the repo in the report. 
 
 You must submit your code (and only your code, not generated files). We must be able to use what is provided (*.cpp, *.py files) and directly run your design in NPU Cloud. If you change test benches to answer questions, please submit them as well. You must follow the file structure below. We use automated scripts to pull your data, so **DOUBLE CHECK** your file/folder names to make sure it corresponds to the instructions. Your repo must contain a folder named "aie" at the top-level. This folder must be organized as follows:
 
