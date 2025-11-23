@@ -1,0 +1,330 @@
+
+
+================================================================
+== Synthesis Summary Report of 'dft'
+================================================================
++ General Information: 
+    * Date:           Fri Nov  7 20:22:22 2025
+    * Version:        2024.2 (Build 5238294 on Nov  8 2024)
+    * Project:        dft_1024_opt
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+-----------+-------------+-------------+-----+
+    |            Modules           | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |         |           |             |             |     |
+    |            & Loops           | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM   |    DSP    |      FF     |     LUT     | URAM|
+    +------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+-----------+-------------+-------------+-----+
+    |+ dft                         |     -|  0.04|   152577|  1.526e+06|         -|   152578|     -|        no|  16 (5%)|  160 (72%)|  20259 (19%)|  29491 (55%)|    -|
+    | o OUTER_LOOP                 |     -|  7.30|   152576|  1.526e+06|       298|        -|   512|        no|        -|          -|            -|            -|    -|
+    |  + dft_Pipeline_INNER_LOOP   |     -|  0.04|      146|  1.460e+03|         -|      146|     -|        no|        -|          -|    4405 (4%)|    1098 (2%)|    -|
+    |   o INNER_LOOP               |     -|  7.30|      144|  1.440e+03|        18|        1|   128|       yes|        -|          -|            -|            -|    -|
+    |  + dft_Pipeline_INNER_LOOP1  |     -|  0.04|      146|  1.460e+03|         -|      146|     -|        no|        -|          -|    4405 (4%)|    1098 (2%)|    -|
+    |   o INNER_LOOP               |     -|  7.30|      144|  1.440e+03|        18|        1|   128|       yes|        -|          -|            -|            -|    -|
+    +------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+-----------+-------------+-------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_MEMORY
++------------------------+-----------+----------+
+| Port                   | Direction | Bitwidth |
++------------------------+-----------+----------+
+| imag_op_0_address0     | out       | 7        |
+| imag_op_0_address1     | out       | 7        |
+| imag_op_0_d0           | out       | 32       |
+| imag_op_0_q1           | in        | 32       |
+| imag_op_1_address0     | out       | 7        |
+| imag_op_1_address1     | out       | 7        |
+| imag_op_1_d0           | out       | 32       |
+| imag_op_1_q1           | in        | 32       |
+| imag_op_2_address0     | out       | 7        |
+| imag_op_2_address1     | out       | 7        |
+| imag_op_2_d0           | out       | 32       |
+| imag_op_2_q1           | in        | 32       |
+| imag_op_3_address0     | out       | 7        |
+| imag_op_3_address1     | out       | 7        |
+| imag_op_3_d0           | out       | 32       |
+| imag_op_3_q1           | in        | 32       |
+| imag_op_4_address0     | out       | 7        |
+| imag_op_4_address1     | out       | 7        |
+| imag_op_4_d0           | out       | 32       |
+| imag_op_4_q1           | in        | 32       |
+| imag_op_5_address0     | out       | 7        |
+| imag_op_5_address1     | out       | 7        |
+| imag_op_5_d0           | out       | 32       |
+| imag_op_5_q1           | in        | 32       |
+| imag_op_6_address0     | out       | 7        |
+| imag_op_6_address1     | out       | 7        |
+| imag_op_6_d0           | out       | 32       |
+| imag_op_6_q1           | in        | 32       |
+| imag_op_7_address0     | out       | 7        |
+| imag_op_7_address1     | out       | 7        |
+| imag_op_7_d0           | out       | 32       |
+| imag_op_7_q1           | in        | 32       |
+| imag_sample_0_address0 | out       | 9        |
+| imag_sample_0_q0       | in        | 32       |
+| imag_sample_1_address0 | out       | 9        |
+| imag_sample_1_q0       | in        | 32       |
+| real_op_0_address0     | out       | 7        |
+| real_op_0_address1     | out       | 7        |
+| real_op_0_d0           | out       | 32       |
+| real_op_0_q1           | in        | 32       |
+| real_op_1_address0     | out       | 7        |
+| real_op_1_address1     | out       | 7        |
+| real_op_1_d0           | out       | 32       |
+| real_op_1_q1           | in        | 32       |
+| real_op_2_address0     | out       | 7        |
+| real_op_2_address1     | out       | 7        |
+| real_op_2_d0           | out       | 32       |
+| real_op_2_q1           | in        | 32       |
+| real_op_3_address0     | out       | 7        |
+| real_op_3_address1     | out       | 7        |
+| real_op_3_d0           | out       | 32       |
+| real_op_3_q1           | in        | 32       |
+| real_op_4_address0     | out       | 7        |
+| real_op_4_address1     | out       | 7        |
+| real_op_4_d0           | out       | 32       |
+| real_op_4_q1           | in        | 32       |
+| real_op_5_address0     | out       | 7        |
+| real_op_5_address1     | out       | 7        |
+| real_op_5_d0           | out       | 32       |
+| real_op_5_q1           | in        | 32       |
+| real_op_6_address0     | out       | 7        |
+| real_op_6_address1     | out       | 7        |
+| real_op_6_d0           | out       | 32       |
+| real_op_6_q1           | in        | 32       |
+| real_op_7_address0     | out       | 7        |
+| real_op_7_address1     | out       | 7        |
+| real_op_7_d0           | out       | 32       |
+| real_op_7_q1           | in        | 32       |
+| real_sample_0_address0 | out       | 9        |
+| real_sample_0_q0       | in        | 32       |
+| real_sample_1_address0 | out       | 9        |
+| real_sample_1_q0       | in        | 32       |
++------------------------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++-------------+-----------+----------+
+| Argument    | Direction | Datatype |
++-------------+-----------+----------+
+| real_sample | in        | float*   |
+| imag_sample | in        | float*   |
+| real_op     | inout     | float*   |
+| imag_op     | inout     | float*   |
++-------------+-----------+----------+
+
+* SW-to-HW Mapping
++-------------+------------------------+---------+----------+
+| Argument    | HW Interface           | HW Type | HW Usage |
++-------------+------------------------+---------+----------+
+| real_sample | real_sample_0_address0 | port    | offset   |
+| real_sample | real_sample_0_ce0      | port    |          |
+| real_sample | real_sample_0_q0       | port    |          |
+| real_sample | real_sample_1_address0 | port    | offset   |
+| real_sample | real_sample_1_ce0      | port    |          |
+| real_sample | real_sample_1_q0       | port    |          |
+| imag_sample | imag_sample_0_address0 | port    | offset   |
+| imag_sample | imag_sample_0_ce0      | port    |          |
+| imag_sample | imag_sample_0_q0       | port    |          |
+| imag_sample | imag_sample_1_address0 | port    | offset   |
+| imag_sample | imag_sample_1_ce0      | port    |          |
+| imag_sample | imag_sample_1_q0       | port    |          |
+| real_op     | real_op_0_address0     | port    | offset   |
+| real_op     | real_op_0_ce0          | port    |          |
+| real_op     | real_op_0_we0          | port    |          |
+| real_op     | real_op_0_d0           | port    |          |
+| real_op     | real_op_0_address1     | port    | offset   |
+| real_op     | real_op_0_ce1          | port    |          |
+| real_op     | real_op_0_q1           | port    |          |
+| real_op     | real_op_1_address0     | port    | offset   |
+| real_op     | real_op_1_ce0          | port    |          |
+| real_op     | real_op_1_we0          | port    |          |
+| real_op     | real_op_1_d0           | port    |          |
+| real_op     | real_op_1_address1     | port    | offset   |
+| real_op     | real_op_1_ce1          | port    |          |
+| real_op     | real_op_1_q1           | port    |          |
+| real_op     | real_op_2_address0     | port    | offset   |
+| real_op     | real_op_2_ce0          | port    |          |
+| real_op     | real_op_2_we0          | port    |          |
+| real_op     | real_op_2_d0           | port    |          |
+| real_op     | real_op_2_address1     | port    | offset   |
+| real_op     | real_op_2_ce1          | port    |          |
+| real_op     | real_op_2_q1           | port    |          |
+| real_op     | real_op_3_address0     | port    | offset   |
+| real_op     | real_op_3_ce0          | port    |          |
+| real_op     | real_op_3_we0          | port    |          |
+| real_op     | real_op_3_d0           | port    |          |
+| real_op     | real_op_3_address1     | port    | offset   |
+| real_op     | real_op_3_ce1          | port    |          |
+| real_op     | real_op_3_q1           | port    |          |
+| real_op     | real_op_4_address0     | port    | offset   |
+| real_op     | real_op_4_ce0          | port    |          |
+| real_op     | real_op_4_we0          | port    |          |
+| real_op     | real_op_4_d0           | port    |          |
+| real_op     | real_op_4_address1     | port    | offset   |
+| real_op     | real_op_4_ce1          | port    |          |
+| real_op     | real_op_4_q1           | port    |          |
+| real_op     | real_op_5_address0     | port    | offset   |
+| real_op     | real_op_5_ce0          | port    |          |
+| real_op     | real_op_5_we0          | port    |          |
+| real_op     | real_op_5_d0           | port    |          |
+| real_op     | real_op_5_address1     | port    | offset   |
+| real_op     | real_op_5_ce1          | port    |          |
+| real_op     | real_op_5_q1           | port    |          |
+| real_op     | real_op_6_address0     | port    | offset   |
+| real_op     | real_op_6_ce0          | port    |          |
+| real_op     | real_op_6_we0          | port    |          |
+| real_op     | real_op_6_d0           | port    |          |
+| real_op     | real_op_6_address1     | port    | offset   |
+| real_op     | real_op_6_ce1          | port    |          |
+| real_op     | real_op_6_q1           | port    |          |
+| real_op     | real_op_7_address0     | port    | offset   |
+| real_op     | real_op_7_ce0          | port    |          |
+| real_op     | real_op_7_we0          | port    |          |
+| real_op     | real_op_7_d0           | port    |          |
+| real_op     | real_op_7_address1     | port    | offset   |
+| real_op     | real_op_7_ce1          | port    |          |
+| real_op     | real_op_7_q1           | port    |          |
+| imag_op     | imag_op_0_address0     | port    | offset   |
+| imag_op     | imag_op_0_ce0          | port    |          |
+| imag_op     | imag_op_0_we0          | port    |          |
+| imag_op     | imag_op_0_d0           | port    |          |
+| imag_op     | imag_op_0_address1     | port    | offset   |
+| imag_op     | imag_op_0_ce1          | port    |          |
+| imag_op     | imag_op_0_q1           | port    |          |
+| imag_op     | imag_op_1_address0     | port    | offset   |
+| imag_op     | imag_op_1_ce0          | port    |          |
+| imag_op     | imag_op_1_we0          | port    |          |
+| imag_op     | imag_op_1_d0           | port    |          |
+| imag_op     | imag_op_1_address1     | port    | offset   |
+| imag_op     | imag_op_1_ce1          | port    |          |
+| imag_op     | imag_op_1_q1           | port    |          |
+| imag_op     | imag_op_2_address0     | port    | offset   |
+| imag_op     | imag_op_2_ce0          | port    |          |
+| imag_op     | imag_op_2_we0          | port    |          |
+| imag_op     | imag_op_2_d0           | port    |          |
+| imag_op     | imag_op_2_address1     | port    | offset   |
+| imag_op     | imag_op_2_ce1          | port    |          |
+| imag_op     | imag_op_2_q1           | port    |          |
+| imag_op     | imag_op_3_address0     | port    | offset   |
+| imag_op     | imag_op_3_ce0          | port    |          |
+| imag_op     | imag_op_3_we0          | port    |          |
+| imag_op     | imag_op_3_d0           | port    |          |
+| imag_op     | imag_op_3_address1     | port    | offset   |
+| imag_op     | imag_op_3_ce1          | port    |          |
+| imag_op     | imag_op_3_q1           | port    |          |
+| imag_op     | imag_op_4_address0     | port    | offset   |
+| imag_op     | imag_op_4_ce0          | port    |          |
+| imag_op     | imag_op_4_we0          | port    |          |
+| imag_op     | imag_op_4_d0           | port    |          |
+| imag_op     | imag_op_4_address1     | port    | offset   |
+| imag_op     | imag_op_4_ce1          | port    |          |
+| imag_op     | imag_op_4_q1           | port    |          |
+| imag_op     | imag_op_5_address0     | port    | offset   |
+| imag_op     | imag_op_5_ce0          | port    |          |
+| imag_op     | imag_op_5_we0          | port    |          |
+| imag_op     | imag_op_5_d0           | port    |          |
+| imag_op     | imag_op_5_address1     | port    | offset   |
+| imag_op     | imag_op_5_ce1          | port    |          |
+| imag_op     | imag_op_5_q1           | port    |          |
+| imag_op     | imag_op_6_address0     | port    | offset   |
+| imag_op     | imag_op_6_ce0          | port    |          |
+| imag_op     | imag_op_6_we0          | port    |          |
+| imag_op     | imag_op_6_d0           | port    |          |
+| imag_op     | imag_op_6_address1     | port    | offset   |
+| imag_op     | imag_op_6_ce1          | port    |          |
+| imag_op     | imag_op_6_q1           | port    |          |
+| imag_op     | imag_op_7_address0     | port    | offset   |
+| imag_op     | imag_op_7_ce0          | port    |          |
+| imag_op     | imag_op_7_we0          | port    |          |
+| imag_op     | imag_op_7_d0           | port    |          |
+| imag_op     | imag_op_7_address1     | port    | offset   |
+| imag_op     | imag_op_7_ce1          | port    |          |
+| imag_op     | imag_op_7_q1           | port    |          |
++-------------+------------------------+---------+----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++---------------------------------------+-----+--------+--------------------+-----+--------+---------+
+| Name                                  | DSP | Pragma | Variable           | Op  | Impl   | Latency |
++---------------------------------------+-----+--------+--------------------+-----+--------+---------+
+| + dft                                 | 160 |        |                    |     |        |         |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U225  |     |        | imag_sample_1_load | ram | auto   | 1       |
+|   fadd_32ns_32ns_32_5_full_dsp_1_U191 |     |        | add_ln14           | add | fabric | 0       |
+|  + dft_Pipeline_INNER_LOOP            | 0   |        |                    |     |        |         |
+|    mul_10s_10s_10_1_1_U65             |     |        | idx                | mul | auto   | 0       |
+|    mul_10s_10s_10_1_1_U66             |     |        | idx_8              | mul | auto   | 0       |
+|    mul_10s_10s_10_1_1_U67             |     |        | idx_9              | mul | auto   | 0       |
+|    mul_10s_10s_10_1_1_U68             |     |        | idx_10             | mul | auto   | 0       |
+|    mul_10s_10s_10_1_1_U69             |     |        | idx_11             | mul | auto   | 0       |
+|    mul_10s_10s_10_1_1_U70             |     |        | idx_12             | mul | auto   | 0       |
+|    mul_10s_10s_10_1_1_U71             |     |        | idx_13             | mul | auto   | 0       |
+|    mul_10s_10s_10_1_1_U72             |     |        | idx_14             | mul | auto   | 0       |
+|    add_ln22_fu_1020_p2                |     |        | add_ln22           | add | fabric | 0       |
+|  + dft_Pipeline_INNER_LOOP1           | 0   |        |                    |     |        |         |
+|    mul_10s_10s_10_1_1_U159            |     |        | idx                | mul | auto   | 0       |
+|    mul_10s_10s_10_1_1_U160            |     |        | idx_1              | mul | auto   | 0       |
+|    mul_10s_10s_10_1_1_U161            |     |        | idx_2              | mul | auto   | 0       |
+|    mul_10s_10s_10_1_1_U162            |     |        | idx_3              | mul | auto   | 0       |
+|    mul_10s_10s_10_1_1_U163            |     |        | idx_4              | mul | auto   | 0       |
+|    mul_10s_10s_10_1_1_U164            |     |        | idx_5              | mul | auto   | 0       |
+|    mul_10s_10s_10_1_1_U165            |     |        | idx_6              | mul | auto   | 0       |
+|    mul_10s_10s_10_1_1_U166            |     |        | idx_7              | mul | auto   | 0       |
+|    add_ln22_fu_1020_p2                |     |        | add_ln22           | add | fabric | 0       |
++---------------------------------------+-----+--------+--------------------+-----+--------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++----------------------------+--------+------+------+------+--------+------------------------+------+---------+------------------+
+| Name                       | Usage  | Type | BRAM | URAM | Pragma | Variable               | Impl | Latency | Bitwidth, Depth, |
+|                            |        |      |      |      |        |                        |      |         | Banks            |
++----------------------------+--------+------+------+------+--------+------------------------+------+---------+------------------+
+| + dft                      |        |      | 16   | 0    |        |                        |      |         |                  |
+|   cos_coefficients_table_U | rom_np |      | 8    |      |        | cos_coefficients_table | auto | 1       | 32, 1024, 1      |
+|   sin_coefficients_table_U | rom_np |      | 8    |      |        | sin_coefficients_table | auto | 1       | 32, 1024, 1      |
++----------------------------+--------+------+------+------+--------+------------------------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+-------------------------------------------+-----------------------------------+
+| Type            | Options                                   | Location                          |
++-----------------+-------------------------------------------+-----------------------------------+
+| array_partition | variable=real_op cyclic factor=8          | ../dft.cpp:8 in dft, real_op      |
+| array_partition | variable=imag_op cyclic factor=8          | ../dft.cpp:9 in dft, imag_op      |
+| array_partition | variable=real_sample cyclic factor=2      | ../dft.cpp:10 in dft, real_sample |
+| array_partition | variable=imag_sample cyclic factor=2      | ../dft.cpp:11 in dft, imag_sample |
+| loop_tripcount  | min=1024 max=1024                         | ../dft.cpp:15 in dft              |
+| unroll          | factor=2 skip_exit_check                  | ../dft.cpp:16 in dft              |
+| loop_tripcount  | min=1024 max=1024                         | ../dft.cpp:23 in dft              |
+| dependence      | variable=real_op intra direction=RAW true | ../dft.cpp:24 in dft, real_op     |
+| dependence      | variable=imag_op intra direction=RAW true | ../dft.cpp:25 in dft, imag_op     |
+| unroll          | factor=8 skip_exit_check                  | ../dft.cpp:26 in dft              |
++-----------------+-------------------------------------------+-----------------------------------+
+
+

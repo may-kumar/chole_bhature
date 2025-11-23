@@ -1,0 +1,63 @@
+{
+    "1": {
+        "name": "dft_Pipeline_INNER_LOOP",
+        "file": "..\/dft.cpp",
+        "fileloc": "22",
+        "instructions": "237",
+        "total_instructions": "237",
+        "calls": "",
+        "basicblocks": "4",
+        "loads": {
+            "G": "16",
+            "L": "1",
+            "T": "16"
+        },
+        "stores": {
+            "L": "2",
+            "T": "16"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "0": {
+        "name": "dft",
+        "file": "dft.cpp",
+        "fileloc": "5",
+        "instructions": "71",
+        "total_instructions": "545",
+        "calls": "1 2",
+        "basicblocks": "4",
+        "loads": {
+            "L": "1",
+            "T": "4"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "2": {
+        "name": "dft_Pipeline_INNER_LOOP1",
+        "file": "..\/dft.cpp",
+        "fileloc": "22",
+        "instructions": "237",
+        "total_instructions": "237",
+        "calls": "",
+        "basicblocks": "4",
+        "loads": {
+            "G": "16",
+            "L": "1",
+            "T": "16"
+        },
+        "stores": {
+            "L": "2",
+            "T": "16"
+        },
+        "loops": {
+            "L": "1"
+        }
+    }
+}

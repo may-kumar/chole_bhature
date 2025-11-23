@@ -1,0 +1,4 @@
+interfaceModel::INFOR: interfaceModel:0:0: note: Applying interface constraints on the variable real_sample which has the interface type default
+interfaceModel::INFOR: interfaceModel:0:0: note: Applying interface constraints on the variable imag_sample which has the interface type default
+interfaceModel::INFOR: interfaceModel:0:0: note: Applying interface constraints on the variable real_op which has the interface type default
+interfaceModel::INFOR: interfaceModel:0:0: note: Applying interface constraints on the variable imag_op which has the interface type default

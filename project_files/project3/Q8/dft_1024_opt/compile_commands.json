@@ -1,0 +1,27 @@
+[
+  {
+    "directory": "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt",
+    "arguments": [
+      "/software/common/Xilinx_Vitis/Vitis/2024.2/vcxx/libexec/clang++",
+      "--gcc-toolchain=/software/common/Xilinx_Vitis/Vitis/2024.2/tps/lnx64/gcc-8.3.0",
+      "-fhls",
+      "-hls-syn-headers-dir=/software/common/Xilinx_Vitis/Vitis/2024.2/common/technology/autopilot",
+      "-fhlstoplevel=dft",
+      "-c",
+      "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft.cpp"
+    ],
+    "file": "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft.cpp"
+  },
+  {
+    "directory": "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt",
+    "arguments": [
+      "/software/common/Xilinx_Vitis/Vitis/2024.2/vcxx/libexec/clang++",
+      "--gcc-toolchain=/software/common/Xilinx_Vitis/Vitis/2024.2/tps/lnx64/gcc-8.3.0",
+      "-fhls-tb",
+      "-hls-sim-headers-dir=/software/common/Xilinx_Vitis/Vitis/2024.2/include",
+      "-c",
+      "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_test.cpp"
+    ],
+    "file": "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_test.cpp"
+  }
+]

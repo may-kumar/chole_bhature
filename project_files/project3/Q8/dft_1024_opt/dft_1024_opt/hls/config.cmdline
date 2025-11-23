@@ -1,0 +1,3 @@
+relativeroot=/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt
+original_argv=-c --mode hls --config /home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt/hls_config.cfg --work_dir dft_1024_opt 
+

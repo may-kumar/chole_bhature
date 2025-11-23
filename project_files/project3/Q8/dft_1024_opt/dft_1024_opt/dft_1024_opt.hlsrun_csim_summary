@@ -1,0 +1,158 @@
+<ENTRY>
+{
+ "thisFile": "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt/dft_1024_opt/dft_1024_opt.hlsrun_csim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri Nov  7 18:52:46 2025",
+ "timestampMillis": "1762570366605",
+ "buildStep": {
+  "cmdId": "1f74a060-4b7a-44f9-8b62-463671838a93",
+  "name": "vitis-run",
+  "logFile": "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt/dft_1024_opt/logs/dft_1024_opt.steps.log",
+  "commandLine": "/software/common/Xilinx_Vitis/Vitis/2024.2/bin/unwrapped/lnx64.o/vitis-run  --mode hls --csim --config /home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt/hls_config.cfg --work_dir dft_1024_opt ",
+  "args": [
+   "--mode",
+   "hls",
+   "--csim",
+   "--config",
+   "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt/hls_config.cfg",
+   "--work_dir",
+   "dft_1024_opt"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov  7 18:52:46 2025",
+ "timestampMillis": "1762570366605",
+ "status": {
+  "cmdId": "1f74a060-4b7a-44f9-8b62-463671838a93",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Fri Nov  7 18:52:59 2025",
+ "timestampMillis": "1762570379439",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_C_SIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "dft",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft.cpp",
+     "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft.h",
+     "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/coefficients1024.h"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2024.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Nov  7 18:52:59 2025",
+ "timestampMillis": "1762570379440",
+ "buildStep": {
+  "cmdId": "b993bf94-e5b5-4c2d-8061-0a8fd5ef50aa",
+  "name": "",
+  "logFile": "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt/dft_1024_opt/hls/hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov  7 18:52:59 2025",
+ "timestampMillis": "1762570379441",
+ "status": {
+  "cmdId": "b993bf94-e5b5-4c2d-8061-0a8fd5ef50aa",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov  7 18:53:04 2025",
+ "timestampMillis": "1762570384836",
+ "status": {
+  "cmdId": "b993bf94-e5b5-4c2d-8061-0a8fd5ef50aa",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov  7 18:53:05 2025",
+ "timestampMillis": "1762570385185",
+ "status": {
+  "cmdId": "1f74a060-4b7a-44f9-8b62-463671838a93",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov  7 18:53:05 2025",
+ "timestampMillis": "1762570385186",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov  7 18:53:05 2025",
+ "timestampMillis": "1762570385187",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

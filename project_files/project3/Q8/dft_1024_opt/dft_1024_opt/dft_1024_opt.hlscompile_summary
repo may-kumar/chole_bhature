@@ -1,0 +1,247 @@
+<ENTRY>
+{
+ "thisFile": "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt/dft_1024_opt/dft_1024_opt.hlscompile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri Nov  7 20:21:44 2025",
+ "timestampMillis": "1762575704447",
+ "buildStep": {
+  "cmdId": "8667395a-0aca-45ae-96f8-41d39af2e835",
+  "name": "v++",
+  "logFile": "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt/dft_1024_opt/logs/dft_1024_opt.steps.log",
+  "commandLine": "/software/common/Xilinx_Vitis/Vitis/2024.2/bin/unwrapped/lnx64.o/v++  -c --mode hls --config /home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt/hls_config.cfg --work_dir dft_1024_opt ",
+  "args": [
+   "-c",
+   "--mode",
+   "hls",
+   "--config",
+   "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt/hls_config.cfg",
+   "--work_dir",
+   "dft_1024_opt"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt/hls_config.cfg",
+    "content": "part=xc7z020clg400-1\n\n[hls]\nflow_target=vivado\npackage.output.format=rtl\npackage.output.syn=false\ncsim.code_analyzer=1\nsyn.top=dft\ntb.file=/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_test.cpp\ntb.file=/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/out.gold.dat\nsyn.file=/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft.cpp\nsyn.file=/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft.h\nsyn.file=/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/coefficients1024.h"
+   }
+  ],
+  "cwd": "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov  7 20:21:44 2025",
+ "timestampMillis": "1762575704448",
+ "status": {
+  "cmdId": "8667395a-0aca-45ae-96f8-41d39af2e835",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Fri Nov  7 20:21:58 2025",
+ "timestampMillis": "1762575718634",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_COMPILE",
+  "target": "TT_HW",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "dft",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft.cpp",
+     "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft.h",
+     "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/coefficients1024.h"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2024.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Nov  7 20:21:58 2025",
+ "timestampMillis": "1762575718635",
+ "buildStep": {
+  "cmdId": "1880d276-85d5-43e2-8c2c-4707059e12c1",
+  "name": "",
+  "logFile": "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt/dft_1024_opt/hls/hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov  7 20:21:58 2025",
+ "timestampMillis": "1762575718636",
+ "status": {
+  "cmdId": "1880d276-85d5-43e2-8c2c-4707059e12c1",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov  7 20:21:58 2025",
+ "timestampMillis": "1762575718636",
+ "report": {
+  "path": "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt/dft_1024_opt/hls/hls_data.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov  7 20:21:58 2025",
+ "timestampMillis": "1762575718637",
+ "report": {
+  "path": "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt/dft_1024_opt/hls/syn/report/csynth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov  7 20:21:58 2025",
+ "timestampMillis": "1762575718637",
+ "report": {
+  "path": "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt/dft_1024_opt/hls/syn/report/csynth.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov  7 20:22:25 2025",
+ "timestampMillis": "1762575745136",
+ "report": {
+  "path": "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt/dft_1024_opt/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_DATAFLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov  7 20:22:25 2025",
+ "timestampMillis": "1762575745138",
+ "report": {
+  "path": "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt/dft_1024_opt/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_FUNCTION_CALL_GRAPH",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov  7 20:22:25 2025",
+ "timestampMillis": "1762575745138",
+ "report": {
+  "path": "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt/dft_1024_opt/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_SCHEDULE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov  7 20:22:25 2025",
+ "timestampMillis": "1762575745139",
+ "status": {
+  "cmdId": "1880d276-85d5-43e2-8c2c-4707059e12c1",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov  7 20:22:25 2025",
+ "timestampMillis": "1762575745529",
+ "status": {
+  "cmdId": "8667395a-0aca-45ae-96f8-41d39af2e835",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov  7 20:22:25 2025",
+ "timestampMillis": "1762575745616",
+ "report": {
+  "path": "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt/dft_1024_opt/reports/v++_compile_dft_1024_opt_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov  7 20:22:25 2025",
+ "timestampMillis": "1762575745617",
+ "report": {
+  "path": "/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt/dft_1024_opt/reports/.db/v++_compile_dft_1024_opt_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

@@ -1,0 +1,54 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="directive:1:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=dft" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../dft.cpp:8:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=real_op cyclic factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../dft.cpp:9:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=imag_op cyclic factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../dft.cpp:10:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=real_sample cyclic factor=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../dft.cpp:11:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=imag_sample cyclic factor=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../dft.cpp:15:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1024 max=1024" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../dft.cpp:16:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=2 skip_exit_check" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../dft.cpp:23:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1024 max=1024" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../dft.cpp:24:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=real_op intra direction=RAW true" ARG_PragmaType="dependence" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../dft.cpp:25:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=imag_op intra direction=RAW true" ARG_PragmaType="dependence" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../dft.cpp:26:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=8 skip_exit_check" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="../dft.cpp:6:0" msg_body="Unrolling loop 'OUTER_LOOP' (../dft.cpp:14:5) in function 'dft' partially (and skipping exit check) with a factor of 2">
+        <args Factor="2" LoopLoc="../dft.cpp:14:5" LoopName="OUTER_LOOP"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="../dft.cpp:6:0" msg_body="Unrolling loop 'INNER_LOOP' (../dft.cpp:22:9) in function 'dft' partially (and skipping exit check) with a factor of 8">
+        <args Factor="8" LoopLoc="../dft.cpp:22:9" LoopName="INNER_LOOP"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="../dft.cpp:6:0" msg_body="Applying array_partition to 'real_sample': Cyclic partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Cyclic" UOName="real_sample"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="../dft.cpp:6:0" msg_body="Applying array_partition to 'imag_sample': Cyclic partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Cyclic" UOName="imag_sample"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="../dft.cpp:6:0" msg_body="Applying array_partition to 'real_op': Cyclic partitioning with factor 8 on dimension 1.">
+        <args Dim="1" Factor="8" Mode="Cyclic" UOName="real_op"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="../dft.cpp:6:0" msg_body="Applying array_partition to 'imag_op': Cyclic partitioning with factor 8 on dimension 1.">
+        <args Dim="1" Factor="8" Mode="Cyclic" UOName="imag_op"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

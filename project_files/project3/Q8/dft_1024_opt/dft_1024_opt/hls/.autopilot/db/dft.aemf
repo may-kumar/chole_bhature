@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1762575742419">
+  <ports id="1" name="real_sample_0" type="PortType" coreName="RAM" coreId="4294967295" bitwidth="32" iftype="IfTypeRegister" arraysize="512">
+    <dataOutputObjs>getelementptr</dataOutputObjs>
+  </ports>
+  <ports id="2" name="real_sample_1" type="PortType" coreName="RAM" coreId="4294967295" bitwidth="32" iftype="IfTypeRegister" arraysize="512">
+    <dataOutputObjs>getelementptr</dataOutputObjs>
+  </ports>
+  <ports id="3" name="imag_sample_0" type="PortType" coreName="RAM" coreId="4294967295" bitwidth="32" iftype="IfTypeRegister" arraysize="512">
+    <dataOutputObjs>getelementptr</dataOutputObjs>
+  </ports>
+  <ports id="4" name="imag_sample_1" type="PortType" coreName="RAM" coreId="4294967295" bitwidth="32" iftype="IfTypeRegister" arraysize="512">
+    <dataOutputObjs>getelementptr</dataOutputObjs>
+  </ports>
+  <ports id="5" name="real_op_0" type="PortType" coreName="RAM" coreId="4294967295" bitwidth="32" direction="DirInOut" iftype="IfTypeRegister" arraysize="128">
+    <dataInputObjs>call</dataInputObjs>
+    <dataInputObjs>call</dataInputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="6" name="real_op_1" type="PortType" coreName="RAM" coreId="4294967295" bitwidth="32" direction="DirInOut" iftype="IfTypeRegister" arraysize="128">
+    <dataInputObjs>call</dataInputObjs>
+    <dataInputObjs>call</dataInputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="7" name="real_op_2" type="PortType" coreName="RAM" coreId="4294967295" bitwidth="32" direction="DirInOut" iftype="IfTypeRegister" arraysize="128">
+    <dataInputObjs>call</dataInputObjs>
+    <dataInputObjs>call</dataInputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="8" name="real_op_3" type="PortType" coreName="RAM" coreId="4294967295" bitwidth="32" direction="DirInOut" iftype="IfTypeRegister" arraysize="128">
+    <dataInputObjs>call</dataInputObjs>
+    <dataInputObjs>call</dataInputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="9" name="real_op_4" type="PortType" coreName="RAM" coreId="4294967295" bitwidth="32" direction="DirInOut" iftype="IfTypeRegister" arraysize="128">
+    <dataInputObjs>call</dataInputObjs>
+    <dataInputObjs>call</dataInputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="10" name="real_op_5" type="PortType" coreName="RAM" coreId="4294967295" bitwidth="32" direction="DirInOut" iftype="IfTypeRegister" arraysize="128">
+    <dataInputObjs>call</dataInputObjs>
+    <dataInputObjs>call</dataInputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="11" name="real_op_6" type="PortType" coreName="RAM" coreId="4294967295" bitwidth="32" direction="DirInOut" iftype="IfTypeRegister" arraysize="128">
+    <dataInputObjs>call</dataInputObjs>
+    <dataInputObjs>call</dataInputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="12" name="real_op_7" type="PortType" coreName="RAM" coreId="4294967295" bitwidth="32" direction="DirInOut" iftype="IfTypeRegister" arraysize="128">
+    <dataInputObjs>call</dataInputObjs>
+    <dataInputObjs>call</dataInputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="13" name="imag_op_0" type="PortType" coreName="RAM" coreId="4294967295" bitwidth="32" direction="DirInOut" iftype="IfTypeRegister" arraysize="128">
+    <dataInputObjs>call</dataInputObjs>
+    <dataInputObjs>call</dataInputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="14" name="imag_op_1" type="PortType" coreName="RAM" coreId="4294967295" bitwidth="32" direction="DirInOut" iftype="IfTypeRegister" arraysize="128">
+    <dataInputObjs>call</dataInputObjs>
+    <dataInputObjs>call</dataInputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="15" name="imag_op_2" type="PortType" coreName="RAM" coreId="4294967295" bitwidth="32" direction="DirInOut" iftype="IfTypeRegister" arraysize="128">
+    <dataInputObjs>call</dataInputObjs>
+    <dataInputObjs>call</dataInputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="16" name="imag_op_3" type="PortType" coreName="RAM" coreId="4294967295" bitwidth="32" direction="DirInOut" iftype="IfTypeRegister" arraysize="128">
+    <dataInputObjs>call</dataInputObjs>
+    <dataInputObjs>call</dataInputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="17" name="imag_op_4" type="PortType" coreName="RAM" coreId="4294967295" bitwidth="32" direction="DirInOut" iftype="IfTypeRegister" arraysize="128">
+    <dataInputObjs>call</dataInputObjs>
+    <dataInputObjs>call</dataInputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="18" name="imag_op_5" type="PortType" coreName="RAM" coreId="4294967295" bitwidth="32" direction="DirInOut" iftype="IfTypeRegister" arraysize="128">
+    <dataInputObjs>call</dataInputObjs>
+    <dataInputObjs>call</dataInputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="19" name="imag_op_6" type="PortType" coreName="RAM" coreId="4294967295" bitwidth="32" direction="DirInOut" iftype="IfTypeRegister" arraysize="128">
+    <dataInputObjs>call</dataInputObjs>
+    <dataInputObjs>call</dataInputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="20" name="imag_op_7" type="PortType" coreName="RAM" coreId="4294967295" bitwidth="32" direction="DirInOut" iftype="IfTypeRegister" arraysize="128">
+    <dataInputObjs>call</dataInputObjs>
+    <dataInputObjs>call</dataInputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <edges id="102" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.1"/>
+  <edges id="103" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="104" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.1/@node_objs.0"/>
+  <edges id="107" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.1/@node_objs.1"/>
+  <edges id="110" source_obj="//@blocks.1/@node_objs.1" sink_obj="//@blocks.1/@node_objs.2"/>
+  <edges id="111" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.1/@node_objs.2"/>
+  <edges id="112" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.1/@node_objs.2"/>
+  <edges id="113" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.2/@node_objs.0"/>
+  <edges id="116" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.2/@node_objs.1"/>
+  <edges id="120" source_obj="//@blocks.2/@node_objs.1" sink_obj="//@blocks.2/@node_objs.2"/>
+  <edges id="121" source_obj="//@ports.0" sink_obj="//@blocks.2/@node_objs.3"/>
+  <edges id="124" source_obj="//@blocks.2/@node_objs.2" sink_obj="//@blocks.2/@node_objs.3"/>
+  <edges id="125" source_obj="//@blocks.2/@node_objs.3" sink_obj="//@blocks.2/@node_objs.4"/>
+  <edges id="126" source_obj="//@blocks.2/@node_objs.4" sink_obj="//@blocks.2/@node_objs.5"/>
+  <edges id="127" source_obj="//@ports.2" sink_obj="//@blocks.2/@node_objs.6"/>
+  <edges id="129" source_obj="//@blocks.2/@node_objs.2" sink_obj="//@blocks.2/@node_objs.6"/>
+  <edges id="130" source_obj="//@blocks.2/@node_objs.6" sink_obj="//@blocks.2/@node_objs.7"/>
+  <edges id="131" source_obj="//@blocks.2/@node_objs.7" sink_obj="//@blocks.2/@node_objs.8"/>
+  <edges id="134" source_obj="//@ports.19" sink_obj="//@blocks.2/@node_objs.9"/>
+  <edges id="135" source_obj="//@ports.18" sink_obj="//@blocks.2/@node_objs.9"/>
+  <edges id="136" source_obj="//@ports.17" sink_obj="//@blocks.2/@node_objs.9"/>
+  <edges id="137" source_obj="//@ports.16" sink_obj="//@blocks.2/@node_objs.9"/>
+  <edges id="138" source_obj="//@ports.15" sink_obj="//@blocks.2/@node_objs.9"/>
+  <edges id="139" source_obj="//@ports.14" sink_obj="//@blocks.2/@node_objs.9"/>
+  <edges id="140" source_obj="//@ports.13" sink_obj="//@blocks.2/@node_objs.9"/>
+  <edges id="141" source_obj="//@ports.12" sink_obj="//@blocks.2/@node_objs.9"/>
+  <edges id="142" source_obj="//@ports.11" sink_obj="//@blocks.2/@node_objs.9"/>
+  <edges id="143" source_obj="//@ports.10" sink_obj="//@blocks.2/@node_objs.9"/>
+  <edges id="144" source_obj="//@ports.9" sink_obj="//@blocks.2/@node_objs.9"/>
+  <edges id="145" source_obj="//@ports.8" sink_obj="//@blocks.2/@node_objs.9"/>
+  <edges id="146" source_obj="//@ports.7" sink_obj="//@blocks.2/@node_objs.9"/>
+  <edges id="147" source_obj="//@ports.6" sink_obj="//@blocks.2/@node_objs.9"/>
+  <edges id="148" source_obj="//@ports.5" sink_obj="//@blocks.2/@node_objs.9"/>
+  <edges id="149" source_obj="//@ports.4" sink_obj="//@blocks.2/@node_objs.9"/>
+  <edges id="150" source_obj="//@blocks.2/@node_objs.0" sink_obj="//@blocks.2/@node_objs.9"/>
+  <edges id="151" source_obj="//@blocks.2/@node_objs.5" sink_obj="//@blocks.2/@node_objs.9"/>
+  <edges id="152" source_obj="//@blocks.2/@node_objs.8" sink_obj="//@blocks.2/@node_objs.9"/>
+  <edges id="153" source_obj="//@ports.1" sink_obj="//@blocks.2/@node_objs.10"/>
+  <edges id="155" source_obj="//@blocks.2/@node_objs.2" sink_obj="//@blocks.2/@node_objs.10"/>
+  <edges id="156" source_obj="//@blocks.2/@node_objs.10" sink_obj="//@blocks.2/@node_objs.11"/>
+  <edges id="157" source_obj="//@blocks.2/@node_objs.11" sink_obj="//@blocks.2/@node_objs.12"/>
+  <edges id="158" source_obj="//@ports.3" sink_obj="//@blocks.2/@node_objs.13"/>
+  <edges id="160" source_obj="//@blocks.2/@node_objs.2" sink_obj="//@blocks.2/@node_objs.13"/>
+  <edges id="161" source_obj="//@blocks.2/@node_objs.13" sink_obj="//@blocks.2/@node_objs.14"/>
+  <edges id="162" source_obj="//@blocks.2/@node_objs.14" sink_obj="//@blocks.2/@node_objs.15"/>
+  <edges id="165" source_obj="//@blocks.2/@node_objs.1" sink_obj="//@blocks.2/@node_objs.16"/>
+  <edges id="170" source_obj="//@ports.19" sink_obj="//@blocks.2/@node_objs.17"/>
+  <edges id="171" source_obj="//@ports.18" sink_obj="//@blocks.2/@node_objs.17"/>
+  <edges id="172" source_obj="//@ports.17" sink_obj="//@blocks.2/@node_objs.17"/>
+  <edges id="173" source_obj="//@ports.16" sink_obj="//@blocks.2/@node_objs.17"/>
+  <edges id="174" source_obj="//@ports.15" sink_obj="//@blocks.2/@node_objs.17"/>
+  <edges id="175" source_obj="//@ports.14" sink_obj="//@blocks.2/@node_objs.17"/>
+  <edges id="176" source_obj="//@ports.13" sink_obj="//@blocks.2/@node_objs.17"/>
+  <edges id="177" source_obj="//@ports.12" sink_obj="//@blocks.2/@node_objs.17"/>
+  <edges id="178" source_obj="//@ports.11" sink_obj="//@blocks.2/@node_objs.17"/>
+  <edges id="179" source_obj="//@ports.10" sink_obj="//@blocks.2/@node_objs.17"/>
+  <edges id="180" source_obj="//@ports.9" sink_obj="//@blocks.2/@node_objs.17"/>
+  <edges id="181" source_obj="//@ports.8" sink_obj="//@blocks.2/@node_objs.17"/>
+  <edges id="182" source_obj="//@ports.7" sink_obj="//@blocks.2/@node_objs.17"/>
+  <edges id="183" source_obj="//@ports.6" sink_obj="//@blocks.2/@node_objs.17"/>
+  <edges id="184" source_obj="//@ports.5" sink_obj="//@blocks.2/@node_objs.17"/>
+  <edges id="185" source_obj="//@ports.4" sink_obj="//@blocks.2/@node_objs.17"/>
+  <edges id="186" source_obj="//@blocks.2/@node_objs.16" sink_obj="//@blocks.2/@node_objs.17"/>
+  <edges id="187" source_obj="//@blocks.2/@node_objs.12" sink_obj="//@blocks.2/@node_objs.17"/>
+  <edges id="188" source_obj="//@blocks.2/@node_objs.15" sink_obj="//@blocks.2/@node_objs.17"/>
+  <edges id="189" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.2/@node_objs.18"/>
+  <edges id="192" source_obj="//@blocks.2/@node_objs.18" sink_obj="//@blocks.2/@node_objs.19"/>
+  <edges id="193" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.2/@node_objs.19"/>
+  <edges id="194" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.2/@node_objs.20"/>
+  <edges id="195" sink_obj="//@blocks.2/@node_objs.9"/>
+  <edges id="196" sink_obj="//@blocks.2/@node_objs.9"/>
+  <edges id="197" sink_obj="//@blocks.2/@node_objs.17"/>
+  <edges id="198" sink_obj="//@blocks.2/@node_objs.17"/>
+  <edges id="659" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="660" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.3"/>
+  <edges id="661" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.2"/>
+  <edges id="662" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.1" is_back_edge="1"/>
+  <edges id="663" edge_type="VirtEdge" source_obj="//@blocks.2/@node_objs.9" sink_obj="//@blocks.2/@node_objs.17"/>
+  <edges id="664" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.1/@node_objs.0"/>
+  <edges id="665" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.2/@node_objs.19"/>
+  <edges id="666" edge_type="VirtEdge" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.2/@node_objs.19"/>
+  <edges id="667" edge_type="VirtEdge" source_obj="//@blocks.2/@node_objs.9" sink_obj="//@blocks.2/@node_objs.17"/>
+  <edges id="-134" source_obj="//@blocks.2/@node_objs.9" sink_obj="//@ports.19"/>
+  <edges id="-135" source_obj="//@blocks.2/@node_objs.9" sink_obj="//@ports.18"/>
+  <edges id="-136" source_obj="//@blocks.2/@node_objs.9" sink_obj="//@ports.17"/>
+  <edges id="-137" source_obj="//@blocks.2/@node_objs.9" sink_obj="//@ports.16"/>
+  <edges id="-138" source_obj="//@blocks.2/@node_objs.9" sink_obj="//@ports.15"/>
+  <edges id="-139" source_obj="//@blocks.2/@node_objs.9" sink_obj="//@ports.14"/>
+  <edges id="-140" source_obj="//@blocks.2/@node_objs.9" sink_obj="//@ports.13"/>
+  <edges id="-141" source_obj="//@blocks.2/@node_objs.9" sink_obj="//@ports.12"/>
+  <edges id="-142" source_obj="//@blocks.2/@node_objs.9" sink_obj="//@ports.11"/>
+  <edges id="-143" source_obj="//@blocks.2/@node_objs.9" sink_obj="//@ports.10"/>
+  <edges id="-144" source_obj="//@blocks.2/@node_objs.9" sink_obj="//@ports.9"/>
+  <edges id="-145" source_obj="//@blocks.2/@node_objs.9" sink_obj="//@ports.8"/>
+  <edges id="-146" source_obj="//@blocks.2/@node_objs.9" sink_obj="//@ports.7"/>
+  <edges id="-147" source_obj="//@blocks.2/@node_objs.9" sink_obj="//@ports.6"/>
+  <edges id="-148" source_obj="//@blocks.2/@node_objs.9" sink_obj="//@ports.5"/>
+  <edges id="-149" source_obj="//@blocks.2/@node_objs.9" sink_obj="//@ports.4"/>
+  <edges id="-170" source_obj="//@blocks.2/@node_objs.17" sink_obj="//@ports.19"/>
+  <edges id="-171" source_obj="//@blocks.2/@node_objs.17" sink_obj="//@ports.18"/>
+  <edges id="-172" source_obj="//@blocks.2/@node_objs.17" sink_obj="//@ports.17"/>
+  <edges id="-173" source_obj="//@blocks.2/@node_objs.17" sink_obj="//@ports.16"/>
+  <edges id="-174" source_obj="//@blocks.2/@node_objs.17" sink_obj="//@ports.15"/>
+  <edges id="-175" source_obj="//@blocks.2/@node_objs.17" sink_obj="//@ports.14"/>
+  <edges id="-176" source_obj="//@blocks.2/@node_objs.17" sink_obj="//@ports.13"/>
+  <edges id="-177" source_obj="//@blocks.2/@node_objs.17" sink_obj="//@ports.12"/>
+  <edges id="-178" source_obj="//@blocks.2/@node_objs.17" sink_obj="//@ports.11"/>
+  <edges id="-179" source_obj="//@blocks.2/@node_objs.17" sink_obj="//@ports.10"/>
+  <edges id="-180" source_obj="//@blocks.2/@node_objs.17" sink_obj="//@ports.9"/>
+  <edges id="-181" source_obj="//@blocks.2/@node_objs.17" sink_obj="//@ports.8"/>
+  <edges id="-182" source_obj="//@blocks.2/@node_objs.17" sink_obj="//@ports.7"/>
+  <edges id="-183" source_obj="//@blocks.2/@node_objs.17" sink_obj="//@ports.6"/>
+  <edges id="-184" source_obj="//@blocks.2/@node_objs.17" sink_obj="//@ports.5"/>
+  <edges id="-185" source_obj="//@blocks.2/@node_objs.17" sink_obj="//@ports.4"/>
+  <blocks id="67" name="entry" type="BlockType">
+    <controlOutputObjs>INNER_LOOP</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="23" name="j" lineNumber="14" originalName="j" fileName="../dft.cpp" fileDirectory="../." coreId="4294967295" contextFuncName="dft" bitwidth="11" opcode="alloca" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="14" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="65" name="j_write_ln14" lineNumber="14" fileName="../dft.cpp" fileDirectory="../." rtlName="fsub_32ns_32ns_32_5_full_dsp_1_U188" coreId="4294967295" contextFuncName="dft" opcode="store" m_display="0" m_delay="1.58" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="14" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="66" name="br_ln14" lineNumber="14" fileName="../dft.cpp" fileDirectory="../." rtlName="fadd_32ns_32ns_32_5_full_dsp_1_U189" coreId="4294967295" contextFuncName="dft" opcode="br" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="14" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <controlInputObjs>INNER_LOOP</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="../dft.cpp">
+      <validLinenumbers>14</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="71" name="INNER_LOOP" type="BlockType">
+    <controlInputObjs>entry</controlInputObjs>
+    <controlInputObjs>INNER_LOOP.split</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>for.end23</controlOutputObjs>
+    <controlOutputObjs>INNER_LOOP.split</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="68" name="j_1" lineNumber="14" originalName="j" fileName="../dft.cpp" fileDirectory="../." coreId="4294967295" contextFuncName="dft" bitwidth="11" opcode="load" nodeLabel="1.0" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="14" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataOutputObjs>bitselect</dataOutputObjs>
+      <dataOutputObjs>trunc</dataOutputObjs>
+      <dataOutputObjs>partselect</dataOutputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="69" name="tmp" lineNumber="14" fileName="../dft.cpp" fileDirectory="../." rtlName="tmp_fu_242_p3" coreId="4294967295" contextFuncName="dft" bitwidth="1" opcode="bitselect" nodeLabel="1.0" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="14" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>br</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="70" name="br_ln14" lineNumber="14" fileName="../dft.cpp" fileDirectory="../." rtlName="fadd_32ns_32ns_32_5_full_dsp_1_U204" coreId="4294967295" contextFuncName="dft" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="14" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <dataInputObjs>bitselect</dataInputObjs>
+      <controlInputObjs>INNER_LOOP.split</controlInputObjs>
+      <controlInputObjs>for.end23</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="../dft.cpp">
+      <validLinenumbers>14</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="95" name="INNER_LOOP.split" type="BlockType">
+    <controlInputObjs>INNER_LOOP</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>INNER_LOOP</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="72" name="trunc_ln14" lineNumber="14" fileName="../dft.cpp" fileDirectory="../." rtlName="trunc_ln14_fu_250_p1" coreId="4294967295" contextFuncName="dft" bitwidth="10" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="14" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="75" name="lshr_ln" lineNumber="14" fileName="../dft.cpp" fileDirectory="../." rtlName="lshr_ln_reg_320" coreId="4294967295" contextFuncName="dft" bitwidth="9" opcode="partselect" nodeLabel="1.0" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="14" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>zext</dataOutputObjs>
+      <dataOutputObjs>bitconcatenate</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="76" name="zext_ln14" lineNumber="14" fileName="../dft.cpp" fileDirectory="../." rtlName="fadd_32ns_32ns_32_5_full_dsp_1_U205" coreId="4294967295" contextFuncName="dft" bitwidth="64" opcode="zext" nodeLabel="1.0" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="14" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <dataInputObjs>partselect</dataInputObjs>
+      <dataOutputObjs>getelementptr</dataOutputObjs>
+      <dataOutputObjs>getelementptr</dataOutputObjs>
+      <dataOutputObjs>getelementptr</dataOutputObjs>
+      <dataOutputObjs>getelementptr</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="77" name="real_sample_0_addr" lineNumber="18" fileName="../dft.cpp" fileDirectory="../." coreId="4294967295" contextFuncName="dft" bitwidth="9" opcode="getelementptr" nodeLabel="1.0" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="18" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <dataInputObjs>real_sample_0</dataInputObjs>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="78" name="real_sample_0_load" lineNumber="18" fileName="../dft.cpp" fileDirectory="../." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="81" contextFuncName="dft" bitwidth="32" opcode="load" nodeLabel="1.0" nodeLatency="1" m_display="0" m_delay="3.25" m_topoIndex="11" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="18" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <dataInputObjs>getelementptr</dataInputObjs>
+      <dataOutputObjs>bitcast</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="79" name="rs" lineNumber="18" originalName="rs" fileName="../dft.cpp" fileDirectory="../." rtlName="rs_fu_281_p1" coreId="4294967295" contextFuncName="dft" bitwidth="32" opcode="bitcast" nodeLabel="3.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="18" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="80" name="imag_sample_0_addr" lineNumber="19" fileName="../dft.cpp" fileDirectory="../." coreId="4294967295" contextFuncName="dft" bitwidth="9" opcode="getelementptr" nodeLabel="1.0" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="19" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <dataInputObjs>imag_sample_0</dataInputObjs>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="81" name="imag_sample_0_load" lineNumber="19" fileName="../dft.cpp" fileDirectory="../." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="81" contextFuncName="dft" bitwidth="32" opcode="load" nodeLabel="1.0" nodeLatency="1" m_display="0" m_delay="3.25" m_topoIndex="13" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="19" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <dataInputObjs>getelementptr</dataInputObjs>
+      <dataOutputObjs>bitcast</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="82" name="is" lineNumber="19" originalName="is" fileName="../dft.cpp" fileDirectory="../." rtlName="is_fu_285_p1" coreId="4294967295" contextFuncName="dft" bitwidth="32" opcode="bitcast" nodeLabel="3.0" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="19" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="83" name="_ln14" lineNumber="14" fileName="../dft.cpp" fileDirectory="../." rtlName="grp_dft_Pipeline_INNER_LOOP_fu_148" coreId="4294967295" contextFuncName="dft" opcode="call" nodeLabel="3.0" nodeLatency="1" m_display="0" m_delay="4.52" m_topoIndex="19" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="14" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <dataInputObjs>imag_op_7</dataInputObjs>
+      <dataInputObjs>imag_op_6</dataInputObjs>
+      <dataInputObjs>imag_op_5</dataInputObjs>
+      <dataInputObjs>imag_op_4</dataInputObjs>
+      <dataInputObjs>imag_op_3</dataInputObjs>
+      <dataInputObjs>imag_op_2</dataInputObjs>
+      <dataInputObjs>imag_op_1</dataInputObjs>
+      <dataInputObjs>imag_op_0</dataInputObjs>
+      <dataInputObjs>real_op_7</dataInputObjs>
+      <dataInputObjs>real_op_6</dataInputObjs>
+      <dataInputObjs>real_op_5</dataInputObjs>
+      <dataInputObjs>real_op_4</dataInputObjs>
+      <dataInputObjs>real_op_3</dataInputObjs>
+      <dataInputObjs>real_op_2</dataInputObjs>
+      <dataInputObjs>real_op_1</dataInputObjs>
+      <dataInputObjs>real_op_0</dataInputObjs>
+      <dataInputObjs>trunc</dataInputObjs>
+      <dataInputObjs>bitcast</dataInputObjs>
+      <dataInputObjs>bitcast</dataInputObjs>
+      <dataOutputObjs>imag_op_7</dataOutputObjs>
+      <dataOutputObjs>imag_op_6</dataOutputObjs>
+      <dataOutputObjs>imag_op_5</dataOutputObjs>
+      <dataOutputObjs>imag_op_4</dataOutputObjs>
+      <dataOutputObjs>imag_op_3</dataOutputObjs>
+      <dataOutputObjs>imag_op_2</dataOutputObjs>
+      <dataOutputObjs>imag_op_1</dataOutputObjs>
+      <dataOutputObjs>imag_op_0</dataOutputObjs>
+      <dataOutputObjs>real_op_7</dataOutputObjs>
+      <dataOutputObjs>real_op_6</dataOutputObjs>
+      <dataOutputObjs>real_op_5</dataOutputObjs>
+      <dataOutputObjs>real_op_4</dataOutputObjs>
+      <dataOutputObjs>real_op_3</dataOutputObjs>
+      <dataOutputObjs>real_op_2</dataOutputObjs>
+      <dataOutputObjs>real_op_1</dataOutputObjs>
+      <dataOutputObjs>real_op_0</dataOutputObjs>
+      <constName>dft_Pipeline_INNER_LOOP</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="84" name="real_sample_1_addr" lineNumber="18" fileName="../dft.cpp" fileDirectory="../." coreId="4294967295" contextFuncName="dft" bitwidth="9" opcode="getelementptr" nodeLabel="3.0" m_display="0" m_topoIndex="20" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="18" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <dataInputObjs>real_sample_1</dataInputObjs>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="85" name="real_sample_1_load" lineNumber="18" fileName="../dft.cpp" fileDirectory="../." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="81" contextFuncName="dft" bitwidth="32" opcode="load" nodeLabel="3.0" nodeLatency="1" m_display="0" m_delay="3.25" m_topoIndex="21" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="18" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <dataInputObjs>getelementptr</dataInputObjs>
+      <dataOutputObjs>bitcast</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="86" name="rs_1" lineNumber="18" originalName="rs" fileName="../dft.cpp" fileDirectory="../." rtlName="rs_1_fu_289_p1" coreId="4294967295" contextFuncName="dft" bitwidth="32" opcode="bitcast" nodeLabel="5.0" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="18" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="87" name="imag_sample_1_addr" lineNumber="19" fileName="../dft.cpp" fileDirectory="../." rtlName="fmul_32ns_32ns_32_4_max_dsp_1_U224" coreId="4294967295" contextFuncName="dft" bitwidth="9" opcode="getelementptr" nodeLabel="3.0" m_display="0" m_topoIndex="22" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="19" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <dataInputObjs>imag_sample_1</dataInputObjs>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="88" name="imag_sample_1_load" lineNumber="19" fileName="../dft.cpp" fileDirectory="../." rtlName="fmul_32ns_32ns_32_4_max_dsp_1_U225" coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="81" contextFuncName="dft" bitwidth="32" opcode="load" nodeLabel="3.0" nodeLatency="1" m_display="0" m_delay="3.25" m_topoIndex="23" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="19" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <dataInputObjs>getelementptr</dataInputObjs>
+      <dataOutputObjs>bitcast</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="89" name="is_1" lineNumber="19" originalName="is" fileName="../dft.cpp" fileDirectory="../." rtlName="fmul_32ns_32ns_32_4_max_dsp_1_U226" coreId="4294967295" contextFuncName="dft" bitwidth="32" opcode="bitcast" nodeLabel="5.0" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="19" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="90" name="or_ln29_7" lineNumber="29" fileName="../dft.cpp" fileDirectory="../." rtlName="fmul_32ns_32ns_32_4_max_dsp_1_U227" coreId="4294967295" contextFuncName="dft" bitwidth="10" opcode="bitconcatenate" nodeLabel="5.0" m_display="0" m_topoIndex="26" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="29" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <dataInputObjs>partselect</dataInputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="91" name="_ln29" lineNumber="29" fileName="../dft.cpp" fileDirectory="../." rtlName="fsub_32ns_32ns_32_5_full_dsp_1_U190" coreId="4294967295" contextFuncName="dft" opcode="call" nodeLabel="5.0" nodeLatency="1" m_display="0" m_delay="4.52" m_topoIndex="27" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="29" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <dataInputObjs>imag_op_7</dataInputObjs>
+      <dataInputObjs>imag_op_6</dataInputObjs>
+      <dataInputObjs>imag_op_5</dataInputObjs>
+      <dataInputObjs>imag_op_4</dataInputObjs>
+      <dataInputObjs>imag_op_3</dataInputObjs>
+      <dataInputObjs>imag_op_2</dataInputObjs>
+      <dataInputObjs>imag_op_1</dataInputObjs>
+      <dataInputObjs>imag_op_0</dataInputObjs>
+      <dataInputObjs>real_op_7</dataInputObjs>
+      <dataInputObjs>real_op_6</dataInputObjs>
+      <dataInputObjs>real_op_5</dataInputObjs>
+      <dataInputObjs>real_op_4</dataInputObjs>
+      <dataInputObjs>real_op_3</dataInputObjs>
+      <dataInputObjs>real_op_2</dataInputObjs>
+      <dataInputObjs>real_op_1</dataInputObjs>
+      <dataInputObjs>real_op_0</dataInputObjs>
+      <dataInputObjs>bitconcatenate</dataInputObjs>
+      <dataInputObjs>bitcast</dataInputObjs>
+      <dataInputObjs>bitcast</dataInputObjs>
+      <dataOutputObjs>imag_op_7</dataOutputObjs>
+      <dataOutputObjs>imag_op_6</dataOutputObjs>
+      <dataOutputObjs>imag_op_5</dataOutputObjs>
+      <dataOutputObjs>imag_op_4</dataOutputObjs>
+      <dataOutputObjs>imag_op_3</dataOutputObjs>
+      <dataOutputObjs>imag_op_2</dataOutputObjs>
+      <dataOutputObjs>imag_op_1</dataOutputObjs>
+      <dataOutputObjs>imag_op_0</dataOutputObjs>
+      <dataOutputObjs>real_op_7</dataOutputObjs>
+      <dataOutputObjs>real_op_6</dataOutputObjs>
+      <dataOutputObjs>real_op_5</dataOutputObjs>
+      <dataOutputObjs>real_op_4</dataOutputObjs>
+      <dataOutputObjs>real_op_3</dataOutputObjs>
+      <dataOutputObjs>real_op_2</dataOutputObjs>
+      <dataOutputObjs>real_op_1</dataOutputObjs>
+      <dataOutputObjs>real_op_0</dataOutputObjs>
+      <constName>dft_Pipeline_INNER_LOOP1</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="92" name="add_ln14" lineNumber="14" fileName="../dft.cpp" fileDirectory="../." rtlName="fadd_32ns_32ns_32_5_full_dsp_1_U191" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="dft" bitwidth="11" opcode="add" nodeLabel="1.0" m_display="0" m_delay="1.63" m_topoIndex="14" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="14" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="93" name="j_write_ln14" lineNumber="14" fileName="../dft.cpp" fileDirectory="../." coreId="4294967295" contextFuncName="dft" opcode="store" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="15" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="14" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <dataInputObjs>add</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="94" name="br_ln14" lineNumber="14" fileName="../dft.cpp" fileDirectory="../." coreId="4294967295" contextFuncName="dft" opcode="br" nodeLabel="6.0" m_display="0" m_topoIndex="28" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="14" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+      <controlInputObjs>INNER_LOOP</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="../dft.cpp">
+      <validLinenumbers>14</validLinenumbers>
+      <validLinenumbers>18</validLinenumbers>
+      <validLinenumbers>19</validLinenumbers>
+      <validLinenumbers>29</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="97" name="for.end23" type="BlockType">
+    <controlInputObjs>INNER_LOOP</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="96" name="_ln75" lineNumber="75" fileName="../dft.cpp" fileDirectory="../." rtlName="fadd_32ns_32ns_32_5_full_dsp_1_U206" coreId="4294967295" contextFuncName="dft" opcode="ret" nodeLabel="1.0" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="../dft.cpp" linenumber="75" fileDirectory="/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project3/Q8/dft_1024_opt" functionName="dft"/>
+    </node_objs>
+    <fileValidLineNumbers fileName="../dft.cpp">
+      <validLinenumbers>75</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <ScheduleInfo time="3"/>
+  <ScheduleInfo time="4"/>
+  <ScheduleInfo time="5"/>
+  <ScheduleInfo time="6"/>
+  <regnodes realName="zext_ln14_reg_325">
+    <nodeIds>76</nodeIds>
+  </regnodes>
+  <regnodes realName="j_reg_305">
+    <nodeIds>23</nodeIds>
+  </regnodes>
+  <regnodes realName="lshr_ln_reg_320">
+    <nodeIds>75</nodeIds>
+  </regnodes>
+  <regnodes realName="real_sample_0_load_reg_341">
+    <nodeIds>78</nodeIds>
+  </regnodes>
+  <regnodes realName="real_sample_1_load_reg_371">
+    <nodeIds>85</nodeIds>
+  </regnodes>
+  <regnodes realName="rs_1_reg_381">
+    <nodeIds>86</nodeIds>
+  </regnodes>
+  <regnodes realName="trunc_ln14_reg_315">
+    <nodeIds>72</nodeIds>
+  </regnodes>
+  <regnodes realName="imag_sample_0_load_reg_346">
+    <nodeIds>81</nodeIds>
+  </regnodes>
+  <regnodes realName="is_reg_356">
+    <nodeIds>82</nodeIds>
+  </regnodes>
+  <regnodes realName="imag_sample_1_load_reg_376">
+    <nodeIds>88</nodeIds>
+  </regnodes>
+  <regnodes realName="real_sample_0_addr_reg_331">
+    <nodeIds>77</nodeIds>
+  </regnodes>
+  <regnodes realName="imag_sample_0_addr_reg_336">
+    <nodeIds>80</nodeIds>
+  </regnodes>
+  <regnodes realName="is_1_reg_386">
+    <nodeIds>89</nodeIds>
+  </regnodes>
+  <regnodes realName="imag_sample_1_addr_reg_366">
+    <nodeIds>87</nodeIds>
+  </regnodes>
+  <regnodes realName="real_sample_1_addr_reg_361">
+    <nodeIds>84</nodeIds>
+  </regnodes>
+  <regnodes realName="or_ln29_7_reg_391">
+    <nodeIds>90</nodeIds>
+  </regnodes>
+  <regnodes realName="rs_reg_351">
+    <nodeIds>79</nodeIds>
+  </regnodes>
+  <expressionNodes realName="rs_1_fu_289">
+    <nodeIds>86</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_fu_242">
+    <nodeIds>69</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="real_sample_1_addr_gep_fu_122">
+    <nodeIds>84</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="rs_fu_281">
+    <nodeIds>79</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="imag_sample_1_addr_gep_fu_135">
+    <nodeIds>87</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_ln29_7_fu_297">
+    <nodeIds>90</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="is_fu_285">
+    <nodeIds>82</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="real_sample_0_addr_gep_fu_96">
+    <nodeIds>77</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln14_fu_270">
+    <nodeIds>92</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="j_fu_92">
+    <nodeIds>23</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln14_fu_250">
+    <nodeIds>72</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln14_fu_264">
+    <nodeIds>76</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="is_1_fu_293">
+    <nodeIds>89</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="lshr_ln_fu_254">
+    <nodeIds>75</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="imag_sample_0_addr_gep_fu_109">
+    <nodeIds>80</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="grp_dft_Pipeline_INNER_LOOP_fu_148">
+    <nodeIds>83</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_dft_Pipeline_INNER_LOOP1_fu_191">
+    <nodeIds>91</nodeIds>
+  </moduleNodes>
+  <ioNodes realName="j_1_load_fu_239">
+    <nodeIds>68</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln14_store_fu_276">
+    <nodeIds>93</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln14_store_fu_234">
+    <nodeIds>65</nodeIds>
+  </ioNodes>
+  <memoryPorts dataString="cos_coefficients_table" portID="100">
+    <nodeIds>83</nodeIds>
+    <nodeIds>91</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="imag_sample_0">
+    <nodeIds>81</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="imag_sample_1">
+    <nodeIds>88</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="real_sample_0">
+    <nodeIds>78</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="real_sample_1">
+    <nodeIds>85</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="sin_coefficients_table" portID="100">
+    <nodeIds>83</nodeIds>
+    <nodeIds>91</nodeIds>
+  </memoryPorts>
+  <ioPorts name="imag_sample_0(p0)">
+    <contents name="load">
+      <nodeIds>81</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="imag_sample_1(p0)">
+    <contents name="load">
+      <nodeIds>88</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="real_sample_0(p0)">
+    <contents name="load">
+      <nodeIds>78</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="real_sample_1(p0)">
+    <contents name="load">
+      <nodeIds>85</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="26" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="28" stage="1" latency="1"/>
+      <operations id="29" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="1"/>
+      <operations id="31" stage="1" latency="1"/>
+      <operations id="32" stage="1" latency="1"/>
+      <operations id="33" stage="1" latency="1"/>
+      <operations id="34" stage="1" latency="1"/>
+      <operations id="35" stage="1" latency="1"/>
+      <operations id="36" stage="1" latency="1"/>
+      <operations id="37" stage="1" latency="1"/>
+      <operations id="38" stage="1" latency="1"/>
+      <operations id="39" stage="1" latency="1"/>
+      <operations id="40" stage="1" latency="1"/>
+      <operations id="41" stage="1" latency="1"/>
+      <operations id="42" stage="1" latency="1"/>
+      <operations id="43" stage="1" latency="1"/>
+      <operations id="44" stage="1" latency="1"/>
+      <operations id="45" stage="1" latency="1"/>
+      <operations id="46" stage="1" latency="1"/>
+      <operations id="47" stage="1" latency="1"/>
+      <operations id="48" stage="1" latency="1"/>
+      <operations id="49" stage="1" latency="1"/>
+      <operations id="50" stage="1" latency="1"/>
+      <operations id="51" stage="1" latency="1"/>
+      <operations id="52" stage="1" latency="1"/>
+      <operations id="53" stage="1" latency="1"/>
+      <operations id="54" stage="1" latency="1"/>
+      <operations id="55" stage="1" latency="1"/>
+      <operations id="56" stage="1" latency="1"/>
+      <operations id="57" stage="1" latency="1"/>
+      <operations id="58" stage="1" latency="1"/>
+      <operations id="59" stage="1" latency="1"/>
+      <operations id="60" stage="1" latency="1"/>
+      <operations id="61" stage="1" latency="1"/>
+      <operations id="62" stage="1" latency="1"/>
+      <operations id="63" stage="1" latency="1"/>
+      <operations id="64" stage="1" latency="1"/>
+      <operations id="65" stage="1" latency="1"/>
+      <operations id="66" stage="1" latency="1"/>
+    </states>
+    <states id="2">
+      <operations id="68" stage="1" latency="1"/>
+      <operations id="69" stage="1" latency="1"/>
+      <operations id="70" stage="1" latency="1"/>
+      <operations id="72" stage="1" latency="1"/>
+      <operations id="75" stage="1" latency="1"/>
+      <operations id="76" stage="1" latency="1"/>
+      <operations id="77" stage="1" latency="1"/>
+      <operations id="78" stage="2" latency="2"/>
+      <operations id="80" stage="1" latency="1"/>
+      <operations id="81" stage="2" latency="2"/>
+      <operations id="92" stage="1" latency="1"/>
+      <operations id="93" stage="1" latency="1"/>
+      <operations id="96" stage="1" latency="1"/>
+    </states>
+    <states id="3">
+      <operations id="78" stage="1" latency="2"/>
+      <operations id="81" stage="1" latency="2"/>
+    </states>
+    <states id="4">
+      <operations id="79" stage="1" latency="1"/>
+      <operations id="82" stage="1" latency="1"/>
+      <operations id="83" stage="2" latency="2"/>
+      <operations id="84" stage="1" latency="1"/>
+      <operations id="85" stage="2" latency="2"/>
+      <operations id="87" stage="1" latency="1"/>
+      <operations id="88" stage="2" latency="2"/>
+    </states>
+    <states id="5">
+      <operations id="83" stage="1" latency="2"/>
+      <operations id="85" stage="1" latency="2"/>
+      <operations id="88" stage="1" latency="2"/>
+    </states>
+    <states id="6">
+      <operations id="86" stage="1" latency="1"/>
+      <operations id="89" stage="1" latency="1"/>
+      <operations id="90" stage="1" latency="1"/>
+      <operations id="91" stage="2" latency="2"/>
+    </states>
+    <states id="7">
+      <operations id="73" stage="1" latency="1"/>
+      <operations id="74" stage="1" latency="1"/>
+      <operations id="91" stage="1" latency="2"/>
+      <operations id="94" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="3">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="3" outState="4">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="4" outState="5">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="5" outState="6">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="6" outState="7">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="7" outState="2">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="dft" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="152577" mMaxLatency="152577">
+      <subRegions>2</subRegions>
+      <subRegions>3</subRegions>
+      <subRegions>4</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>67</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="3" mTag="OUTER_LOOP" mII="-1" mDepth="-1" mMinTripCount="512" mMaxTripCount="512" mMinLatency="152576" mMaxLatency="152576" mType="1">
+      <basicBlocks>71</basicBlocks>
+      <basicBlocks>95</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="4" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>97</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>
