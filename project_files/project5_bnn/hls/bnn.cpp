@@ -1,6 +1,15 @@
 #include "bnn.h"
 
 
+uint32_t compute_popcount(uint64_t data) {
+#pragma HLS INLINE
+    // Vitis HLS maps this directly to optimal LUT logic
+    return __builtin_popcountll(data); 
+// __builtin_popcount(x): For int (usually 32-bit).
+// __builtin_popcountl(x): For long.
+// __builtin_popcountll(x): For long long (64-bit).
+}
+
 
 
 void bnn(DTYPE IN[SIZE], ITYPE ys[10])

@@ -393,6 +393,113 @@ class BNN_MNIST:
         # print(score)
         return score
 
+    def generate_golden_header(self, num_samples=None):
+            mnist = np.load("dataset/mnist_test_data_original.npy", allow_pickle=True)
+            X_all = mnist.item().get("data")
+            X_all = np.reshape(X_all, (10000, 784))
+
+            if num_samples is None:
+                limit = len(X_all) 
+            else:
+                limit = num_samples
+
+            cpp_inputs = []
+            cpp_l1_outputs = []
+            cpp_l2_outputs = []
+            cpp_final_outputs = []
+
+            for i in range(limit):
+                if (i+1) % 100 == 0:
+                    print(f"Processed {i} samples")
+                x_sample = X_all[i:i+1]
+                x_bin = self.sign(self.adj(x_sample))
+                
+                x_padded = np.array([list(arr) + [1] * 16 for arr in x_bin]) 
+                x_packed = self.pack(x_padded, 800) 
+                cpp_inputs.append(x_packed)
+
+                l1_mult = self.matmul_xnor(self.quantize(x_bin), self.fc1w_qntz.T)
+                l1_act = (l1_mult * 2 - 784) 
+                l1_bin = self.sign(l1_act) 
+                l1_packed = self.pack(l1_bin, 128)
+                cpp_l1_outputs.append(l1_packed)
+
+                l2_mult = self.matmul_xnor(self.quantize(l1_bin), self.fc2w_qntz.T)
+                l2_act = (l2_mult * 2 - 128)
+                l2_bin = self.sign(l2_act) 
+                l2_packed = self.pack(l2_bin, 64)
+                cpp_l2_outputs.append(l2_packed)
+
+                l3_mult = self.matmul_xnor(self.quantize(l2_bin), self.fc3w_qntz.T)
+                l3_final = (l3_mult * 2 - 64) 
+                cpp_final_outputs.append(l3_final.astype(int))
+
+            w1_padded = np.array([list(arr) + [1] * 16 for arr in self.fc1w_q]) 
+            w1_packed = self.pack(w1_padded, w1_padded.shape[0] * w1_padded.shape[1])
+
+            w2_packed = self.pack(self.fc2w_q, self.fc2w_q.shape[0] * self.fc2w_q.shape[1])
+            w3_packed = self.pack(self.fc3w_q, self.fc3w_q.shape[0] * self.fc3w_q.shape[1])
+
+            with open("../hls/golden.h", "w") as f:
+                f.write("#ifndef GOLDEN_H\n#define GOLDEN_H\n\n")
+                f.write("#include <cstdint>\n\n")
+
+                f.write(f"const int NUM_SAMPLES = {limit};\n")
+                f.write("#define INPUT_BITS 784\n")
+                f.write("#define INPUT_PACKED_WIDTH 25\n\n")
+
+                f.write("#define L1_NEURONS 128\n")
+                f.write("#define L1_OUT_BITS 128\n")
+                f.write("#define L1_OUT_PACKED 4\n")
+                f.write(f"#define W1_SIZE {len(w1_packed)}\n\n")
+
+                f.write("#define L2_NEURONS 64\n")
+                f.write("#define L2_OUT_BITS 64\n")
+                f.write("#define L2_OUT_PACKED 2\n")
+                f.write(f"#define W2_SIZE {len(w2_packed)}\n\n")
+
+                f.write("#define L3_NEURONS 10\n")
+                f.write("#define L3_OUT_BITS 10\n")
+                f.write(f"#define W3_SIZE {len(w3_packed)}\n\n")
+
+                def write_2d_array(name, data_list, dim1_name, dim2_name):
+                    f.write(f"const int32_t {name}[{dim1_name}][{dim2_name}] = {{\n")
+                    for row_idx, row in enumerate(data_list):
+                        f.write("    {")
+                        for col_idx, val in enumerate(row):
+                            f.write(f"0x{val:08X}")
+                            if col_idx < len(row) - 1: f.write(", ")
+                        f.write("}")
+                        if row_idx < len(data_list) - 1: f.write(",\n")
+                    f.write("\n};\n\n")
+
+                def write_1d_array(name, data, dim_name):
+                    f.write(f"const int32_t {name}[{dim_name}] = {{\n    ")
+                    for i, val in enumerate(data):
+                        f.write(f"0x{val:08X}")
+                        if i < len(data) - 1: f.write(", ")
+                        if (i + 1) % 8 == 0: f.write("\n    ")
+                    f.write("\n};\n\n")
+
+                write_2d_array("TEST_INPUTS", cpp_inputs, "NUM_SAMPLES", "INPUT_PACKED_WIDTH")
+                write_1d_array("WEIGHTS_L1", w1_packed, "W1_SIZE")
+                write_1d_array("WEIGHTS_L2", w2_packed, "W2_SIZE")
+                write_1d_array("WEIGHTS_L3", w3_packed, "W3_SIZE")
+                write_2d_array("GOLDEN_L1_OUT", cpp_l1_outputs, "NUM_SAMPLES", "L1_OUT_PACKED")
+                write_2d_array("GOLDEN_L2_OUT", cpp_l2_outputs, "NUM_SAMPLES", "L2_OUT_PACKED")
+
+                f.write(f"const int32_t GOLDEN_FINAL_SCORES[NUM_SAMPLES][L3_NEURONS] = {{\n")
+                for row_idx, row in enumerate(cpp_final_outputs):
+                    f.write("    {")
+                    for col_idx, val in enumerate(row):
+                        f.write(f"{val}") 
+                        if col_idx < len(row) - 1: f.write(", ")
+                    f.write("}")
+                    if row_idx < len(cpp_final_outputs) - 1: f.write(",\n")
+                f.write("\n};\n\n")
+
+                f.write("#endif\n")
+
 
 if __name__ == "__main__":
     run_option = 3
