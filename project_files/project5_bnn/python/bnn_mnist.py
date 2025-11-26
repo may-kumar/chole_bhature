@@ -434,7 +434,7 @@ class BNN_MNIST:
                 l3_final = (l3_mult * 2 - 64) 
                 cpp_final_outputs.append(l3_final.astype(int))
 
-            w1_padded = np.array([list(arr) + [1] * 16 for arr in self.fc1w_q]) 
+            w1_padded = np.array([list(arr) + [1, -1] * 8 for arr in self.fc1w_q]) 
             w1_packed = self.pack(w1_padded, w1_padded.shape[0] * w1_padded.shape[1])
 
             w2_packed = self.pack(self.fc2w_q, self.fc2w_q.shape[0] * self.fc2w_q.shape[1])
@@ -463,7 +463,7 @@ class BNN_MNIST:
                 f.write(f"#define W3_SIZE {len(w3_packed)}\n\n")
 
                 def write_2d_array(name, data_list, dim1_name, dim2_name):
-                    f.write(f"const int32_t {name}[{dim1_name}][{dim2_name}] = {{\n")
+                    f.write(f"const uint32_t {name}[{dim1_name}][{dim2_name}] = {{\n")
                     for row_idx, row in enumerate(data_list):
                         f.write("    {")
                         for col_idx, val in enumerate(row):
@@ -474,7 +474,7 @@ class BNN_MNIST:
                     f.write("\n};\n\n")
 
                 def write_1d_array(name, data, dim_name):
-                    f.write(f"const int32_t {name}[{dim_name}] = {{\n    ")
+                    f.write(f"const uint32_t {name}[{dim_name}] = {{\n    ")
                     for i, val in enumerate(data):
                         f.write(f"0x{val:08X}")
                         if i < len(data) - 1: f.write(", ")
