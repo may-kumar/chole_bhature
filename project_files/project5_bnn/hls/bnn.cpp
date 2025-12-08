@@ -15,23 +15,7 @@ static ap_int<7> xnor_popcount(ap_uint<32> a, ap_uint<32> b) {
     return matches;
 }
 
-void read_input(const uint32_t *in_mem, hls::stream<uint32_t> &out_stream) {
-    READ_LOOP: 
-    for (uint32_t i = 0; i < INPUT_PACKED_WIDTH; i++) {
-        #pragma HLS PIPELINE II=1
-        out_stream.write(in_mem[i]);
-    }
-}
-
-void write_output(hls::stream<int32_t> &in_stream, int32_t *out_mem) {
-    WRITE_LOOP: 
-    for (uint32_t i = 0; i < 10; i++) {
-        #pragma HLS PIPELINE II=1
-        out_mem[i] = in_stream.read();
-    }
-}
-
-void compute_L1(hls::stream<uint32_t> &in, hls::stream<uint32_t> &out) {
+void compute_L1(hls::stream<transPkt> &in, hls::stream<uint32_t> &out) {
     #pragma HLS ARRAY_PARTITION variable=WEIGHTS_L1 dim=1 cyclic factor=2
     
     uint32_t local_in[INPUT_PACKED_WIDTH];
@@ -40,7 +24,8 @@ void compute_L1(hls::stream<uint32_t> &in, hls::stream<uint32_t> &out) {
     LOAD_L1: 
     for(uint32_t i=0; i<INPUT_PACKED_WIDTH; i++) {
         #pragma HLS PIPELINE II=1
-        local_in[i] = in.read();
+        transPkt pkt = in.read();
+        local_in[i] = pkt.data;
     }
     
     uint32_t current_word = 0;
@@ -117,7 +102,7 @@ void compute_L2(hls::stream<uint32_t> &in, hls::stream<uint32_t> &out) {
     out.write(word2);
 }
 
-void compute_L3(hls::stream<uint32_t> &in, hls::stream<int32_t> &out) {
+void compute_L3(hls::stream<uint32_t> &in, hls::stream<transPktOut> &out) {
     #pragma HLS ARRAY_PARTITION variable=WEIGHTS_L3 complete
 
     uint32_t local_in[L2_OUT_PACKED];
@@ -138,26 +123,31 @@ void compute_L3(hls::stream<uint32_t> &in, hls::stream<int32_t> &out) {
             #pragma HLS UNROLL skip_exit_check
             acc += xnor_popcount(local_in[k], WEIGHTS_L3[n*L2_OUT_PACKED + k]);
         }
-        out.write(acc);
+        
+        transPktOut packet;
+        packet.data = acc;
+        packet.keep = -1;
+        packet.strb = -1;
+        packet.last = (n == L3_NEURONS - 1) ? 1 : 0;
+        out.write(packet);
     }
 }
 
-void bnn(const uint32_t input[SIZE], int32_t ys[10]) {
-    hls::stream<uint32_t> in_stream("in_stream");
+// void bnn(const uint32_t input[SIZE], int32_t ys[10]) {
+void bnn(hls::stream<transPkt> &in, hls::stream<transPktOut> &out) {
+    #pragma HLS INTERFACE mode=axis port=in
+    #pragma HLS INTERFACE mode=axis port=out
+    #pragma HLS INTERFACE mode=s_axilite port=return
+
     hls::stream<uint32_t> l1_to_l2("l1_to_l2");
     hls::stream<uint32_t> l2_to_l3("l2_to_l3");
-    hls::stream<int32_t>  out_stream("out_stream");
 
-    #pragma HLS STREAM variable=in_stream depth=25
     #pragma HLS STREAM variable=l1_to_l2  depth=4
     #pragma HLS STREAM variable=l2_to_l3  depth=2
-    #pragma HLS STREAM variable=out_stream depth=10
 
     #pragma HLS DATAFLOW
     
-    read_input(input, in_stream);
-    compute_L1(in_stream, l1_to_l2);
+    compute_L1(in, l1_to_l2);
     compute_L2(l1_to_l2, l2_to_l3);
-    compute_L3(l2_to_l3, out_stream);
-    write_output(out_stream, ys);
+    compute_L3(l2_to_l3, out);
 }
