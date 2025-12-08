@@ -26,22 +26,19 @@ void read_input(const uint32_t *in_mem, hls::stream<uint32_t> &out);
 
 void compute_L1(
     hls::stream<uint32_t> &in, 
-    hls::stream<uint32_t> &out,
-    const uint32_t *weights
+    hls::stream<uint32_t> &out
 );
 
 void compute_L2(
     hls::stream<uint32_t> &in, 
-    hls::stream<uint32_t> &out,
-    const uint32_t *weights
+    hls::stream<uint32_t> &out
 );
 
 void compute_L3(
     hls::stream<uint32_t> &in, 
-    hls::stream<uint32_t> &out,
-    const uint32_t *weights
+    hls::stream<int32_t> &out
 );
 
-void write_output(hls::stream<uint32_t> &in, int32_t *out_mem);
+void write_output(hls::stream<int32_t> &in_stream, int32_t *out_mem);
 
 #endif
