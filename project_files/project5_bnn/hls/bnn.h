@@ -13,8 +13,6 @@ using namespace std;
 typedef hls::axis<uint32_t, 0, 0, 0> transPkt;
 typedef hls::axis<int32_t, 0, 0, 0> transPktOut;
 
-const int SIZE = INPUT_PACKED_WIDTH;
-
 void bnn(hls::stream<transPkt> &in, hls::stream<transPktOut> &out);
 
 void compute_L1(hls::stream<transPkt> &in, hls::stream<uint32_t> &out);
