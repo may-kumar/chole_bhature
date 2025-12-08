@@ -36,15 +36,16 @@ void compute_L1(
     #pragma HLS INLINE off
     const int NEURONS = L1_NEURONS;
     const int IN_W = INPUT_PACKED_WIDTH;
-    const int PE = 8;
+    const int PE = 16;
 
     static uint32_t w_mem[NEURONS][IN_W];
-    #pragma HLS ARRAY_PARTITION variable=w_mem dim=1 factor=PE cyclic
-
-    static bool loaded = false;
+	#pragma HLS ARRAY_PARTITION variable=w_mem dim=1 factor=PE cyclic
+    
+	static bool loaded = false;
     if (!loaded) {
         for(int i=0; i<NEURONS; i++) {
-            for(int j=0; j<IN_W; j++) w_mem[i][j] = weights[i*IN_W+j];
+            #pragma HLS PIPELINE II=1
+			for(int j=0; j<IN_W; j++) w_mem[i][j] = weights[i*IN_W+j];
         }
         loaded = true;
     }
@@ -60,16 +61,29 @@ void compute_L1(
     int32_t raw[NEURONS];
     #pragma HLS ARRAY_PARTITION variable=raw dim=1 factor=PE cyclic
 
-    L1_COMPUTE: for(int n=0; n<NEURONS; n++) {
-        #pragma HLS PIPELINE II=1
-        #pragma HLS UNROLL factor=PE
+    L1_COMPUTE: for(int n=0; n<NEURONS; n += PE) {
         
-        int32_t acc = 0;
+        int32_t acc[PE];
+		#pragma HLS ARRAY_PARTITION variable=acc complete
+        for(int z=0; z<PE; z++) acc[z] = 0;
+
         for(int k=0; k<IN_W; k++) {
-            #pragma HLS UNROLL
-            acc += xnor_popcount(local_in[k], w_mem[n][k]);
+        	#pragma HLS PIPELINE II=1
+			for(int p=0; p<PE; p++) {
+    	        #pragma HLS UNROLL
+				int idx = n+p;
+				if (idx < NEURONS) {
+	        	    acc[p] += xnor_popcount(local_in[k], w_mem[idx][k]);
+				}
+			}
         }
-        raw[n] = acc;
+        // Write results to raw array
+        for(int p=0; p<PE; p++) {
+    	    #pragma HLS UNROLL
+        	if (n + p < NEURONS) {
+				raw[n + p] = acc[p];
+			}
+        }
     }
 
     uint32_t cur = 0;
@@ -94,14 +108,15 @@ void compute_L2(
     #pragma HLS INLINE off
     const int NEURONS = L2_NEURONS;
     const int IN_W = L1_OUT_PACKED;
-    const int PE = 4;
+    const int PE = 2;
 
     static uint32_t w_mem[NEURONS][IN_W];
-    #pragma HLS ARRAY_PARTITION variable=w_mem dim=1 factor=PE cyclic
+	#pragma HLS ARRAY_PARTITION variable=w_mem dim=1 factor=PE cyclic
 
     static bool loaded = false;
     if (!loaded) {
         for(int i=0; i<NEURONS; i++) {
+			#pragma HLS PIPELINE II=1
             for(int j=0; j<IN_W; j++) w_mem[i][j] = weights[i*IN_W+j];
         }
         loaded = true;
@@ -118,16 +133,30 @@ void compute_L2(
     int32_t raw[NEURONS];
     #pragma HLS ARRAY_PARTITION variable=raw dim=1 factor=PE cyclic
 
-    L2_COMPUTE: for(int n=0; n<NEURONS; n++) {
-        #pragma HLS PIPELINE II=1
-        #pragma HLS UNROLL factor=PE
-        
-        int32_t acc = 0;
+    L2_COMPUTE: for(int n=0; n<NEURONS; n += PE) {
+
+        int32_t acc[PE];
+        #pragma HLS ARRAY_PARTITION variable=acc complete
+        for(int z=0; z<PE; z++) acc[z] = 0;
+
         for(int k=0; k<IN_W; k++) {
+            #pragma HLS PIPELINE II=1
+            for(int p=0; p<PE; p++) {
+                #pragma HLS UNROLL
+                int idx = n+p; 
+                if (idx < NEURONS) {
+                    acc[p] += xnor_popcount(local_in[k], w_mem[idx][k]);
+                }   
+            }   
+        } 
+
+        // Write results to raw array
+        for(int p=0; p<PE; p++) {
             #pragma HLS UNROLL
-            acc += xnor_popcount(local_in[k], w_mem[n][k]);
+            if (n + p < NEURONS) {
+                raw[n + p] = acc[p];
+            }
         }
-        raw[n] = acc;
     }
 
     uint32_t cur = 0;
@@ -154,11 +183,12 @@ void compute_L3(
     const int IN_W = 2;
 
     static uint32_t w_mem[NEURONS][IN_W];
-    #pragma HLS ARRAY_PARTITION variable=w_mem dim=2 complete 
+	//Removing array partitioning to save resources as L3 is not the bottleneck
 
     static bool loaded = false;
     if (!loaded) {
         for(int i=0; i<NEURONS; i++) {
+			#pragma HLS PIPELINE II=1
             for(int j=0; j<IN_W; j++) w_mem[i][j] = weights[i*IN_W+j];
         }
         loaded = true;
@@ -175,11 +205,10 @@ void compute_L3(
     int32_t raw[NEURONS];
 
     L3_COMPUTE: for(int n=0; n<NEURONS; n++) {
-        #pragma HLS PIPELINE II=1
-        
+		//Removing pipelining to save resources as L3 is not the bottleneck
         int32_t acc = 0;
         for(int k=0; k<IN_W; k++) {
-            #pragma HLS UNROLL
+			//Removing loop unrolling to save resources as L3 is not the bottleneck
             acc += xnor_popcount(local_in[k], w_mem[n][k]);
         }
         raw[n] = acc;
@@ -193,6 +222,15 @@ void compute_L3(
 
 
 void bnn(const uint32_t input[SIZE], int32_t ys[10]) {
+	// Define AXI Master interfaces for memory access (DDR)
+    #pragma HLS INTERFACE m_axi port=input bundle=gmem0 offset=slave depth=25
+    #pragma HLS INTERFACE m_axi port=ys    bundle=gmem1 offset=slave depth=10
+    
+    // Define AXI Lite interface for the control block (Start/Stop/Done signals)
+    #pragma HLS INTERFACE s_axilite port=input bundle=control
+    #pragma HLS INTERFACE s_axilite port=ys    bundle=control
+    #pragma HLS INTERFACE s_axilite port=return bundle=control
+
     hls::stream<uint32_t> in_stream("input_stream");
     hls::stream<uint32_t> l1_to_l2("l1_to_l2");
     hls::stream<uint32_t> l2_to_l3("l2_to_l3");
