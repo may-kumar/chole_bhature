@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'bnn'
 ================================================================
-* Date:           Thu Dec  4 13:43:55 2025
+* Date:           Mon Dec  8 22:57:06 2025
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        bnn.comp
@@ -20,30 +20,28 @@
     +--------+----------+----------+------------+
     |  Clock |  Target  | Estimated| Uncertainty|
     +--------+----------+----------+------------+
-    |ap_clk  |  10.00 ns|  7.162 ns|     2.70 ns|
+    |ap_clk  |  10.00 ns|  7.082 ns|     2.70 ns|
     +--------+----------+----------+------------+
 
 + Latency: 
     * Summary: 
-    +---------+---------+----------+-----------+-----+------+----------+
-    |  Latency (cycles) |  Latency (absolute)  |  Interval  | Pipeline |
-    |   min   |   max   |    min   |    max    | min |  max |   Type   |
-    +---------+---------+----------+-----------+-----+------+----------+
-    |      200|     3406|  2.000 us|  34.060 us|  201|  3407|  dataflow|
-    +---------+---------+----------+-----------+-----+------+----------+
+    +---------+---------+----------+----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max   | min | max |   Type   |
+    +---------+---------+----------+----------+-----+-----+----------+
+    |      154|      154|  1.540 us|  1.540 us|  142|  142|  dataflow|
+    +---------+---------+----------+----------+-----+-----+----------+
 
     + Detail: 
         * Instance: 
-        +-----------------+--------------+---------+---------+----------+-----------+-----+------+------------------------------------------------+
-        |                 |              |  Latency (cycles) |  Latency (absolute)  |  Interval  |                    Pipeline                    |
-        |     Instance    |    Module    |   min   |   max   |    min   |    max    | min |  max |                      Type                      |
-        +-----------------+--------------+---------+---------+----------+-----------+-----+------+------------------------------------------------+
-        |read_input_U0    |read_input    |       27|       27|  0.270 us|   0.270 us|   25|    25|  loop auto-rewind stp (delay=0 clock cycles(s))|
-        |compute_L1_U0    |compute_L1    |      200|     3406|  2.000 us|  34.060 us|  200|  3406|                                              no|
-        |compute_L2_U0    |compute_L2    |      104|      364|  1.040 us|   3.640 us|  104|   364|                                              no|
-        |compute_L3_U0    |compute_L3    |       39|       61|  0.390 us|   0.610 us|   39|    61|                                              no|
-        |write_output_U0  |write_output  |       11|       11|  0.110 us|   0.110 us|   10|    10|  loop auto-rewind stp (delay=0 clock cycles(s))|
-        +-----------------+--------------+---------+---------+----------+-----------+-----+------+------------------------------------------------+
+        +---------------+------------+---------+---------+----------+----------+-----+-----+---------+
+        |               |            |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+        |    Instance   |   Module   |   min   |   max   |    min   |    max   | min | max |   Type  |
+        +---------------+------------+---------+---------+----------+----------+-----+-----+---------+
+        |compute_L1_U0  |compute_L1  |      106|      106|  1.060 us|  1.060 us|  106|  106|       no|
+        |compute_L2_U0  |compute_L2  |      141|      141|  1.410 us|  1.410 us|  141|  141|       no|
+        |compute_L3_U0  |compute_L3  |       42|       42|  0.420 us|  0.420 us|   42|   42|       no|
+        +---------------+------------+---------+---------+----------+----------+-----+-----+---------+
 
         * Loop: 
         N/A
@@ -54,37 +52,36 @@
 == Utilization Estimates
 ================================================================
 * Summary: 
-+-----------------+---------+-----+--------+--------+-----+
-|       Name      | BRAM_18K| DSP |   FF   |   LUT  | URAM|
-+-----------------+---------+-----+--------+--------+-----+
-|DSP              |        -|    -|       -|       -|    -|
-|Expression       |        -|    -|       0|       2|    -|
-|FIFO             |        -|    -|     396|     280|    -|
-|Instance         |        9|    1|   39395|  210482|    0|
-|Memory           |        -|    -|       -|       -|    -|
-|Multiplexer      |        -|    -|       -|       -|    -|
-|Register         |        -|    -|       -|       -|    -|
-+-----------------+---------+-----+--------+--------+-----+
-|Total            |        9|    1|   39791|  210764|    0|
-+-----------------+---------+-----+--------+--------+-----+
-|Available        |      280|  220|  106400|   53200|    0|
-+-----------------+---------+-----+--------+--------+-----+
-|Utilization (%)  |        3|   ~0|      37|     396|    0|
-+-----------------+---------+-----+--------+--------+-----+
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|      2|    -|
+|FIFO             |        -|    -|     198|    136|    -|
+|Instance         |      106|    0|   14583|  26907|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|      -|    -|
+|Register         |        -|    -|       -|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |      106|    0|   14781|  27045|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |       37|    0|      13|     50|    0|
++-----------------+---------+-----+--------+-------+-----+
 
 + Detail: 
     * Instance: 
-    +-----------------+--------------+---------+----+-------+--------+-----+
-    |     Instance    |    Module    | BRAM_18K| DSP|   FF  |   LUT  | URAM|
-    +-----------------+--------------+---------+----+-------+--------+-----+
-    |compute_L1_U0    |compute_L1    |        8|   1|  32569|  191050|    0|
-    |compute_L2_U0    |compute_L2    |        1|   0|   5216|   16821|    0|
-    |compute_L3_U0    |compute_L3    |        0|   0|   1594|    2461|    0|
-    |read_input_U0    |read_input    |        0|   0|     10|      86|    0|
-    |write_output_U0  |write_output  |        0|   0|      6|      64|    0|
-    +-----------------+--------------+---------+----+-------+--------+-----+
-    |Total            |              |        9|   1|  39395|  210482|    0|
-    +-----------------+--------------+---------+----+-------+--------+-----+
+    +-----------------+---------------+---------+----+-------+-------+-----+
+    |     Instance    |     Module    | BRAM_18K| DSP|   FF  |  LUT  | URAM|
+    +-----------------+---------------+---------+----+-------+-------+-----+
+    |compute_L1_U0    |compute_L1     |      104|   0|  12688|  23040|    0|
+    |compute_L2_U0    |compute_L2     |        2|   0|   1265|   2808|    0|
+    |compute_L3_U0    |compute_L3     |        0|   0|    594|   1019|    0|
+    |control_s_axi_U  |control_s_axi  |        0|   0|     36|     40|    0|
+    +-----------------+---------------+---------+----+-------+-------+-----+
+    |Total            |               |      106|   0|  14583|  26907|    0|
+    +-----------------+---------------+---------+----+-------+-------+-----+
 
     * DSP: 
     N/A
@@ -93,16 +90,14 @@
     N/A
 
     * FIFO: 
-    +--------------+---------+----+----+-----+------+-----+---------+
-    |     Name     | BRAM_18K| FF | LUT| URAM| Depth| Bits| Size:D*B|
-    +--------------+---------+----+----+-----+------+-----+---------+
-    |in_stream_U   |        0|  99|   0|    -|    25|   32|      800|
-    |l1_to_l2_U    |        0|  99|   0|    -|     4|   32|      128|
-    |l2_to_l3_U    |        0|  99|   0|    -|     2|   32|       64|
-    |out_stream_U  |        0|  99|   0|    -|    10|   32|      320|
-    +--------------+---------+----+----+-----+------+-----+---------+
-    |Total         |        0| 396|   0|    0|    41|  128|     1312|
-    +--------------+---------+----+----+-----+------+-----+---------+
+    +------------+---------+----+----+-----+------+-----+---------+
+    |    Name    | BRAM_18K| FF | LUT| URAM| Depth| Bits| Size:D*B|
+    +------------+---------+----+----+-----+------+-----+---------+
+    |l1_to_l2_U  |        0|  99|   0|    -|     4|   32|      128|
+    |l2_to_l3_U  |        0|  99|   0|    -|     2|   32|       64|
+    +------------+---------+----+----+-----+------+-----+---------+
+    |Total       |        0| 198|   0|    0|     6|   64|      192|
+    +------------+---------+----+----+-----+------+-----+---------+
 
     * Expression: 
     +--------------+----------+----+---+----+------------+------------+
@@ -125,34 +120,40 @@
 == Interface
 ================================================================
 * Summary: 
-+------------------+-----+-----+------------+--------------+--------------+
-|     RTL Ports    | Dir | Bits|  Protocol  | Source Object|    C Type    |
-+------------------+-----+-----+------------+--------------+--------------+
-|input_r_address0  |  out|    5|   ap_memory|       input_r|         array|
-|input_r_ce0       |  out|    1|   ap_memory|       input_r|         array|
-|input_r_d0        |  out|   32|   ap_memory|       input_r|         array|
-|input_r_q0        |   in|   32|   ap_memory|       input_r|         array|
-|input_r_we0       |  out|    1|   ap_memory|       input_r|         array|
-|input_r_address1  |  out|    5|   ap_memory|       input_r|         array|
-|input_r_ce1       |  out|    1|   ap_memory|       input_r|         array|
-|input_r_d1        |  out|   32|   ap_memory|       input_r|         array|
-|input_r_q1        |   in|   32|   ap_memory|       input_r|         array|
-|input_r_we1       |  out|    1|   ap_memory|       input_r|         array|
-|ys_address0       |  out|    4|   ap_memory|            ys|         array|
-|ys_ce0            |  out|    1|   ap_memory|            ys|         array|
-|ys_d0             |  out|   32|   ap_memory|            ys|         array|
-|ys_q0             |   in|   32|   ap_memory|            ys|         array|
-|ys_we0            |  out|    1|   ap_memory|            ys|         array|
-|ys_address1       |  out|    4|   ap_memory|            ys|         array|
-|ys_ce1            |  out|    1|   ap_memory|            ys|         array|
-|ys_d1             |  out|   32|   ap_memory|            ys|         array|
-|ys_q1             |   in|   32|   ap_memory|            ys|         array|
-|ys_we1            |  out|    1|   ap_memory|            ys|         array|
-|ap_clk            |   in|    1|  ap_ctrl_hs|           bnn|  return value|
-|ap_rst            |   in|    1|  ap_ctrl_hs|           bnn|  return value|
-|ap_start          |   in|    1|  ap_ctrl_hs|           bnn|  return value|
-|ap_done           |  out|    1|  ap_ctrl_hs|           bnn|  return value|
-|ap_ready          |  out|    1|  ap_ctrl_hs|           bnn|  return value|
-|ap_idle           |  out|    1|  ap_ctrl_hs|           bnn|  return value|
-+------------------+-----+-----+------------+--------------+--------------+
++-----------------------+-----+-----+------------+----------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  |  Source Object |    C Type    |
++-----------------------+-----+-----+------------+----------------+--------------+
+|s_axi_control_AWVALID  |   in|    1|       s_axi|         control|   return void|
+|s_axi_control_AWREADY  |  out|    1|       s_axi|         control|   return void|
+|s_axi_control_AWADDR   |   in|    4|       s_axi|         control|   return void|
+|s_axi_control_WVALID   |   in|    1|       s_axi|         control|   return void|
+|s_axi_control_WREADY   |  out|    1|       s_axi|         control|   return void|
+|s_axi_control_WDATA    |   in|   32|       s_axi|         control|   return void|
+|s_axi_control_WSTRB    |   in|    4|       s_axi|         control|   return void|
+|s_axi_control_ARVALID  |   in|    1|       s_axi|         control|   return void|
+|s_axi_control_ARREADY  |  out|    1|       s_axi|         control|   return void|
+|s_axi_control_ARADDR   |   in|    4|       s_axi|         control|   return void|
+|s_axi_control_RVALID   |  out|    1|       s_axi|         control|   return void|
+|s_axi_control_RREADY   |   in|    1|       s_axi|         control|   return void|
+|s_axi_control_RDATA    |  out|   32|       s_axi|         control|   return void|
+|s_axi_control_RRESP    |  out|    2|       s_axi|         control|   return void|
+|s_axi_control_BVALID   |  out|    1|       s_axi|         control|   return void|
+|s_axi_control_BREADY   |   in|    1|       s_axi|         control|   return void|
+|s_axi_control_BRESP    |  out|    2|       s_axi|         control|   return void|
+|ap_clk                 |   in|    1|  ap_ctrl_hs|             bnn|  return value|
+|ap_rst_n               |   in|    1|  ap_ctrl_hs|             bnn|  return value|
+|interrupt              |  out|    1|  ap_ctrl_hs|             bnn|  return value|
+|in_r_TDATA             |   in|   32|        axis|   in_r_V_data_V|       pointer|
+|in_r_TKEEP             |   in|    4|        axis|   in_r_V_keep_V|       pointer|
+|in_r_TSTRB             |   in|    4|        axis|   in_r_V_strb_V|       pointer|
+|in_r_TLAST             |   in|    1|        axis|   in_r_V_last_V|       pointer|
+|in_r_TVALID            |   in|    1|        axis|   in_r_V_last_V|       pointer|
+|in_r_TREADY            |  out|    1|        axis|   in_r_V_last_V|       pointer|
+|out_r_TDATA            |  out|   32|        axis|  out_r_V_data_V|       pointer|
+|out_r_TKEEP            |  out|    4|        axis|  out_r_V_keep_V|       pointer|
+|out_r_TSTRB            |  out|    4|        axis|  out_r_V_strb_V|       pointer|
+|out_r_TLAST            |  out|    1|        axis|  out_r_V_last_V|       pointer|
+|out_r_TVALID           |  out|    1|        axis|  out_r_V_last_V|       pointer|
+|out_r_TREADY           |   in|    1|        axis|  out_r_V_last_V|       pointer|
++-----------------------+-----+-----+------------+----------------+--------------+
 
