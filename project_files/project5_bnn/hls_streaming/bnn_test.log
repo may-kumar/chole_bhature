@@ -12,29 +12,24 @@ Testing Stream Size: 2
 >> Stream Size 2: PASSED
 
 -------------------------------------------------
-Testing Stream Size: 854
+Testing Stream Size: 721
 -------------------------------------------------
->> Stream Size 854: PASSED
+>> Stream Size 721: PASSED
 
 -------------------------------------------------
-Testing Stream Size: 636
+Testing Stream Size: 943
 -------------------------------------------------
->> Stream Size 636: PASSED
+>> Stream Size 943: PASSED
 
 -------------------------------------------------
-Testing Stream Size: 359
+Testing Stream Size: 370
 -------------------------------------------------
->> Stream Size 359: PASSED
+>> Stream Size 370: PASSED
 
 -------------------------------------------------
-Testing Stream Size: 386
+Testing Stream Size: 29
 -------------------------------------------------
->> Stream Size 386: PASSED
-
--------------------------------------------------
-Testing Stream Size: 64
--------------------------------------------------
->> Stream Size 64: PASSED
+>> Stream Size 29: PASSED
 
 -------------------------------------------------
 Testing Stream Size: 1024

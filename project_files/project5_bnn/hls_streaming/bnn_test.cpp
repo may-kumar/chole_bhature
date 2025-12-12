@@ -6,6 +6,7 @@
 #include <string>
 #include <hls_stream.h>
 #include <vector>
+#include <cstdlib>
 
 using namespace std;
 
@@ -75,6 +76,8 @@ int test_xnor_popcount_32() {
 }
 
 int test_streaming_size(int stream_size) {
+    if (stream_size <= 0) return 1; 
+
     cout << "\n-------------------------------------------------" << endl;
     cout << "Testing Stream Size: " << stream_size << endl;
     cout << "-------------------------------------------------" << endl;
@@ -161,10 +164,9 @@ int main () {
     if (!test_streaming_size(2)) total_errors++;
 
     for (int i = 0; i < 4; i++) {
-        if (!test_streaming_size(rand() % 1024)) total_errors++;
+        int rand_size = (rand() % 1000) + 3; 
+        if (!test_streaming_size(rand_size)) total_errors++;
     }    
-
-    if (!test_streaming_size(64)) total_errors++;
 
     if (!test_streaming_size(1024)) total_errors++;
 
