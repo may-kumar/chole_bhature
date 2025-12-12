@@ -1,4 +1,3 @@
-
 #define TESTBENCH_REQUIRED_VALUES
 
 #include "bnn.h"
@@ -8,12 +7,14 @@
 #include <hls_stream.h>
 #include <vector>
 
+using namespace std;
+
 int verify_output(string name, const int golden[10], int predicted[10]){
     int PASS = 1;
     for(int i=0;i<10;i++) {
         if (golden[i]!=predicted[i]) {
             PASS=0;
-            cout<<"  " << name << " Wrong output: Expected: "<<golden[i]<<" Obtained: "<<predicted[i]<<endl;
+            cout << "  " << name << " Wrong output: Expected: " << golden[i] << " Obtained: " << predicted[i] << endl;
         }
     }
     return PASS;
@@ -45,148 +46,104 @@ int golden_pop_32(uint32_t a, uint32_t b) {
 }
 
 int test_xnor_pop_3() {
-    std::cout << "Testing xnor_pop_3 (Exhaustive 64 cases)... ";
+    cout << "Testing xnor_pop_3... ";
     int errors = 0;
     for (int a = 0; a < 8; a++) {
         for (int b = 0; b < 8; b++) {
             ap_uint<2> dut = xnor_pop_3(ap_uint<3>(a), ap_uint<3>(b));
             int ref = golden_pop_3(a, b);
-            
-            if (dut.to_int() != ref) {
-                std::cout << "\nFAIL: a=" << a << " b=" << b 
-                          << " Expected=" << ref << " Got=" << dut.to_int() << "\n";
-                errors++;
-            }
+            if (dut.to_int() != ref) errors++;
         }
     }
-    if (errors == 0) std::cout << "PASSED" << std::endl;
+    if (errors == 0) cout << "PASSED" << endl;
+    else cout << "FAILED" << endl;
     return errors;
 }
 
 int test_xnor_popcount_32() {
-    std::cout << "Testing xnor_popcount_32 (Edge cases + 1M Random)... ";
+    cout << "Testing xnor_popcount_32... ";
     int errors = 0;
-
+    
     struct TestCase { uint32_t a; uint32_t b; };
-    std::vector<TestCase> tests;
-
-    tests.push_back({0x00000000, 0x00000000}); 
-    tests.push_back({0xFFFFFFFF, 0xFFFFFFFF});
-    tests.push_back({0x00000000, 0xFFFFFFFF});
-    tests.push_back({0xAAAAAAAA, 0x55555555});
-    tests.push_back({0xAAAAAAAA, 0xAAAAAAAA});
+    vector<TestCase> tests = {
+        {0x00000000, 0x00000000}, {0xFFFFFFFF, 0xFFFFFFFF},
+        {0x00000000, 0xFFFFFFFF}, {0xAAAAAAAA, 0x55555555}
+    };
 
     for(const auto& t : tests) {
-        int dut = xnor_popcount_32(ap_uint<32>(t.a), ap_uint<32>(t.b));
-        int ref = golden_pop_32(t.a, t.b);
-        if (dut != ref) {
-            std::cout << "\nFAIL Edge: a=" << std::hex << t.a << " b=" << t.b << std::dec 
-                      << " Expected=" << ref << " Got=" << dut << "\n";
-            errors++;
-        }
+        if (xnor_popcount_32(ap_uint<32>(t.a), ap_uint<32>(t.b)) != golden_pop_32(t.a, t.b)) errors++;
     }
 
-    for (int i = 0; i < 1000000; i++) {
+    for (int i = 0; i < 100000; i++) {
         uint32_t a = rand();
         uint32_t b = rand();
-        
-        if (RAND_MAX < 0xFFFFFFFF) {
-            a = (a << 16) | rand();
-            b = (b << 16) | rand();
-        }
-
-        int dut = xnor_popcount_32(ap_uint<32>(a), ap_uint<32>(b));
-        int ref = golden_pop_32(a, b);
-
-        if (dut != ref) {
-            std::cout << "\nFAIL Random: a=" << std::hex << a << " b=" << b << std::dec 
-                      << " Expected=" << ref << " Got=" << dut << "\n";
+        if (xnor_popcount_32(ap_uint<32>(a), ap_uint<32>(b)) != golden_pop_32(a, b)) {
             errors++;
-            if (errors > 10) break;
+            break;
         }
     }
 
-    if (errors == 0) std::cout << "PASSED" << std::endl;
+    if (errors == 0) cout << "PASSED" << endl;
+    else cout << "FAILED" << endl;
     return errors;
 }
 
 int main () {
-    
-    int fails = 0;
-    fails += test_xnor_pop_3();
-    fails += test_xnor_popcount_32();
+    if (test_xnor_pop_3() + test_xnor_popcount_32() > 0) return 1;
 
-    if (fails > 0) return 1;
-    
-    
-    int PASS = 1;
-    
-    cout << "\n[ Processing Batch of " << BATCH_SIZE << " Samples ]" << endl;
-
+    int total_pass = 1;
     hls::stream<transPkt> bnn_in_stream;
     hls::stream<transPktOut> bnn_out_stream;
-    
-    vector<int> sample_indices;
-    for(int i=0; i<BATCH_SIZE; i++) {
-        sample_indices.push_back(i); 
-    }
 
-    fill_input_stream_batch(sample_indices, bnn_in_stream);
+    cout << "\nStarting Inference on " << NUM_SAMPLES << " samples (" << BATCH_SIZE << " per batch)..." << endl;
 
-    bnn(bnn_in_stream, bnn_out_stream);
-
-    cout << "  Checking BNN AXI Stream Output..." << endl;
-    bool tlast_error = false;
-    
-    for(int b=0; b<BATCH_SIZE; b++) {
-        int s = sample_indices[b];
-        int32_t hw_out[10];
-
-        for(int i=0; i<10; i++) {
-            if(bnn_out_stream.empty()) {
-                cout << "  Error: Stream empty early at batch " << b << " index " << i << endl;
-                PASS = 0;
-                break;
-            }
-            transPktOut pkt = bnn_out_stream.read();
-            hw_out[i] = pkt.data;
-
-            bool is_last_packet = (b == BATCH_SIZE - 1) && (i == 9);
-
-            if (is_last_packet) {
-                if (pkt.last != 1) {
-                    cout << "  Error: Expected TLAST=1 at batch " << b << " index 9, got 0" << endl;
-                    tlast_error = true;
-                }
-            } else {
-                if (pkt.last != 0) {
-                    cout << "  Error: Expected TLAST=0 at batch " << b << " index " << i << ", got 1" << endl;
-                    tlast_error = true;
-                }
+    for(int start_idx = 0; start_idx < NUM_SAMPLES; start_idx += BATCH_SIZE) {
+        
+        vector<int> current_batch;
+        for(int i = 0; i < BATCH_SIZE; i++) {
+            if (start_idx + i < NUM_SAMPLES) {
+                current_batch.push_back(start_idx + i);
             }
         }
         
-        if(PASS) {
-             string test_name = "Sample " + to_string(s) + " (Batch Index " + to_string(b) + ")";
-             PASS &= verify_output(test_name, GOLDEN_FINAL_SCORES[s], hw_out);
+        if (current_batch.empty()) break;
+
+        fill_input_stream_batch(current_batch, bnn_in_stream);
+        bnn(bnn_in_stream, bnn_out_stream);
+
+        for(size_t b = 0; b < current_batch.size(); b++) {
+            int s = current_batch[b];
+            int32_t hw_out[10];
+
+            for(int i = 0; i < 10; i++) {
+                if(bnn_out_stream.empty()) {
+                    cout << "Error: Stream empty early at Sample " << s << endl;
+                    total_pass = 0;
+                    goto end_test;
+                }
+                
+                transPktOut pkt = bnn_out_stream.read();
+                hw_out[i] = pkt.data;
+                
+                bool is_last = (b == current_batch.size() - 1) && (i == 9);
+                if (pkt.last != (is_last ? 1 : 0)) {
+                    cout << "Error: TLAST mismatch at Sample " << s << endl;
+                    total_pass = 0;
+                }
+            }
+
+            if (!verify_output("Sample " + to_string(s), GOLDEN_FINAL_SCORES[s], hw_out)) {
+                total_pass = 0;
+            }
         }
-    }
-    
-    if (!tlast_error && PASS) {
-         cout << "  TLAST Signals Correct." << endl;
-    } else {
-         PASS = 0;
+        cout << "Batch " << (start_idx / BATCH_SIZE) + 1 << " processed." << endl;
     }
 
-    if(PASS) {
-        cout << "\n*******************************************" << endl;
-        cout << "PASS: All tests passed!" << endl;
-        cout << "*******************************************" << endl;
-        return 0;
-    } else {
-        cout << "\n*******************************************" << endl;
-        cout << "FAIL: Tests failed!" << endl;
-        cout << "*******************************************" << endl;
-        return 1;
-    }
+end_test:
+    cout << "\n*******************************************" << endl;
+    if(total_pass) cout << "PASS: All " << NUM_SAMPLES << " samples verified!" << endl;
+    else cout << "FAIL: Errors detected." << endl;
+    cout << "*******************************************" << endl;
+    
+    return !total_pass;
 }

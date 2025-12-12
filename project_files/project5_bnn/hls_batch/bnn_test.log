@@ -1,11 +1,41 @@
-Testing xnor_pop_3 (Exhaustive 64 cases)... PASSED
-Testing xnor_popcount_32 (Edge cases + 1M Random)... PASSED
+Testing xnor_pop_3... PASSED
+Testing xnor_popcount_32... PASSED
 
-[ Processing Batch of 32 Samples ]
-  Checking BNN AXI Stream Output...
-  TLAST Signals Correct.
+Starting Inference on 1024 samples (32 per batch)...
+Batch 1 processed.
+Batch 2 processed.
+Batch 3 processed.
+Batch 4 processed.
+Batch 5 processed.
+Batch 6 processed.
+Batch 7 processed.
+Batch 8 processed.
+Batch 9 processed.
+Batch 10 processed.
+Batch 11 processed.
+Batch 12 processed.
+Batch 13 processed.
+Batch 14 processed.
+Batch 15 processed.
+Batch 16 processed.
+Batch 17 processed.
+Batch 18 processed.
+Batch 19 processed.
+Batch 20 processed.
+Batch 21 processed.
+Batch 22 processed.
+Batch 23 processed.
+Batch 24 processed.
+Batch 25 processed.
+Batch 26 processed.
+Batch 27 processed.
+Batch 28 processed.
+Batch 29 processed.
+Batch 30 processed.
+Batch 31 processed.
+Batch 32 processed.
 
 *******************************************
-PASS: All tests passed!
+PASS: All 1024 samples verified!
 *******************************************
 INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 800
