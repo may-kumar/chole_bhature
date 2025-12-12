@@ -39,3 +39,9 @@ Testing Stream Size: 64
 -------------------------------------------------
 Testing Stream Size: 1024
 -------------------------------------------------
+>> Stream Size 1024: PASSED
+
+*******************************************
+PASS: All streaming configurations verified!
+*******************************************
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 25600
