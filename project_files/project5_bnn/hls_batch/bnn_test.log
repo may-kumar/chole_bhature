@@ -1,85 +1,11 @@
+Testing xnor_pop_3 (Exhaustive 64 cases)... PASSED
+Testing xnor_popcount_32 (Edge cases + 1M Random)... PASSED
 
-[ Processing Sample 0 ]
------------------------------------------------------------
-Verifying Layer: Layer 1 Check
-Layer 1 Check PASSED
------------------------------------------------------------
-Verifying Layer: Layer 2 Check
-Layer 2 Check PASSED
------------------------------------------------------------
-Verifying the sample: Layer 3 Check
-Sample: Layer 3 Check PASSED
+[ Processing Batch of 32 Samples ]
   Checking BNN AXI Stream Output...
   TLAST Signals Correct.
------------------------------------------------------------
-Verifying the sample: Full BNN Hardware
-Sample: Full BNN Hardware PASSED
-
-[ Processing Sample 1 ]
------------------------------------------------------------
-Verifying Layer: Layer 1 Check
-Layer 1 Check PASSED
------------------------------------------------------------
-Verifying Layer: Layer 2 Check
-Layer 2 Check PASSED
------------------------------------------------------------
-Verifying the sample: Layer 3 Check
-Sample: Layer 3 Check PASSED
-  Checking BNN AXI Stream Output...
-  TLAST Signals Correct.
------------------------------------------------------------
-Verifying the sample: Full BNN Hardware
-Sample: Full BNN Hardware PASSED
-
-[ Processing Sample 2 ]
------------------------------------------------------------
-Verifying Layer: Layer 1 Check
-Layer 1 Check PASSED
------------------------------------------------------------
-Verifying Layer: Layer 2 Check
-Layer 2 Check PASSED
------------------------------------------------------------
-Verifying the sample: Layer 3 Check
-Sample: Layer 3 Check PASSED
-  Checking BNN AXI Stream Output...
-  TLAST Signals Correct.
------------------------------------------------------------
-Verifying the sample: Full BNN Hardware
-Sample: Full BNN Hardware PASSED
-
-[ Processing Sample 3 ]
------------------------------------------------------------
-Verifying Layer: Layer 1 Check
-Layer 1 Check PASSED
------------------------------------------------------------
-Verifying Layer: Layer 2 Check
-Layer 2 Check PASSED
------------------------------------------------------------
-Verifying the sample: Layer 3 Check
-Sample: Layer 3 Check PASSED
-  Checking BNN AXI Stream Output...
-  TLAST Signals Correct.
------------------------------------------------------------
-Verifying the sample: Full BNN Hardware
-Sample: Full BNN Hardware PASSED
-
-[ Processing Sample 4 ]
------------------------------------------------------------
-Verifying Layer: Layer 1 Check
-Layer 1 Check PASSED
------------------------------------------------------------
-Verifying Layer: Layer 2 Check
-Layer 2 Check PASSED
------------------------------------------------------------
-Verifying the sample: Layer 3 Check
-Sample: Layer 3 Check PASSED
-  Checking BNN AXI Stream Output...
-  TLAST Signals Correct.
------------------------------------------------------------
-Verifying the sample: Full BNN Hardware
-Sample: Full BNN Hardware PASSED
 
 *******************************************
 PASS: All tests passed!
 *******************************************
-INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 25
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 800

@@ -1,156 +1,181 @@
+
+#define TESTBENCH_REQUIRED_VALUES
+
 #include "bnn.h"
 #include <iostream>
 #include <iomanip>
 #include <string>
 #include <hls_stream.h>
-
-int verify_layer_output(string name, const uint32_t* golden, const uint32_t* predicted, int size) {
-    cout << "-----------------------------------------------------------" << endl;
-    cout << "Verifying Layer: " << name << endl;
-    int PASS = 1;
-    for(int i=0; i<size; i++) {
-        if (golden[i] != predicted[i]) {
-            PASS = 0;
-            cout << "  Idx " << i << " Expected: " << hex << golden[i] 
-                 << " Obtained: " << predicted[i] << dec << endl;
-        }
-    }
-    if(PASS==0) 
-        cout << name << " FAILED" << endl;
-    else
-        cout << name << " PASSED" << endl;
-
-    return PASS;
-}
+#include <vector>
 
 int verify_output(string name, const int golden[10], int predicted[10]){
-    cout<<"-----------------------------------------------------------"<<endl;
-    cout<<"Verifying the sample: "<<name<<endl;
     int PASS = 1;
     for(int i=0;i<10;i++) {
         if (golden[i]!=predicted[i]) {
             PASS=0;
-            cout<<"Wrong output: Expected: "<<golden[i]<<" Obtained: "<<predicted[i]<<endl;
+            cout<<"  " << name << " Wrong output: Expected: "<<golden[i]<<" Obtained: "<<predicted[i]<<endl;
         }
     }
-
-    if(PASS==0) {
-        cout<<"Sample: "<<name<<" FAILED"<<endl;
-    } else {
-        cout<<"Sample: "<<name<<" PASSED"<<endl;
-    }
-
     return PASS;
 }
 
-void fill_input_stream(const uint32_t *data, hls::stream<transPkt> &in_stream) {
-    for(int i=0; i<INPUT_PACKED_WIDTH; i++) {
-        transPkt pkt;
-        pkt.data = data[i];
-        pkt.keep = -1;
-        pkt.strb = -1;
-        pkt.last = (i == INPUT_PACKED_WIDTH - 1) ? 1 : 0;
-        in_stream.write(pkt);
+void fill_input_stream_batch(const vector<int>& sample_indices, hls::stream<transPkt> &in_stream) {
+    for(size_t b = 0; b < sample_indices.size(); b++) {
+        int s = sample_indices[b];
+        for(int i=0; i<INPUT_PACKED_WIDTH; i++) {
+            transPkt pkt;
+            pkt.data = TEST_INPUTS[s][i];
+            pkt.keep = -1;
+            pkt.strb = -1;
+            pkt.last = (i == INPUT_PACKED_WIDTH - 1 && b == sample_indices.size() - 1) ? 1 : 0;
+            in_stream.write(pkt);
+        }
     }
 }
 
-int test_layer1(int s) {
-    hls::stream<transPkt> axi_in;
-    hls::stream<uint32_t> l1_out;
-    uint32_t l1_res[L1_OUT_PACKED];
-
-    fill_input_stream(TEST_INPUTS[s], axi_in);
-
-    compute_L1(axi_in, l1_out);
-
-    for(int i=0; i<L1_OUT_PACKED; i++) {
-        l1_res[i] = l1_out.read();
-    }
-    return verify_layer_output("Layer 1 Check", GOLDEN_L1_OUT[s], l1_res, L1_OUT_PACKED);
+int golden_pop_3(int a, int b) {
+    int x = (~(a ^ b)) & 0x7;
+    return __builtin_popcount(x);
 }
 
-int test_layer2(int s) {
-    hls::stream<uint32_t> l2_in;
-    hls::stream<uint32_t> l2_out;
-    uint32_t l2_res[L2_OUT_PACKED];
-
-    for(int i=0; i<L1_OUT_PACKED; i++) {
-        l2_in.write(GOLDEN_L1_OUT[s][i]);
-    }
-    compute_L2(l2_in, l2_out);
-    for(int i=0; i<L2_OUT_PACKED; i++) {
-        l2_res[i] = l2_out.read();
-    }
-    return verify_layer_output("Layer 2 Check", GOLDEN_L2_OUT[s], l2_res, L2_OUT_PACKED);
+int golden_pop_32(uint32_t a, uint32_t b) {
+    uint32_t x = ~(a ^ b);
+    int p = __builtin_popcount(x);
+    return (p * 2) - 32;
 }
 
-int test_layer3(int s) {
-    hls::stream<uint32_t> l3_in;
-    hls::stream<transPktOut> axi_out;
-    int32_t l3_res[10];
+int test_xnor_pop_3() {
+    std::cout << "Testing xnor_pop_3 (Exhaustive 64 cases)... ";
+    int errors = 0;
+    for (int a = 0; a < 8; a++) {
+        for (int b = 0; b < 8; b++) {
+            ap_uint<2> dut = xnor_pop_3(ap_uint<3>(a), ap_uint<3>(b));
+            int ref = golden_pop_3(a, b);
+            
+            if (dut.to_int() != ref) {
+                std::cout << "\nFAIL: a=" << a << " b=" << b 
+                          << " Expected=" << ref << " Got=" << dut.to_int() << "\n";
+                errors++;
+            }
+        }
+    }
+    if (errors == 0) std::cout << "PASSED" << std::endl;
+    return errors;
+}
 
-    for(int i=0; i<L2_OUT_PACKED; i++) {
-        l3_in.write(GOLDEN_L2_OUT[s][i]);
+int test_xnor_popcount_32() {
+    std::cout << "Testing xnor_popcount_32 (Edge cases + 1M Random)... ";
+    int errors = 0;
+
+    struct TestCase { uint32_t a; uint32_t b; };
+    std::vector<TestCase> tests;
+
+    tests.push_back({0x00000000, 0x00000000}); 
+    tests.push_back({0xFFFFFFFF, 0xFFFFFFFF});
+    tests.push_back({0x00000000, 0xFFFFFFFF});
+    tests.push_back({0xAAAAAAAA, 0x55555555});
+    tests.push_back({0xAAAAAAAA, 0xAAAAAAAA});
+
+    for(const auto& t : tests) {
+        int dut = xnor_popcount_32(ap_uint<32>(t.a), ap_uint<32>(t.b));
+        int ref = golden_pop_32(t.a, t.b);
+        if (dut != ref) {
+            std::cout << "\nFAIL Edge: a=" << std::hex << t.a << " b=" << t.b << std::dec 
+                      << " Expected=" << ref << " Got=" << dut << "\n";
+            errors++;
+        }
     }
 
-    compute_L3(l3_in, axi_out);
+    for (int i = 0; i < 1000000; i++) {
+        uint32_t a = rand();
+        uint32_t b = rand();
+        
+        if (RAND_MAX < 0xFFFFFFFF) {
+            a = (a << 16) | rand();
+            b = (b << 16) | rand();
+        }
 
-    for(int i=0; i<10; i++) {
-        transPktOut pkt = axi_out.read();
-        l3_res[i] = pkt.data;
+        int dut = xnor_popcount_32(ap_uint<32>(a), ap_uint<32>(b));
+        int ref = golden_pop_32(a, b);
+
+        if (dut != ref) {
+            std::cout << "\nFAIL Random: a=" << std::hex << a << " b=" << b << std::dec 
+                      << " Expected=" << ref << " Got=" << dut << "\n";
+            errors++;
+            if (errors > 10) break;
+        }
     }
-    return verify_output("Layer 3 Check", GOLDEN_FINAL_SCORES[s], l3_res);
+
+    if (errors == 0) std::cout << "PASSED" << std::endl;
+    return errors;
 }
 
 int main () {
+    
+    int fails = 0;
+    fails += test_xnor_pop_3();
+    fails += test_xnor_popcount_32();
+
+    if (fails > 0) return 1;
+    
+    
     int PASS = 1;
-    for (int s = 0; s < 5; s++) {
-        cout << "\n[ Processing Sample " << s << " ]" << endl;
+    
+    cout << "\n[ Processing Batch of " << BATCH_SIZE << " Samples ]" << endl;
 
-        PASS &= test_layer1(s);
-        PASS &= test_layer2(s);
-        PASS &= test_layer3(s);
+    hls::stream<transPkt> bnn_in_stream;
+    hls::stream<transPktOut> bnn_out_stream;
+    
+    vector<int> sample_indices;
+    for(int i=0; i<BATCH_SIZE; i++) {
+        sample_indices.push_back(i); 
+    }
 
-        hls::stream<transPkt> bnn_in_stream;
-        hls::stream<transPktOut> bnn_out_stream;
+    fill_input_stream_batch(sample_indices, bnn_in_stream);
+
+    bnn(bnn_in_stream, bnn_out_stream);
+
+    cout << "  Checking BNN AXI Stream Output..." << endl;
+    bool tlast_error = false;
+    
+    for(int b=0; b<BATCH_SIZE; b++) {
+        int s = sample_indices[b];
         int32_t hw_out[10];
 
-        fill_input_stream(TEST_INPUTS[s], bnn_in_stream);
-
-        bnn(bnn_in_stream, bnn_out_stream);
-
-        cout << "  Checking BNN AXI Stream Output..." << endl;
-        bool tlast_error = false;
-        
         for(int i=0; i<10; i++) {
             if(bnn_out_stream.empty()) {
-                cout << "  Error: Stream empty early at index " << i << endl;
+                cout << "  Error: Stream empty early at batch " << b << " index " << i << endl;
                 PASS = 0;
                 break;
             }
             transPktOut pkt = bnn_out_stream.read();
             hw_out[i] = pkt.data;
 
-            if (i == 9) {
+            bool is_last_packet = (b == BATCH_SIZE - 1) && (i == 9);
+
+            if (is_last_packet) {
                 if (pkt.last != 1) {
-                    cout << "  Error: Expected TLAST=1 at index 9, got 0" << endl;
+                    cout << "  Error: Expected TLAST=1 at batch " << b << " index 9, got 0" << endl;
                     tlast_error = true;
                 }
             } else {
                 if (pkt.last != 0) {
-                    cout << "  Error: Expected TLAST=0 at index " << i << ", got 1" << endl;
+                    cout << "  Error: Expected TLAST=0 at batch " << b << " index " << i << ", got 1" << endl;
                     tlast_error = true;
                 }
             }
         }
         
-        if (!tlast_error) {
-             cout << "  TLAST Signals Correct." << endl;
-        } else {
-             PASS = 0;
+        if(PASS) {
+             string test_name = "Sample " + to_string(s) + " (Batch Index " + to_string(b) + ")";
+             PASS &= verify_output(test_name, GOLDEN_FINAL_SCORES[s], hw_out);
         }
-
-        PASS &= verify_output("Full BNN Hardware", GOLDEN_FINAL_SCORES[s], hw_out);
+    }
+    
+    if (!tlast_error && PASS) {
+         cout << "  TLAST Signals Correct." << endl;
+    } else {
+         PASS = 0;
     }
 
     if(PASS) {

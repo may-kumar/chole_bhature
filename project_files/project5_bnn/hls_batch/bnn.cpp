@@ -4,132 +4,146 @@
 #include <hls_stream.h>
 #include <ap_int.h>
 
-static ap_int<7> xnor_popcount(ap_uint<32> a, ap_uint<32> b) {
-    #pragma HLS INLINE
-    ap_int<7> matches = 0;
-    POPCOUNT_LOOP: 
-    for (uint32_t i = 0; i < 32; i++) {
-        #pragma HLS UNROLL skip_exit_check
-        matches += (!(a[i] ^ b[i]) << 1) - 1;
-    }
-    return matches;
-}
-
 void compute_L1(hls::stream<transPkt> &in, hls::stream<uint32_t> &out) {
-    #pragma HLS ARRAY_PARTITION variable=WEIGHTS_L1 dim=1 cyclic factor=2
+    #pragma HLS ARRAY_PARTITION variable=WEIGHTS_L1 cyclic factor=64 dim=1
     
     uint32_t local_in[INPUT_PACKED_WIDTH];
     #pragma HLS ARRAY_PARTITION variable=local_in complete
 
-    LOAD_L1: 
-    for(uint32_t i=0; i<INPUT_PACKED_WIDTH; i++) {
-        #pragma HLS PIPELINE II=1
-        transPkt pkt = in.read();
-        local_in[i] = pkt.data;
-    }
-    
-    uint32_t current_word = 0;
-    ap_uint<6> bit_count = 0;
-
-    LOOP_L1_NEURONS: 
-    for(uint32_t n=0; n<L1_NEURONS; n+=2) {
-        #pragma HLS PIPELINE II=1
+    L1_BATCH_LOOP:
+    for(int b = 0; b < BATCH_SIZE; b++) {
         
-        ap_int<12> acc0 = 0;
-        ap_int<12> acc1 = 0;
-        
-        L1_DOT_PROD: 
-        for(uint32_t k=0; k<INPUT_PACKED_WIDTH; k++) {
-            #pragma HLS UNROLL skip_exit_check
-            acc0 += xnor_popcount(local_in[k], WEIGHTS_L1[(int)(n*INPUT_PACKED_WIDTH + k)]);
-            acc1 += xnor_popcount(local_in[k], WEIGHTS_L1[(int)((n+1)*INPUT_PACKED_WIDTH + k)]);
+        LOAD_L1: 
+        for(uint32_t i=0; i<INPUT_PACKED_WIDTH; i++) {
+            #pragma HLS PIPELINE II=1
+            transPkt pkt = in.read();
+            local_in[i] = pkt.data;
         }
-
-        uint32_t bit0 = (acc0 > 0) ? 0 : 1;
-        uint32_t bit1 = (acc1 > 0) ? 0 : 1;
         
-        current_word = (current_word << 2) | (bit0 << 1) | bit1;
-        bit_count += 2;
+        LOOP_L1_NEURONS: 
+        for(uint32_t n=0; n<L1_NEURONS; n+=64) {
+            
+            ap_int<12> acc[64];
+            #pragma HLS ARRAY_PARTITION variable=acc complete
 
-        if(bit_count == 32) {
-            out.write(current_word);
-            current_word = 0;
-            bit_count = 0;
+            for(int i=0; i<64; i++) {
+                #pragma HLS UNROLL
+                acc[i] = -1;
+            }
+            
+            L1_DOT_PROD: 
+            for(uint32_t k=0; k<INPUT_PACKED_WIDTH; k++) {
+                #pragma HLS PIPELINE II=1
+                
+                uint32_t in_val = local_in[k];
+                
+                for(int i=0; i<64; i++) {
+                    #pragma HLS UNROLL
+                    acc[i] += xnor_popcount_32(in_val, WEIGHTS_L1[(int)((n+i)*INPUT_PACKED_WIDTH + k)]);
+                }
+            }
+
+            ap_uint<32> word1 = 0;
+            ap_uint<32> word2 = 0;
+
+            for(int i=0; i<32; i++) {
+                #pragma HLS UNROLL
+                word1 = (word1 << 1) | (uint32_t)acc[i][11];
+            }
+            for(int i=0; i<32; i++) {
+                #pragma HLS UNROLL
+                word2 = (word2 << 1) | (uint32_t)acc[32+i][11];
+            }
+
+            out.write((uint32_t)word1);
+            out.write((uint32_t)word2);
         }
     }
 }
 
 void compute_L2(hls::stream<uint32_t> &in, hls::stream<uint32_t> &out) {
-    #pragma HLS ARRAY_PARTITION variable=WEIGHTS_L2 dim=1 cyclic factor=2
+    #pragma HLS ARRAY_PARTITION variable=WEIGHTS_L2 cyclic factor=8 dim=1
     
     ap_int<12> acc[64];
     #pragma HLS ARRAY_PARTITION variable=acc complete
 
-    INIT_L2:
-    for(int i=0; i<64; i++) {
-        #pragma HLS UNROLL skip_exit_check
-        acc[i] = 0;
-    }
+    L2_BATCH_LOOP:
+    for(int b = 0; b < BATCH_SIZE; b++) {
 
-    STREAM_L2: 
-    for(uint32_t k=0; k<L1_OUT_PACKED; k++) {
-        uint32_t in_val = in.read();
-        
-        UPDATE_L2:
-        for(uint32_t n=0; n<64; n++) {
-            #pragma HLS PIPELINE II=1
-            #pragma HLS UNROLL factor=2 skip_exit_check
-            
-            acc[n] += xnor_popcount(in_val, WEIGHTS_L2[(int)(n*L1_OUT_PACKED + k)]);
-        }
-    }
-    
-    PACK_L2:
-    for(int w=0; w<2; w++) {
-        #pragma HLS PIPELINE II=1
-        uint32_t word = 0;
-        for(int b=0; b<32; b++) {
+        INIT_L2:
+        for(int i=0; i<64; i++) {
             #pragma HLS UNROLL
-            int idx = w*32 + b;
-            uint32_t bit = (acc[idx] > 0) ? 0 : 1;
-            word = (word << 1) | bit;
+            acc[i] = -1;
         }
-        out.write(word);
+
+        STREAM_L2: 
+        for(uint32_t k=0; k<L1_OUT_PACKED; k++) {
+            uint32_t in_val = in.read();
+            
+            UPDATE_L2:
+            for(uint32_t n=0; n<64; n+=8) {
+                #pragma HLS PIPELINE II=1
+                for(int i=0; i<8; i++) {
+                    #pragma HLS UNROLL
+                    acc[n+i] += xnor_popcount_32(in_val, WEIGHTS_L2[(int)((n+i)*L1_OUT_PACKED + k)]);
+                }
+            }
+        }
+        
+        PACK_L2:
+        for(int w=0; w<2; w++) {
+            #pragma HLS PIPELINE II=1
+            ap_uint<32> current_word = 0;
+            int n = w * 32;
+            for(int i=0; i<32; i++) {
+                #pragma HLS UNROLL
+                current_word = (current_word << 1) | (uint32_t)acc[n+i][11];
+            }
+            out.write((uint32_t)current_word);
+        }
     }
 }
 
 void compute_L3(hls::stream<uint32_t> &in, hls::stream<transPktOut> &out) {
-    #pragma HLS ARRAY_PARTITION variable=WEIGHTS_L3 dim=1 cyclic factor=1
+    #pragma HLS BIND_STORAGE variable=WEIGHTS_L3 type=ram_2p impl=bram
 
     ap_int<12> acc[L3_NEURONS];
     #pragma HLS ARRAY_PARTITION variable=acc complete
 
-    INIT_L3:
-    for(int i=0; i<L3_NEURONS; i++) {
-        #pragma HLS UNROLL skip_exit_check
-        acc[i] = 0;
-    }
+    L3_BATCH_LOOP:
+    for(int b = 0; b < BATCH_SIZE; b++) {
 
-    STREAM_L3: 
-    for(uint32_t k=0; k<L2_OUT_PACKED; k++) {
-        uint32_t in_val = in.read();
+        INIT_L3:
+        for(int i=0; i<L3_NEURONS; i++) {
+            #pragma HLS UNROLL
+            acc[i] = 0;
+        }
 
-        UPDATE_L3: 
+        STREAM_L3: 
+        for(uint32_t k=0; k<L2_OUT_PACKED; k++) {
+            uint32_t in_val = in.read();
+
+            UPDATE_L3: 
+            for(uint32_t n=0; n<L3_NEURONS; n++) {
+                #pragma HLS PIPELINE II=1
+                acc[n] += xnor_popcount_32(in_val, WEIGHTS_L3[(int)(n*L2_OUT_PACKED + k)]);
+            }
+        }
+
+        WRITE_L3: 
         for(uint32_t n=0; n<L3_NEURONS; n++) {
             #pragma HLS PIPELINE II=1
-            acc[n] += xnor_popcount(in_val, WEIGHTS_L3[(int)(n*L2_OUT_PACKED + k)]);
+            transPktOut packet;
+            packet.data = acc[n];
+            packet.keep = -1;
+            packet.strb = -1;
+            
+            bool end_of_batch = (b == BATCH_SIZE - 1);
+            bool end_of_neurons = (n == L3_NEURONS - 1);
+            packet.last = (end_of_batch && end_of_neurons) ? 1 : 0;
+            
+            out.write(packet);
         }
-    }
-
-    WRITE_L3: 
-    for(uint32_t n=0; n<L3_NEURONS; n++) {
-        #pragma HLS PIPELINE II=1
-        transPktOut packet;
-        packet.data = acc[n];
-        packet.keep = -1;
-        packet.strb = -1;
-        packet.last = (n == L3_NEURONS - 1) ? 1 : 0;
-        out.write(packet);
     }
 }
 

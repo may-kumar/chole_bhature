@@ -440,7 +440,7 @@ class BNN_MNIST:
             w2_packed = self.pack(self.fc2w_q, self.fc2w_q.shape[0] * self.fc2w_q.shape[1])
             w3_packed = self.pack(self.fc3w_q, self.fc3w_q.shape[0] * self.fc3w_q.shape[1])
 
-            with open("../hls/golden.h", "w") as f:
+            with open("../hls_batch/golden.h", "w") as f:
                 f.write("#ifndef GOLDEN_H\n#define GOLDEN_H\n\n")
                 f.write("#include <cstdint>\n\n")
 
