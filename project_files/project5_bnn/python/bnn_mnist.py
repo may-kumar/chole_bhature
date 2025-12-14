@@ -440,7 +440,7 @@ class BNN_MNIST:
             w2_packed = self.pack(self.fc2w_q, self.fc2w_q.shape[0] * self.fc2w_q.shape[1])
             w3_packed = self.pack(self.fc3w_q, self.fc3w_q.shape[0] * self.fc3w_q.shape[1])
 
-            with open("../hls_batch/golden.h", "w") as f:
+            with open("../hls_streaming/golden.h", "w") as f:
                 f.write("#ifndef GOLDEN_H\n#define GOLDEN_H\n\n")
                 f.write("#include <cstdint>\n\n")
 
@@ -481,10 +481,11 @@ class BNN_MNIST:
                         if (i + 1) % 8 == 0: f.write("\n    ")
                     f.write("\n};\n\n")
 
-                write_2d_array("TEST_INPUTS", cpp_inputs, "NUM_SAMPLES", "INPUT_PACKED_WIDTH")
                 write_1d_array("WEIGHTS_L1", w1_packed, "W1_SIZE")
                 write_1d_array("WEIGHTS_L2", w2_packed, "W2_SIZE")
                 write_1d_array("WEIGHTS_L3", w3_packed, "W3_SIZE")
+                f.write("#ifdef TESTBENCH_REQUIRED_VALUES\n")
+                write_2d_array("TEST_INPUTS", cpp_inputs, "NUM_SAMPLES", "INPUT_PACKED_WIDTH")
                 write_2d_array("GOLDEN_L1_OUT", cpp_l1_outputs, "NUM_SAMPLES", "L1_OUT_PACKED")
                 write_2d_array("GOLDEN_L2_OUT", cpp_l2_outputs, "NUM_SAMPLES", "L2_OUT_PACKED")
 
@@ -497,12 +498,35 @@ class BNN_MNIST:
                     f.write("}")
                     if row_idx < len(cpp_final_outputs) - 1: f.write(",\n")
                 f.write("\n};\n\n")
+                f.write("#endif //TESTBENCH_REQUIRED_VALUES\n")
 
-                f.write("#endif\n")
+                f.write("#endif //GOLDEN_H\n")
+
+    def inference_batch(self, images):
+        """
+        Run fast BNN inference on a batch of images using Matrix Multiplication.
+        This simulates the XNOR-Popcount behavior using {-1, 1} dot products.
+
+        :param images: Numpy array of shape (N, 784)
+        :return: Numpy array of predicted labels (N,)
+        """
+        X = self.sign(self.adj(images))
+
+        layer1_activations = np.matmul(X, self.fc1w_q.T)
+        layer1_output = self.sign(layer1_activations)
+
+        layer2_activations = np.matmul(layer1_output, self.fc2w_q.T)
+        layer2_output = self.sign(layer2_activations)
+
+        layer3_activations = np.matmul(layer2_output, self.fc3w_q.T)
+
+        predictions = np.argmax(layer3_activations, axis=1)
+
+        return predictions.astype(np.int32)
 
 
 if __name__ == "__main__":
-    run_option = 3
+    run_option = 8
     bnn = BNN_MNIST(batch_size=1)
 
     if run_option == 1:
@@ -526,5 +550,7 @@ if __name__ == "__main__":
     elif run_option == 7:
         print("BNN test")
         bnn.run_test_visalize(num_samples=3)
+    elif run_option == 8:
+        bnn.generate_golden_header(1024)
 
     #
