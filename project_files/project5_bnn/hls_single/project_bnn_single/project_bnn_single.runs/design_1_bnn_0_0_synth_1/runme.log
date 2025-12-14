@@ -1,0 +1,768 @@
+
+*** Running vivado
+    with args -log design_1_bnn_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_bnn_0_0.tcl
+
+
+****** Vivado v2024.2 (64-bit)
+  **** SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Sun Dec 14 14:45:30 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source design_1_bnn_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1494.941 ; gain = 24.840 ; free physical = 8055 ; free virtual = 22492
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/bnn.comp/hls/impl/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/software/common/Xilinx_Vitis/Vivado/2024.2/data/ip'.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_bnn_0_0
+Command: synth_design -top design_1_bnn_0_0 -part xc7z020clg400-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 3497969
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2140.430 ; gain = 420.797 ; free physical = 6183 ; free virtual = 20620
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_bnn_0_0' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ip/design_1_bnn_0_0/synth/design_1_bnn_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'bnn' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_control_s_axi' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_control_s_axi.v:9]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_control_s_axi.v:197]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_control_s_axi' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_control_s_axi.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_LOAD_L1' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOAD_L1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_flow_control_loop_pipe_sequential_init' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_flow_control_loop_pipe_sequential_init.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_flow_control_loop_pipe_sequential_init' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_flow_control_loop_pipe_sequential_init.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_LOAD_L1' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOAD_L1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_LOOP_L1_NEURONS' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.v:172]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.v:173]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.v:174]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.v:175]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.v:176]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.v:177]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.v:178]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.v:179]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.v:180]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.v:181]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.v:182]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.v:183]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.v:184]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.v:172]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.v:173]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.v:174]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.v:175]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.v:176]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.v:177]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.v:178]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.v:179]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.v:180]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.v:181]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.v:182]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.v:183]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.v:184]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_mul_6ns_6ns_11_1_1' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_mul_6ns_6ns_11_1_1.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_mul_6ns_6ns_11_1_1' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_mul_6ns_6ns_11_1_1.v:5]
+INFO: [Synth 8-6157] synthesizing module 'bnn_mul_7ns_6ns_12_1_1' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_mul_7ns_6ns_12_1_1.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_mul_7ns_6ns_12_1_1' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_mul_7ns_6ns_12_1_1.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_LOOP_L1_NEURONS' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1_Pipeline_LOOP_L1_NEURONS.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_regslice_both' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_regslice_both.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_regslice_both' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_regslice_both.v:8]
+INFO: [Synth 8-6157] synthesizing module 'bnn_regslice_both__parameterized0' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_regslice_both.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_regslice_both__parameterized0' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_regslice_both.v:8]
+INFO: [Synth 8-6157] synthesizing module 'bnn_regslice_both__parameterized1' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_regslice_both.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_regslice_both__parameterized1' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_regslice_both.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L2' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L2.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_0_ROM_AUTO_1R' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_0_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_0_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_0_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_0_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_0_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_1_ROM_AUTO_1R' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_1_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_1_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_1_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_1_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_1_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_65_6_12_1_1' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_sparsemux_65_6_12_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_65_6_12_1_1' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_sparsemux_65_6_12_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L2_Pipeline_PACK_L2' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L2_Pipeline_PACK_L2.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L2_Pipeline_PACK_L2' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L2_Pipeline_PACK_L2.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L2' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L2.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L3' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L3.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L3_Pipeline_STREAM_L3_UPDATE_L3' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L3_Pipeline_STREAM_L3_UPDATE_L3.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L3_Pipeline_STREAM_L3_UPDATE_L3_WEIGHTS_L3_ROM_AUTO_1R' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L3_Pipeline_STREAM_L3_UPDATE_L3_WEIGHTS_L3_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L3_Pipeline_STREAM_L3_UPDATE_L3_WEIGHTS_L3_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L3_Pipeline_STREAM_L3_UPDATE_L3_WEIGHTS_L3_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L3_Pipeline_STREAM_L3_UPDATE_L3_WEIGHTS_L3_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L3_Pipeline_STREAM_L3_UPDATE_L3_WEIGHTS_L3_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_21_4_12_1_1' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_sparsemux_21_4_12_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_21_4_12_1_1' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_sparsemux_21_4_12_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L3_Pipeline_STREAM_L3_UPDATE_L3' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L3_Pipeline_STREAM_L3_UPDATE_L3.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L3_Pipeline_WRITE_L3' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L3_Pipeline_WRITE_L3.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L3_Pipeline_WRITE_L3' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L3_Pipeline_WRITE_L3.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L3' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_compute_L3.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_fifo_w32_d4_S' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_fifo_w32_d4_S.v:11]
+INFO: [Synth 8-6157] synthesizing module 'bnn_fifo_w32_d4_S_ShiftReg' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_fifo_w32_d4_S.v:129]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_fifo_w32_d4_S_ShiftReg' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_fifo_w32_d4_S.v:129]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_fifo_w32_d4_S' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_fifo_w32_d4_S.v:11]
+INFO: [Synth 8-6157] synthesizing module 'bnn_fifo_w32_d2_S' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_fifo_w32_d2_S.v:11]
+INFO: [Synth 8-6157] synthesizing module 'bnn_fifo_w32_d2_S_ShiftReg' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_fifo_w32_d2_S.v:129]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_fifo_w32_d2_S_ShiftReg' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_fifo_w32_d2_S.v:129]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_fifo_w32_d2_S' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_fifo_w32_d2_S.v:11]
+INFO: [Synth 8-6157] synthesizing module 'bnn_start_for_compute_L2_U0' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_start_for_compute_L2_U0.v:11]
+INFO: [Synth 8-6157] synthesizing module 'bnn_start_for_compute_L2_U0_ShiftReg' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_start_for_compute_L2_U0.v:125]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_start_for_compute_L2_U0_ShiftReg' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_start_for_compute_L2_U0.v:125]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_start_for_compute_L2_U0' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_start_for_compute_L2_U0.v:11]
+INFO: [Synth 8-6157] synthesizing module 'bnn_start_for_compute_L3_U0' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_start_for_compute_L3_U0.v:11]
+INFO: [Synth 8-6157] synthesizing module 'bnn_start_for_compute_L3_U0_ShiftReg' [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_start_for_compute_L3_U0.v:125]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_start_for_compute_L3_U0_ShiftReg' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_start_for_compute_L3_U0.v:125]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_start_for_compute_L3_U0' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_start_for_compute_L3_U0.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'bnn' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_bnn_0_0' (0#1) [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ip/design_1_bnn_0_0/synth/design_1_bnn_0_0.v:53]
+WARNING: [Synth 8-6014] Unused sequential element int_ap_done_reg was removed.  [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ipshared/746b/hdl/verilog/bnn_control_s_axi.v:254]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+WARNING: [Synth 8-7129] Port addr[1] in module bnn_fifo_w32_d2_S_ShiftReg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module bnn_compute_L3_Pipeline_STREAM_L3_UPDATE_L3_WEIGHTS_L3_ROM_AUTO_1R is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[2] in module bnn_compute_L3_Pipeline_STREAM_L3_UPDATE_L3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[1] in module bnn_compute_L3_Pipeline_STREAM_L3_UPDATE_L3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[0] in module bnn_compute_L3_Pipeline_STREAM_L3_UPDATE_L3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[2] in module bnn_compute_L3_Pipeline_STREAM_L3_UPDATE_L3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[1] in module bnn_compute_L3_Pipeline_STREAM_L3_UPDATE_L3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[0] in module bnn_compute_L3_Pipeline_STREAM_L3_UPDATE_L3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[2] in module bnn_compute_L3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[1] in module bnn_compute_L3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[0] in module bnn_compute_L3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[2] in module bnn_compute_L3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[1] in module bnn_compute_L3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[0] in module bnn_compute_L3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[31] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[30] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[29] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[28] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[27] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[26] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[25] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[24] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[23] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[22] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[21] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[20] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[19] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[18] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[17] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[16] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[15] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[14] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[13] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[12] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[11] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[10] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[9] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[8] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[7] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[6] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[5] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[4] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[3] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[2] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[1] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[0] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[31] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[30] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[29] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[28] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[27] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[26] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[25] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[24] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[23] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[22] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[21] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[20] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[19] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[18] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[17] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[16] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[15] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[14] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[13] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[12] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[11] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[10] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[9] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[8] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[7] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[6] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[5] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[4] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[3] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[2] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[1] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[0] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_1_ROM_AUTO_1R is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_0_ROM_AUTO_1R is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l1_to_l2_num_data_valid[2] in module bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l1_to_l2_num_data_valid[1] in module bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l1_to_l2_num_data_valid[0] in module bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l1_to_l2_fifo_cap[2] in module bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l1_to_l2_fifo_cap[1] in module bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l1_to_l2_fifo_cap[0] in module bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l1_to_l2_num_data_valid[2] in module bnn_compute_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l1_to_l2_num_data_valid[1] in module bnn_compute_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l1_to_l2_num_data_valid[0] in module bnn_compute_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l1_to_l2_fifo_cap[2] in module bnn_compute_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l1_to_l2_fifo_cap[1] in module bnn_compute_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l1_to_l2_fifo_cap[0] in module bnn_compute_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module bnn_compute_L1_Pipeline_LOOP_L1_NEURONS_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l1_to_l2_num_data_valid[31] in module bnn_compute_L1_Pipeline_LOOP_L1_NEURONS is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l1_to_l2_num_data_valid[30] in module bnn_compute_L1_Pipeline_LOOP_L1_NEURONS is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l1_to_l2_num_data_valid[29] in module bnn_compute_L1_Pipeline_LOOP_L1_NEURONS is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l1_to_l2_num_data_valid[28] in module bnn_compute_L1_Pipeline_LOOP_L1_NEURONS is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l1_to_l2_num_data_valid[27] in module bnn_compute_L1_Pipeline_LOOP_L1_NEURONS is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l1_to_l2_num_data_valid[26] in module bnn_compute_L1_Pipeline_LOOP_L1_NEURONS is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2420.938 ; gain = 701.305 ; free physical = 5998 ; free virtual = 20443
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2420.938 ; gain = 701.305 ; free physical = 5997 ; free virtual = 20442
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2420.938 ; gain = 701.305 ; free physical = 5997 ; free virtual = 20442
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.13 . Memory (MB): peak = 2420.938 ; gain = 0.000 ; free physical = 5997 ; free virtual = 20442
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ip/design_1_bnn_0_0/constraints/bnn_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.gen/sources_1/bd/design_1/ip/design_1_bnn_0_0/constraints/bnn_ooc.xdc] for cell 'inst'
+Parsing XDC File [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.runs/design_1_bnn_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.runs/design_1_bnn_0_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2558.688 ; gain = 0.000 ; free physical = 5994 ; free virtual = 20440
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.28 ; elapsed = 00:00:00.21 . Memory (MB): peak = 2558.688 ; gain = 0.000 ; free physical = 5994 ; free virtual = 20440
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2558.688 ; gain = 839.055 ; free physical = 5952 ; free virtual = 20398
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2566.691 ; gain = 847.059 ; free physical = 5952 ; free virtual = 20397
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  /home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.runs/design_1_bnn_0_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2566.691 ; gain = 847.059 ; free physical = 5952 ; free virtual = 20397
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'wstate_reg' in module 'bnn_control_s_axi'
+INFO: [Synth 8-802] inferred FSM for state register 'rstate_reg' in module 'bnn_control_s_axi'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'bnn_regslice_both'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'bnn_regslice_both__parameterized0'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'bnn_regslice_both__parameterized1'
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                             0001 |                               11
+*
+                  WRIDLE |                             0010 |                               00
+                  WRDATA |                             0100 |                               01
+                  WRRESP |                             1000 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'wstate_reg' using encoding 'one-hot' in module 'bnn_control_s_axi'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              001 |                               10
+*
+                  RDIDLE |                              010 |                               00
+                  RDDATA |                              100 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'rstate_reg' using encoding 'one-hot' in module 'bnn_control_s_axi'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                               00 |                               00
+*
+                    ZERO |                               01 |                               10
+                     ONE |                               11 |                               11
+                     TWO |                               10 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'bnn_regslice_both'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                               00 |                               00
+*
+                    ZERO |                               01 |                               10
+                     ONE |                               11 |                               11
+                     TWO |                               10 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'bnn_regslice_both__parameterized0'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                               00 |                               00
+*
+                    ZERO |                               01 |                               10
+                     ONE |                               11 |                               11
+                     TWO |                               10 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'bnn_regslice_both__parameterized1'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 2566.691 ; gain = 847.059 ; free physical = 5769 ; free virtual = 20221
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   12 Bit       Adders := 15    
+	   2 Input   11 Bit       Adders := 26    
+	   3 Input   11 Bit       Adders := 2     
+	   2 Input   10 Bit       Adders := 2     
+	   3 Input   10 Bit       Adders := 2     
+	   3 Input    9 Bit       Adders := 2     
+	   2 Input    9 Bit       Adders := 4     
+	   2 Input    8 Bit       Adders := 6     
+	   3 Input    8 Bit       Adders := 12    
+	   2 Input    7 Bit       Adders := 54    
+	   2 Input    6 Bit       Adders := 55    
+	   2 Input    5 Bit       Adders := 3     
+	  10 Input    5 Bit       Adders := 52    
+	   5 Input    5 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 2     
+	   2 Input    3 Bit       Adders := 4     
+	   6 Input    3 Bit       Adders := 5     
+	   2 Input    2 Bit       Adders := 59    
+	   3 Input    2 Bit       Adders := 520   
+	   2 Input    1 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
+	   3 Input      1 Bit         XORs := 1696  
++---Registers : 
+	               32 Bit    Registers := 90    
+	               30 Bit    Registers := 1     
+	               12 Bit    Registers := 77    
+	               11 Bit    Registers := 4     
+	               10 Bit    Registers := 2     
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 8     
+	                7 Bit    Registers := 15    
+	                6 Bit    Registers := 52    
+	                5 Bit    Registers := 57    
+	                4 Bit    Registers := 18    
+	                3 Bit    Registers := 8     
+	                2 Bit    Registers := 640   
+	                1 Bit    Registers := 991   
++---ROMs : 
+	                    ROMs := 50    
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 7     
+	 129 Input   32 Bit        Muxes := 4     
+	  21 Input   32 Bit        Muxes := 1     
+	   2 Input   12 Bit        Muxes := 32    
+	   2 Input    5 Bit        Muxes := 3     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 13    
+	   3 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 4     
+	   2 Input    2 Bit        Muxes := 91    
+	   4 Input    2 Bit        Muxes := 32    
+	   2 Input    1 Bit        Muxes := 101   
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP mul_7ns_6ns_12_1_1_U31/tmp_product, operation Mode is: A*(B:0x19).
+DSP Report: operator mul_7ns_6ns_12_1_1_U31/tmp_product is absorbed into DSP mul_7ns_6ns_12_1_1_U31/tmp_product.
+DSP Report: Generating DSP add_ln72_4_fu_7355_p2, operation Mode is: (C:0x5)+(A*(B:0x19))'.
+DSP Report: register empty_822_reg_63022_reg is absorbed into DSP add_ln72_4_fu_7355_p2.
+DSP Report: operator add_ln72_4_fu_7355_p2 is absorbed into DSP add_ln72_4_fu_7355_p2.
+DSP Report: operator mul_7ns_6ns_12_1_1_U31/tmp_product is absorbed into DSP add_ln72_4_fu_7355_p2.
+DSP Report: Generating DSP add_ln72_fu_7293_p2, operation Mode is: (A*(B:0x19))'+1.
+DSP Report: register empty_822_reg_63022_reg is absorbed into DSP add_ln72_fu_7293_p2.
+DSP Report: operator add_ln72_fu_7293_p2 is absorbed into DSP add_ln72_fu_7293_p2.
+DSP Report: operator mul_7ns_6ns_12_1_1_U31/tmp_product is absorbed into DSP add_ln72_fu_7293_p2.
+WARNING: [Synth 8-3332] Sequential element (control_s_axi_U/FSM_onehot_wstate_reg[0]) is unused and will be removed from module bnn.
+WARNING: [Synth 8-3332] Sequential element (control_s_axi_U/FSM_onehot_rstate_reg[0]) is unused and will be removed from module bnn.
+WARNING: [Synth 8-3332] Sequential element (compute_L1_U0/regslice_both_in_r_V_keep_V_U/FSM_sequential_state_reg[1]) is unused and will be removed from module bnn.
+WARNING: [Synth 8-3332] Sequential element (compute_L1_U0/regslice_both_in_r_V_keep_V_U/FSM_sequential_state_reg[0]) is unused and will be removed from module bnn.
+WARNING: [Synth 8-3332] Sequential element (compute_L1_U0/regslice_both_in_r_V_strb_V_U/FSM_sequential_state_reg[1]) is unused and will be removed from module bnn.
+WARNING: [Synth 8-3332] Sequential element (compute_L1_U0/regslice_both_in_r_V_strb_V_U/FSM_sequential_state_reg[0]) is unused and will be removed from module bnn.
+WARNING: [Synth 8-3332] Sequential element (compute_L1_U0/regslice_both_in_r_V_last_V_U/FSM_sequential_state_reg[1]) is unused and will be removed from module bnn.
+WARNING: [Synth 8-3332] Sequential element (compute_L1_U0/regslice_both_in_r_V_last_V_U/FSM_sequential_state_reg[0]) is unused and will be removed from module bnn.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:24 ; elapsed = 00:01:28 . Memory (MB): peak = 2646.730 ; gain = 927.098 ; free physical = 5850 ; free virtual = 20318
+---------------------------------------------------------------------------------
+ Sort Area is  add_ln72_4_fu_7355_p2_2 : 0 0 : 155 155 : Used 1 time 0
+ Sort Area is  add_ln72_fu_7293_p2_4 : 0 0 : 155 155 : Used 1 time 0
+ Sort Area is  mul_7ns_6ns_12_1_1_U31/tmp_product_0 : 0 0 : 108 108 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++----------------------------------------+------------------------------+---------------+----------------+
+|Module Name                             | RTL Object                   | Depth x Width | Implemented As | 
++----------------------------------------+------------------------------+---------------+----------------+
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_0_U/q0_reg  | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_0_U/q1_reg  | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_0_U/q2_reg  | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_0_U/q3_reg  | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_0_U/q4_reg  | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_0_U/q5_reg  | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_0_U/q6_reg  | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_0_U/q7_reg  | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_0_U/q8_reg  | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_0_U/q9_reg  | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_0_U/q10_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_0_U/q11_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_0_U/q12_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_0_U/q13_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_0_U/q14_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_0_U/q15_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_0_U/q16_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_0_U/q17_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_0_U/q18_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_0_U/q19_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_0_U/q20_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_0_U/q21_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_0_U/q22_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_0_U/q23_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | empty_821_reg_63005_reg_rep  | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_1_U/q0_reg  | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_1_U/q1_reg  | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_1_U/q2_reg  | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_1_U/q3_reg  | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_1_U/q4_reg  | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_1_U/q5_reg  | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_1_U/q6_reg  | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_1_U/q7_reg  | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_1_U/q8_reg  | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_1_U/q9_reg  | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_1_U/q10_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_1_U/q11_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_1_U/q12_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_1_U/q13_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_1_U/q14_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_1_U/q15_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_1_U/q16_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_1_U/q17_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_1_U/q18_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_1_U/q19_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_1_U/q20_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_1_U/q21_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | p_ZL10WEIGHTS_L1_1_U/q22_reg | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | empty_821_reg_63005_reg_rep  | 2048x32       | Block RAM      | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | lshr_ln_reg_63038_reg_rep    | 2048x32       | Block RAM      | 
++----------------------------------------+------------------------------+---------------+----------------+
+
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++----------------------------------------+-----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name                             | DSP Mapping           | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------------------------------+-----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|bnn_mul_7ns_6ns_12_1_1                  | A*(B:0x19)            | 8      | 6      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | (C:0x5)+(A*(B:0x19))' | 8      | 6      | 3      | -      | 12     | 0    | 0    | 0    | -    | -     | 1    | 0    | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | (A*(B:0x19))'+1       | 8      | 6      | -      | -      | 12     | 0    | 0    | -    | -    | -     | 1    | 0    | 
++----------------------------------------+-----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:35 ; elapsed = 00:01:39 . Memory (MB): peak = 2646.730 ; gain = 927.098 ; free physical = 5796 ; free virtual = 20264
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:39 ; elapsed = 00:01:43 . Memory (MB): peak = 2674.770 ; gain = 955.137 ; free physical = 5751 ; free virtual = 20228
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q0_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q0_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q0_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q0_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q2_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q2_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q2_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q2_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q4_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q4_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q4_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q4_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q6_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q6_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q6_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q6_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q8_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q8_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q8_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q8_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q10_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q10_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q10_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q10_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q12_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q12_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q12_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q12_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q14_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q14_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q14_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q14_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q16_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q16_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q16_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q16_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q18_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q18_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q18_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q18_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q20_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q20_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q20_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q20_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q22_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q22_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q22_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_0_U/q22_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q0_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q0_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q0_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q0_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q2_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q2_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q2_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q2_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q4_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q4_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q4_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q4_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q6_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q6_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q6_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q6_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q8_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q8_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q8_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q8_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q10_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q10_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q10_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q10_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q12_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q12_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q12_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q12_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q14_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q14_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q14_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q14_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q16_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q16_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q16_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q16_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q18_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q18_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q18_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q18_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q20_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q20_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q20_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q20_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q22_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/p_ZL10WEIGHTS_L1_1_U/q22_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:46 ; elapsed = 00:01:50 . Memory (MB): peak = 2708.793 ; gain = 989.160 ; free physical = 5699 ; free virtual = 20176
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:52 ; elapsed = 00:01:57 . Memory (MB): peak = 2774.605 ; gain = 1054.973 ; free physical = 5457 ; free virtual = 19934
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:52 ; elapsed = 00:01:57 . Memory (MB): peak = 2774.605 ; gain = 1054.973 ; free physical = 5457 ; free virtual = 19934
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:54 ; elapsed = 00:01:58 . Memory (MB): peak = 2774.605 ; gain = 1054.973 ; free physical = 5603 ; free virtual = 20080
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:54 ; elapsed = 00:01:58 . Memory (MB): peak = 2774.605 ; gain = 1054.973 ; free physical = 5603 ; free virtual = 20080
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:54 ; elapsed = 00:01:59 . Memory (MB): peak = 2780.543 ; gain = 1060.910 ; free physical = 5603 ; free virtual = 20080
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:54 ; elapsed = 00:01:59 . Memory (MB): peak = 2780.543 ; gain = 1060.910 ; free physical = 5603 ; free virtual = 20080
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                                                                                   | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|bnn         | compute_L1_U0/grp_compute_L1_Pipeline_LOOP_L1_NEURONS_fu_243/ap_loop_exit_ready_pp0_iter8_reg_reg          | 8      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|bnn         | compute_L2_U0/grp_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_fu_282/ap_loop_exit_ready_pp0_iter3_reg_reg      | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|bnn         | compute_L3_U0/grp_compute_L3_Pipeline_STREAM_L3_UPDATE_L3_fu_82/select_ln141_reg_2057_pp0_iter4_reg_reg[3] | 3      | 4     | NO           | NO                 | YES               | 4      | 0       | 
+|bnn         | compute_L3_U0/grp_compute_L3_Pipeline_STREAM_L3_UPDATE_L3_fu_82/ap_loop_exit_ready_pp0_iter4_reg_reg       | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
++------------+------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+
+Dynamic Shift Register Report:
++------------+----------------+--------+------------+--------+---------+--------+--------+--------+
+|Module Name | RTL Name       | Length | Data Width | SRL16E | SRLC32E | Mux F7 | Mux F8 | Mux F9 | 
++------------+----------------+--------+------------+--------+---------+--------+--------+--------+
+|dsrl        | SRL_SIG_reg[3] | 32     | 32         | 32     | 0       | 0      | 0      | 0      | 
++------------+----------------+--------+------------+--------+---------+--------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++----------------------------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name                             | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------------------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | (C+A*B)'    | 7      | 5      | 3      | -      | 12     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|bnn_compute_L1_Pipeline_LOOP_L1_NEURONS | (A*B)'+1    | 7      | 5      | -      | -      | 12     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|bnn_mul_7ns_6ns_12_1_1                  | A*B         | 7      | 5      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++----------------------------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |   175|
+|2     |DSP48E1  |     3|
+|5     |LUT1     |    43|
+|6     |LUT2     |   287|
+|7     |LUT3     |   794|
+|8     |LUT4     |   441|
+|9     |LUT5     |  1150|
+|10    |LUT6     |  2117|
+|11    |MUXF7    |   102|
+|12    |MUXF8    |     4|
+|13    |RAMB36E1 |    52|
+|23    |SRL16E   |    39|
+|24    |FDRE     |  5310|
+|25    |FDSE     |    15|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:54 ; elapsed = 00:01:59 . Memory (MB): peak = 2780.543 ; gain = 1060.910 ; free physical = 5603 ; free virtual = 20080
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 185 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:49 ; elapsed = 00:01:54 . Memory (MB): peak = 2780.543 ; gain = 923.160 ; free physical = 5603 ; free virtual = 20080
+Synthesis Optimization Complete : Time (s): cpu = 00:01:54 ; elapsed = 00:01:59 . Memory (MB): peak = 2780.551 ; gain = 1060.910 ; free physical = 5603 ; free virtual = 20080
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.11 . Memory (MB): peak = 2780.551 ; gain = 0.000 ; free physical = 5745 ; free virtual = 20222
+INFO: [Netlist 29-17] Analyzing 336 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2804.555 ; gain = 0.000 ; free physical = 5733 ; free virtual = 20209
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 29c61436
+INFO: [Common 17-83] Releasing license: Synthesis
+230 Infos, 110 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:07 ; elapsed = 00:02:08 . Memory (MB): peak = 2804.555 ; gain = 1289.801 ; free physical = 5733 ; free virtual = 20209
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2027.384; main = 1893.316; forked = 251.170
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3628.270; main = 2804.559; forked = 919.473
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2828.566 ; gain = 0.000 ; free physical = 5733 ; free virtual = 20209
+INFO: [Common 17-1381] The checkpoint '/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.runs/design_1_bnn_0_0_synth_1/design_1_bnn_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_bnn_0_0, cache-ID = 195ddf597bc31d54
+INFO: [Coretcl 2-1174] Renamed 35 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2828.566 ; gain = 0.000 ; free physical = 5763 ; free virtual = 20250
+INFO: [Common 17-1381] The checkpoint '/home/linux/ieng6/students/185/c3shah/chole_bhature/project_files/project5_bnn/hls_single/project_bnn_single/project_bnn_single.runs/design_1_bnn_0_0_synth_1/design_1_bnn_0_0.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file design_1_bnn_0_0_utilization_synth.rpt -pb design_1_bnn_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Dec 14 14:48:06 2025...
