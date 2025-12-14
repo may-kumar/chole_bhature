@@ -1,0 +1,980 @@
+
+*** Running vivado
+    with args -log chole_bhature_bnn_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source chole_bhature_bnn_0_0.tcl
+
+
+****** Vivado v2024.2 (64-bit)
+  **** SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Sat Dec 13 17:09:33 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source chole_bhature_bnn_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1495.059 ; gain = 18.871 ; free physical = 12744 ; free virtual = 20763
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/bnn.comp/hls/impl/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/software/common/Xilinx_Vitis/Vivado/2024.2/data/ip'.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: chole_bhature_bnn_0_0
+Command: synth_design -top chole_bhature_bnn_0_0 -part xc7z020clg400-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 467852
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 2141.578 ; gain = 418.797 ; free physical = 9460 ; free virtual = 17479
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'chole_bhature_bnn_0_0' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ip/chole_bhature_bnn_0_0/synth/chole_bhature_bnn_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'bnn' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_control_s_axi' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_control_s_axi.v:9]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_control_s_axi.v:197]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_control_s_axi' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_control_s_axi.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.v:40]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_0_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.v:40]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_1_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_2_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_2_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_2_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_2_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_2_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_2_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_3_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_3_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_3_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_3_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_3_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_3_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_4_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_4_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_4_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_4_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_4_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_4_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_5_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_5_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_5_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_5_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_5_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_5_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_6_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_6_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_6_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_6_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_6_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_6_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_7_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_7_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_7_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_7_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_7_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_7_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_8_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_8_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_8_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_8_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_8_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_8_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_9_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_9_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_9_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_9_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_9_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_9_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_10_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_10_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_10_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_10_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_10_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_10_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_11_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_11_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_11_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_11_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_11_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_11_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_12_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_12_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_12_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_12_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_12_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_12_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_13_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_13_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_13_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_13_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_13_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_13_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_14_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_14_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_14_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_14_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_14_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_14_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_15_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_15_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_15_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_15_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_15_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_15_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_16_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_16_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_16_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_16_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_16_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_16_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_17_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_17_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_17_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_17_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_17_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_17_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_18_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_18_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_18_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_18_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_18_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_18_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_19_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_19_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_19_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_19_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_19_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_19_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_20_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_20_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_20_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_20_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_20_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_20_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_21_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_21_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_21_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_21_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_21_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_21_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_22_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_22_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_22_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_22_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_22_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_22_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_23_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_23_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_23_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_23_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_23_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_23_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_24_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_24_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_24_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_24_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_24_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_24_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_LOAD_L1' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_LOAD_L1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_flow_control_loop_pipe_sequential_init' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_flow_control_loop_pipe_sequential_init.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_flow_control_loop_pipe_sequential_init' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_flow_control_loop_pipe_sequential_init.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_LOAD_L1' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_LOAD_L1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_25_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_25_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_25_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_25_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_25_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_25_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_26_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_26_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_26_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_26_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_26_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_26_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_27_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_27_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_27_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_27_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_27_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_27_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_28_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_28_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_28_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_28_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_28_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_28_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_29_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_29_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_29_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_29_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_29_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_29_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_30_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_30_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_30_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_30_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_30_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_30_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_31_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_31_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_31_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_31_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_31_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_31_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_32_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_32_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_32_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_32_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_32_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_32_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_33_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_33_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_33_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_33_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_33_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_33_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_34_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_34_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_34_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_34_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_34_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_34_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_35_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_35_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_35_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_35_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_35_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_35_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_36_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_36_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_36_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_36_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_36_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_36_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_37_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_37_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_37_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_37_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_37_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_37_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_38_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_38_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_38_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_38_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_38_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_38_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_39_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_39_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_39_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_39_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_39_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_39_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_40_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_40_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_40_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_40_ROM_AUTO_1R.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_40_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_40_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_41_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_41_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_41_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_41_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_41_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_41_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_42_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_42_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_42_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_42_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_42_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_42_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_43_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_43_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_43_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_43_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_43_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_43_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_44_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_44_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_44_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_44_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_44_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_44_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_45_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_45_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_45_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_45_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_45_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_45_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_46_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_46_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_46_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_46_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_46_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_46_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_47_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_47_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_47_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_47_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_47_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_47_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_48_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_48_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_48_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_48_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_48_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_48_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_49_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_49_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_49_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_49_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_49_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_49_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_50_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_50_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_50_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_50_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_50_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_50_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_51_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_51_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_51_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_51_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_51_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_51_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_52_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_52_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_52_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_52_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_52_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_52_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_53_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_53_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_53_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_53_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_53_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_53_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_54_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_54_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_54_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_54_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_54_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_54_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_55_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_55_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_55_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_55_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_55_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_55_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_56_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_56_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_56_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_56_ROM_AUTO_1R.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_56_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_56_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_57_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_57_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_57_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_57_ROM_AUTO_1R.v:40]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_57_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_57_ROM_AUTO_1R.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_57_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_57_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_58_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_58_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_58_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_58_ROM_AUTO_1R.v:40]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_58_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_58_ROM_AUTO_1R.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_58_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_58_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_59_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_59_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_59_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_59_ROM_AUTO_1R.v:40]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_59_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_59_ROM_AUTO_1R.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_59_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_59_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_60_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_60_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_60_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_60_ROM_AUTO_1R.v:40]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_60_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_60_ROM_AUTO_1R.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_60_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_60_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_61_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_61_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_61_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_61_ROM_AUTO_1R.v:40]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_61_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_61_ROM_AUTO_1R.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_61_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_61_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_62_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_62_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_62_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_62_ROM_AUTO_1R.v:40]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_62_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_62_ROM_AUTO_1R.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_62_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_62_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_63_ROM_AUTO_1R' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_63_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_63_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_63_ROM_AUTO_1R.v:40]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_63_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_63_ROM_AUTO_1R.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_63_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD_p_ZL10WEIGHTS_L1_63_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_51_5_32_1_1' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_51_5_32_1_1' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized0' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized0' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized1' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized1' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized2' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized2' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized3' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized3' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized4' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized4' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized5' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized5' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized6' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized6' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized7' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized7' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized8' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized8' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized9' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized9' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized10' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized10' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized11' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized11' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized12' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized12' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized13' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized13' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized14' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized14' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized15' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized15' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized16' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized16' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized17' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized17' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized18' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized18' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized19' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized19' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized20' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized20' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized21' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized21' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized22' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized22' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized23' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_sparsemux_51_5_32_1_1__parameterized23' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_51_5_32_1_1.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1_Pipeline_L1_DOT_PROD' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1_Pipeline_L1_DOT_PROD.v:9]
+INFO: [Synth 8-6157] synthesizing module 'bnn_mul_7ns_6ns_12_1_1' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_mul_7ns_6ns_12_1_1.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_mul_7ns_6ns_12_1_1' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_mul_7ns_6ns_12_1_1.v:5]
+INFO: [Synth 8-6157] synthesizing module 'bnn_regslice_both' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_regslice_both.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_regslice_both' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_regslice_both.v:8]
+INFO: [Synth 8-6157] synthesizing module 'bnn_regslice_both__parameterized0' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_regslice_both.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_regslice_both__parameterized0' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_regslice_both.v:8]
+INFO: [Synth 8-6157] synthesizing module 'bnn_regslice_both__parameterized1' [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_regslice_both.v:8]
+INFO: [Common 17-14] Message 'Synth 8-6157' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6155] done synthesizing module 'bnn_regslice_both__parameterized1' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_regslice_both.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L1' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L1.v:9]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_0_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_0_ROM_AUTO_1R.v:45]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_0_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_0_ROM_AUTO_1R.v:46]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_0_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_0_ROM_AUTO_1R.v:7]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_1_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_1_ROM_AUTO_1R.v:45]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_1_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_1_ROM_AUTO_1R.v:46]
+INFO: [Synth 8-6155] done synthesizing module 'bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_1_ROM_AUTO_1R' (0#1) [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_1_ROM_AUTO_1R.v:7]
+INFO: [Common 17-14] Message 'Synth 8-6155' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_2_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_2_ROM_AUTO_1R.v:45]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_2_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_2_ROM_AUTO_1R.v:46]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_3_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_3_ROM_AUTO_1R.v:45]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_3_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_3_ROM_AUTO_1R.v:46]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_4_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_4_ROM_AUTO_1R.v:45]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_4_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_4_ROM_AUTO_1R.v:46]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_5_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_5_ROM_AUTO_1R.v:45]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_5_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_5_ROM_AUTO_1R.v:46]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_6_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_6_ROM_AUTO_1R.v:45]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_6_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_6_ROM_AUTO_1R.v:46]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_7_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_7_ROM_AUTO_1R.v:45]
+INFO: [Synth 8-3876] $readmem data file './bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_7_ROM_AUTO_1R.dat' is read successfully [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_p_ZL10WEIGHTS_L2_7_ROM_AUTO_1R.v:46]
+INFO: [Synth 8-226] default block is never used [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_sparsemux_9_2_32_1_1.v:55]
+WARNING: [Synth 8-6014] Unused sequential element int_ap_done_reg was removed.  [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ipshared/9875/hdl/verilog/bnn_control_s_axi.v:254]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+WARNING: [Synth 8-7129] Port addr[1] in module bnn_fifo_w65_d2_S_ShiftReg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[2] in module bnn_compute_L3_Pipeline_STREAM_L3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[1] in module bnn_compute_L3_Pipeline_STREAM_L3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[0] in module bnn_compute_L3_Pipeline_STREAM_L3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[2] in module bnn_compute_L3_Pipeline_STREAM_L3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[1] in module bnn_compute_L3_Pipeline_STREAM_L3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[0] in module bnn_compute_L3_Pipeline_STREAM_L3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[2] in module bnn_compute_L3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[1] in module bnn_compute_L3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[0] in module bnn_compute_L3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[2] in module bnn_compute_L3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[1] in module bnn_compute_L3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[0] in module bnn_compute_L3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[31] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[30] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[29] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[28] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[27] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[26] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[25] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[24] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[23] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[22] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[21] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[20] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[19] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[18] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[17] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[16] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[15] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[14] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[13] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[12] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[11] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[10] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[9] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[8] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[7] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[6] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[5] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[4] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[3] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[2] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[1] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_num_data_valid[0] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[31] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[30] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[29] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[28] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[27] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[26] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[25] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[24] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[23] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[22] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[21] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[20] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[19] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[18] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[17] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[16] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[15] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[14] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[13] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[12] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[11] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[10] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[9] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[8] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[7] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[6] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[5] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[4] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[3] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[2] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[1] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port l2_to_l3_fifo_cap[0] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port acc_32_load_reload[14] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port acc_32_load_reload[13] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port acc_32_load_reload[12] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port acc_32_load_reload[11] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port acc_32_load_reload[10] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port acc_32_load_reload[9] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port acc_32_load_reload[8] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port acc_32_load_reload[7] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port acc_32_load_reload[6] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port acc_32_load_reload[5] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port acc_32_load_reload[4] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port acc_32_load_reload[3] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port acc_32_load_reload[2] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port acc_32_load_reload[1] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port acc_32_load_reload[0] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port acc_load_reload[14] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port acc_load_reload[13] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port acc_load_reload[12] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port acc_load_reload[11] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port acc_load_reload[10] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port acc_load_reload[9] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port acc_load_reload[8] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port acc_load_reload[7] in module bnn_compute_L2_Pipeline_PACK_L2 is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:22 ; elapsed = 00:00:31 . Memory (MB): peak = 2481.656 ; gain = 758.875 ; free physical = 8520 ; free virtual = 16553
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:32 . Memory (MB): peak = 2481.656 ; gain = 758.875 ; free physical = 8518 ; free virtual = 16550
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:32 . Memory (MB): peak = 2481.656 ; gain = 758.875 ; free physical = 8518 ; free virtual = 16550
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.46 ; elapsed = 00:00:00.48 . Memory (MB): peak = 2481.656 ; gain = 0.000 ; free physical = 8505 ; free virtual = 16537
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ip/chole_bhature_bnn_0_0/constraints/bnn_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.gen/sources_1/bd/chole_bhature/ip/chole_bhature_bnn_0_0/constraints/bnn_ooc.xdc] for cell 'inst'
+Parsing XDC File [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.runs/chole_bhature_bnn_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.runs/chole_bhature_bnn_0_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2586.500 ; gain = 0.000 ; free physical = 8310 ; free virtual = 16342
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:44 ; elapsed = 00:01:12 . Memory (MB): peak = 2598.422 ; gain = 875.641 ; free physical = 5490 ; free virtual = 13528
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:44 ; elapsed = 00:01:12 . Memory (MB): peak = 2602.508 ; gain = 879.727 ; free physical = 5486 ; free virtual = 13524
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  /home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.runs/chole_bhature_bnn_0_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:44 ; elapsed = 00:01:12 . Memory (MB): peak = 2602.508 ; gain = 879.727 ; free physical = 5472 ; free virtual = 13510
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'wstate_reg' in module 'bnn_control_s_axi'
+INFO: [Synth 8-802] inferred FSM for state register 'rstate_reg' in module 'bnn_control_s_axi'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'bnn_regslice_both'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'bnn_regslice_both__parameterized0'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'bnn_regslice_both__parameterized1'
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                             0001 |                               11
+*
+                  WRIDLE |                             0010 |                               00
+                  WRDATA |                             0100 |                               01
+                  WRRESP |                             1000 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'wstate_reg' using encoding 'one-hot' in module 'bnn_control_s_axi'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              001 |                               10
+*
+                  RDIDLE |                              010 |                               00
+                  RDDATA |                              100 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'rstate_reg' using encoding 'one-hot' in module 'bnn_control_s_axi'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                               00 |                               00
+*
+                    ZERO |                               01 |                               10
+                     ONE |                               11 |                               11
+                     TWO |                               10 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'bnn_regslice_both'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                               00 |                               00
+*
+                    ZERO |                               01 |                               10
+                     ONE |                               11 |                               11
+                     TWO |                               10 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'bnn_regslice_both__parameterized0'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                               00 |                               00
+*
+                    ZERO |                               01 |                               10
+                     ONE |                               11 |                               11
+                     TWO |                               10 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'bnn_regslice_both__parameterized1'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:59 ; elapsed = 00:01:48 . Memory (MB): peak = 2610.512 ; gain = 887.730 ; free physical = 3765 ; free virtual = 11809
+---------------------------------------------------------------------------------
+INFO: [Synth 8-223] decloning instance 'inst/compute_L3_U0/regslice_both_out_r_V_keep_V_U' (bnn_regslice_both__parameterized0) to 'inst/compute_L3_U0/regslice_both_out_r_V_strb_V_U'
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   16 Bit       Adders := 8     
+	   2 Input   12 Bit       Adders := 14    
+	   3 Input   12 Bit       Adders := 33    
+	   2 Input   11 Bit       Adders := 69    
+	   3 Input   11 Bit       Adders := 12    
+	   2 Input   10 Bit       Adders := 1     
+	   2 Input    9 Bit       Adders := 4     
+	   2 Input    8 Bit       Adders := 19    
+	   2 Input    7 Bit       Adders := 87    
+	   2 Input    6 Bit       Adders := 85    
+	  10 Input    5 Bit       Adders := 73    
+	   2 Input    5 Bit       Adders := 2     
+	   3 Input    5 Bit       Adders := 9     
+	  12 Input    4 Bit       Adders := 18    
+	   2 Input    4 Bit       Adders := 1     
+	   6 Input    3 Bit       Adders := 9     
+	   2 Input    3 Bit       Adders := 3     
+	   3 Input    2 Bit       Adders := 730   
+	   2 Input    2 Bit       Adders := 88    
+	   2 Input    1 Bit       Adders := 2     
++---XORs : 
+	   3 Input      1 Bit         XORs := 2539  
+	   2 Input      1 Bit         XORs := 5     
++---Registers : 
+	               65 Bit    Registers := 3     
+	               32 Bit    Registers := 397   
+	               16 Bit    Registers := 65    
+	               12 Bit    Registers := 1     
+	               11 Bit    Registers := 66    
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 13    
+	                7 Bit    Registers := 2     
+	                6 Bit    Registers := 16    
+	                5 Bit    Registers := 80    
+	                4 Bit    Registers := 27    
+	                3 Bit    Registers := 14    
+	                2 Bit    Registers := 911   
+	                1 Bit    Registers := 561   
++---Muxes : 
+	   2 Input   65 Bit        Muxes := 2     
+	  51 Input   32 Bit        Muxes := 159   
+	   2 Input   32 Bit        Muxes := 42    
+	  33 Input   32 Bit        Muxes := 32    
+	   4 Input   32 Bit        Muxes := 8     
+	   5 Input   32 Bit        Muxes := 1     
+	   2 Input   31 Bit        Muxes := 1     
+	   2 Input   30 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 2     
+	   2 Input    9 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 2     
+	   2 Input    6 Bit        Muxes := 2     
+	   2 Input    5 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 9     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 5     
+	   3 Input    3 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 101   
+	   4 Input    2 Bit        Muxes := 36    
+	   2 Input    1 Bit        Muxes := 178   
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ap_done_reg_reg)
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\ap_CS_fsm_reg[0] )
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[0]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[5]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[1]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[2]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[3]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[26]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[4]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[10]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[5]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[7]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[6]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[26]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[7]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[8]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[8]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[24]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[9]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[10]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[12]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[11]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[12]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[13]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[13]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[14]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[14]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[15]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[15]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[16]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[16]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[18]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[17]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[26]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[18]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[28]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[19]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[20]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[21]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[26]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[22]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[26]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[23]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[24]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[25]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[25]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[27]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (p_ZL10WEIGHTS_L1_20_U/\q0_reg[26] )
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[27]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[29]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_20_U/q0_reg[28]' (FDE) to 'p_ZL10WEIGHTS_L1_20_U/q0_reg[30]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (p_ZL10WEIGHTS_L1_20_U/\q0_reg[31] )
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[0]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[8]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[1]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[29]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[2]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[29]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[3]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[4]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[7]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[5]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[6]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[7]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[15]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[8]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[9]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[9]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[13]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[10]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[11]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[12]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[13]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[21]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[14]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[15]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[18]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[16]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[17]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[18]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[19]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[19]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[26]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[20]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[21]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[23]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[22]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[29]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[23]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[24]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[24]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[27]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[25]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[29]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[27]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[30]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_13_U/q0_reg[28]' (FDE) to 'p_ZL10WEIGHTS_L1_13_U/q0_reg[30]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (p_ZL10WEIGHTS_L1_13_U/\q0_reg[29] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (p_ZL10WEIGHTS_L1_13_U/\q0_reg[31] )
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[0]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[29]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[1]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[16]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[2]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[7]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[3]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[30]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[4]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[30]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[5]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[30]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[6]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[30]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[7]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[8]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[8]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[9]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[9]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[10]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[10]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[22]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[11]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[30]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[12]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[30]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[13]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[30]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[14]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[30]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[15]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[30]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[16]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[17]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[17]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[18]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[29]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[19]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[29]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[20]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[30]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[21]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[29]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[22]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[23]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[23]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[25]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[24]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[29]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[25]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[26]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[27]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[30]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_12_U/q0_reg[28]' (FDE) to 'p_ZL10WEIGHTS_L1_12_U/q0_reg[29]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (p_ZL10WEIGHTS_L1_12_U/\q0_reg[29] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (p_ZL10WEIGHTS_L1_12_U/\q0_reg[30] )
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_19_U/q0_reg[0]' (FDE) to 'p_ZL10WEIGHTS_L1_19_U/q0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_19_U/q0_reg[1]' (FDE) to 'p_ZL10WEIGHTS_L1_19_U/q0_reg[2]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_19_U/q0_reg[2]' (FDE) to 'p_ZL10WEIGHTS_L1_19_U/q0_reg[5]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_19_U/q0_reg[3]' (FDE) to 'p_ZL10WEIGHTS_L1_19_U/q0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_19_U/q0_reg[4]' (FDE) to 'p_ZL10WEIGHTS_L1_19_U/q0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_19_U/q0_reg[5]' (FDE) to 'p_ZL10WEIGHTS_L1_19_U/q0_reg[16]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_19_U/q0_reg[6]' (FDE) to 'p_ZL10WEIGHTS_L1_19_U/q0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_19_U/q0_reg[7]' (FDE) to 'p_ZL10WEIGHTS_L1_19_U/q0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_19_U/q0_reg[8]' (FDE) to 'p_ZL10WEIGHTS_L1_19_U/q0_reg[9]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_19_U/q0_reg[9]' (FDE) to 'p_ZL10WEIGHTS_L1_19_U/q0_reg[15]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_19_U/q0_reg[10]' (FDE) to 'p_ZL10WEIGHTS_L1_19_U/q0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_19_U/q0_reg[11]' (FDE) to 'p_ZL10WEIGHTS_L1_19_U/q0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_19_U/q0_reg[12]' (FDE) to 'p_ZL10WEIGHTS_L1_19_U/q0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_19_U/q0_reg[13]' (FDE) to 'p_ZL10WEIGHTS_L1_19_U/q0_reg[25]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_19_U/q0_reg[14]' (FDE) to 'p_ZL10WEIGHTS_L1_19_U/q0_reg[25]'
+INFO: [Synth 8-3886] merging instance 'p_ZL10WEIGHTS_L1_19_U/q0_reg[15]' (FDE) to 'p_ZL10WEIGHTS_L1_19_U/q0_reg[26]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (p_ZL10WEIGHTS_L1_19_U/\q0_reg[25] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (p_ZL10WEIGHTS_L1_19_U/\q0_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (p_ZL10WEIGHTS_L1_18_U/\q0_reg[22] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (p_ZL10WEIGHTS_L1_18_U/\q0_reg[28] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (p_ZL10WEIGHTS_L1_17_U/\q0_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (p_ZL10WEIGHTS_L1_17_U/\q0_reg[30] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (p_ZL10WEIGHTS_L1_11_U/\q0_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (p_ZL10WEIGHTS_L1_11_U/\q0_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (p_ZL10WEIGHTS_L1_16_U/\q0_reg[26] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (p_ZL10WEIGHTS_L1_16_U/\q0_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (p_ZL10WEIGHTS_L1_15_U/\q0_reg[29] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (p_ZL10WEIGHTS_L1_15_U/\q0_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (p_ZL10WEIGHTS_L1_21_U/\q0_reg[29] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (p_ZL10WEIGHTS_L1_21_U/\q0_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (p_ZL10WEIGHTS_L1_22_U/\q0_reg[28] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (p_ZL10WEIGHTS_L1_22_U/\q0_reg[30] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (p_ZL10WEIGHTS_L1_14_U/\q0_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (p_ZL10WEIGHTS_L1_14_U/\q0_reg[30] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\p_ZL10WEIGHTS_L1_14_load_reg_3706_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\p_ZL10WEIGHTS_L1_14_load_reg_3706_reg[30] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (p_ZL10WEIGHTS_L1_23_U/\q0_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (p_ZL10WEIGHTS_L1_23_U/\q0_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (p_ZL10WEIGHTS_L1_8_U/\q0_reg[22] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (p_ZL10WEIGHTS_L1_8_U/\q0_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (p_ZL10WEIGHTS_L1_9_U/\q0_reg[28] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (p_ZL10WEIGHTS_L1_9_U/\q0_reg[30] )
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (p_ZL10WEIGHTS_L1_10_U/\q0_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (p_ZL10WEIGHTS_L1_10_U/\q0_reg[31] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\p_ZL10WEIGHTS_L1_10_load_reg_3686_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\p_ZL10WEIGHTS_L1_10_load_reg_3686_reg[31] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (p_ZL10WEIGHTS_L1_24_U/\q0_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (p_ZL10WEIGHTS_L1_24_U/\q0_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (p_ZL10WEIGHTS_L1_4_U/\q0_reg[26] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (p_ZL10WEIGHTS_L1_4_U/\q0_reg[27] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (p_ZL10WEIGHTS_L1_5_U/\q0_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (p_ZL10WEIGHTS_L1_5_U/\q0_reg[28] )
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (p_ZL10WEIGHTS_L1_6_U/\q0_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (p_ZL10WEIGHTS_L1_6_U/\q0_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (p_ZL10WEIGHTS_L1_7_U/\q0_reg[17] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (p_ZL10WEIGHTS_L1_7_U/\q0_reg[29] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (grp_compute_L1_Pipeline_LOAD_L1_fu_1038/\ap_CS_fsm_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (grp_compute_L1_Pipeline_LOAD_L1_fu_1038/ap_done_reg_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\p_ZL10WEIGHTS_L1_7_load_reg_3671_reg[17] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\p_ZL10WEIGHTS_L1_7_load_reg_3671_reg[29] )
+DSP Report: Generating DSP empty_reg_3625_reg, operation Mode is: (A*(B:0x19))'.
+DSP Report: register empty_reg_3625_reg is absorbed into DSP empty_reg_3625_reg.
+DSP Report: operator mul_7ns_6ns_12_1_1_U330/tmp_product is absorbed into DSP empty_reg_3625_reg.
+DSP Report: Generating DSP empty_106_reg_3761_reg, operation Mode is: (C:0x190)+(A*(B:0x19))'.
+DSP Report: register empty_106_reg_3761_reg is absorbed into DSP empty_106_reg_3761_reg.
+DSP Report: register empty_reg_3625_reg is absorbed into DSP empty_106_reg_3761_reg.
+DSP Report: operator empty_106_fu_1765_p2 is absorbed into DSP empty_106_reg_3761_reg.
+DSP Report: operator mul_7ns_6ns_12_1_1_U330/tmp_product is absorbed into DSP empty_106_reg_3761_reg.
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (p_ZL10WEIGHTS_L1_3_U/\q0_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (p_ZL10WEIGHTS_L1_3_U/\q0_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (p_ZL10WEIGHTS_L1_2_U/\q0_reg[25] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (p_ZL10WEIGHTS_L1_2_U/\q0_reg[30] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (p_ZL10WEIGHTS_L1_1_U/\q0_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (p_ZL10WEIGHTS_L1_1_U/\q0_reg[30] )
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (p_ZL10WEIGHTS_L1_0_U/\q0_reg[31] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\p_ZL10WEIGHTS_L1_1_load_reg_3641_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\p_ZL10WEIGHTS_L1_0_load_reg_3636_reg[31] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (p_ZL10WEIGHTS_L2_1_U/\q0_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (p_ZL10WEIGHTS_L2_2_U/\q0_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ap_done_reg_reg)
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\ap_CS_fsm_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\select_ln105_reg_12464_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\select_ln105_reg_12464_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\select_ln105_reg_12464_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\select_ln105_reg_12464_reg[2] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:35 ; elapsed = 00:03:01 . Memory (MB): peak = 2622.438 ; gain = 899.656 ; free physical = 2890 ; free virtual = 10950
+---------------------------------------------------------------------------------
+ Sort Area is bnn_compute_L1__GCB3 empty_106_reg_3761_reg_2 : 0 0 : 147 147 : Used 1 time 0
+ Sort Area is bnn_compute_L1__GCB3 empty_reg_3625_reg_0 : 0 0 : 122 122 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++---------------------+-------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name          | DSP Mapping             | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++---------------------+-------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|bnn_compute_L1__GCB3 | (A*(B:0x19))'           | 8      | 6      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|bnn_compute_L1__GCB3 | (C:0x190)+(A*(B:0x19))' | 8      | 6      | 9      | -      | 11     | 0    | 0    | 0    | -    | -     | 1    | 1    | 
++---------------------+-------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:29 ; elapsed = 00:03:27 . Memory (MB): peak = 2631.516 ; gain = 908.734 ; free physical = 6390 ; free virtual = 14451
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (FSM_sequential_state_reg[1]) is unused and will be removed from module bnn_regslice_both__parameterized0__1.
+WARNING: [Synth 8-3332] Sequential element (FSM_sequential_state_reg[0]) is unused and will be removed from module bnn_regslice_both__parameterized0__1.
+WARNING: [Synth 8-3332] Sequential element (FSM_sequential_state_reg[1]) is unused and will be removed from module bnn_regslice_both__parameterized0__2.
+WARNING: [Synth 8-3332] Sequential element (FSM_sequential_state_reg[0]) is unused and will be removed from module bnn_regslice_both__parameterized0__2.
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:04:14 ; elapsed = 00:04:24 . Memory (MB): peak = 2839.102 ; gain = 1116.320 ; free physical = 4243 ; free virtual = 12313
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:04:33 ; elapsed = 00:04:57 . Memory (MB): peak = 2851.027 ; gain = 1128.246 ; free physical = 2455 ; free virtual = 10526
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:04:47 ; elapsed = 00:05:11 . Memory (MB): peak = 2851.027 ; gain = 1128.246 ; free physical = 5345 ; free virtual = 13418
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:04:47 ; elapsed = 00:05:12 . Memory (MB): peak = 2851.027 ; gain = 1128.246 ; free physical = 5345 ; free virtual = 13418
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:52 ; elapsed = 00:05:16 . Memory (MB): peak = 2851.027 ; gain = 1128.246 ; free physical = 5353 ; free virtual = 13428
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:04:52 ; elapsed = 00:05:17 . Memory (MB): peak = 2851.027 ; gain = 1128.246 ; free physical = 5354 ; free virtual = 13429
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:04:54 ; elapsed = 00:05:19 . Memory (MB): peak = 2851.027 ; gain = 1128.246 ; free physical = 5340 ; free virtual = 13415
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:04:54 ; elapsed = 00:05:20 . Memory (MB): peak = 2851.027 ; gain = 1128.246 ; free physical = 5340 ; free virtual = 13414
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+--------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                                                                                     | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+--------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|bnn         | compute_L1_U0/grp_compute_L1_Pipeline_L1_DOT_PROD_fu_1105/ap_loop_exit_ready_pp0_iter4_reg_reg               | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|bnn         | compute_L2_U0/grp_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_fu_327/ap_loop_exit_ready_pp0_iter4_reg_reg        | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|bnn         | compute_L2_U0/grp_compute_L2_Pipeline_STREAM_L2_UPDATE_L2_fu_327/select_ln105_reg_12464_pp0_iter3_reg_reg[5] | 3      | 3     | NO           | NO                 | YES               | 3      | 0       | 
++------------+--------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+
+Dynamic Shift Register Report:
++------------+----------------+--------+------------+--------+---------+--------+--------+--------+
+|Module Name | RTL Name       | Length | Data Width | SRL16E | SRLC32E | Mux F7 | Mux F8 | Mux F9 | 
++------------+----------------+--------+------------+--------+---------+--------+--------+--------+
+|dsrl        | SRL_SIG_reg[3] | 65     | 65         | 65     | 0       | 0      | 0      | 0      | 
++------------+----------------+--------+------------+--------+---------+--------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++---------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name          | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++---------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|bnn_compute_L1__GCB3 | (A*B)'      | 7      | 5      | -      | -      | 14     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|bnn_compute_L1__GCB3 | (C+(A*B)')' | 7      | 5      | 9      | -      | 11     | 0    | 0    | 0    | -    | -     | 1    | 1    | 
++---------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |CARRY4  |   435|
+|2     |DSP48E1 |     2|
+|4     |LUT1    |   267|
+|5     |LUT2    |   979|
+|6     |LUT3    |  4512|
+|7     |LUT4    |  1123|
+|8     |LUT5    |  1964|
+|9     |LUT6    | 13398|
+|10    |MUXF7   |   512|
+|11    |MUXF8   |   104|
+|12    |SRL16E  |    70|
+|13    |FDRE    | 13367|
+|14    |FDSE    |  1758|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:04:55 ; elapsed = 00:05:20 . Memory (MB): peak = 2851.027 ; gain = 1128.246 ; free physical = 5341 ; free virtual = 13416
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 106 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:04:45 ; elapsed = 00:05:13 . Memory (MB): peak = 2851.027 ; gain = 1011.480 ; free physical = 11356 ; free virtual = 19430
+Synthesis Optimization Complete : Time (s): cpu = 00:04:55 ; elapsed = 00:05:23 . Memory (MB): peak = 2851.027 ; gain = 1128.246 ; free physical = 11355 ; free virtual = 19419
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.39 ; elapsed = 00:00:00.39 . Memory (MB): peak = 2851.027 ; gain = 0.000 ; free physical = 11363 ; free virtual = 19427
+INFO: [Netlist 29-17] Analyzing 1053 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2863.113 ; gain = 0.000 ; free physical = 11385 ; free virtual = 19448
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: df1b42d4
+INFO: [Common 17-83] Releasing license: Synthesis
+507 Infos, 105 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:05:08 ; elapsed = 00:05:38 . Memory (MB): peak = 2863.113 ; gain = 1348.242 ; free physical = 11385 ; free virtual = 19448
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 8813.302; main = 1921.528; forked = 7239.018
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 17320.945; main = 2863.117; forked = 14702.422
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2887.125 ; gain = 0.000 ; free physical = 11376 ; free virtual = 19441
+INFO: [Common 17-1381] The checkpoint '/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.runs/chole_bhature_bnn_0_0_synth_1/chole_bhature_bnn_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP chole_bhature_bnn_0_0, cache-ID = cdb852af9523d868
+INFO: [Coretcl 2-1174] Renamed 103 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2887.125 ; gain = 0.000 ; free physical = 11412 ; free virtual = 19508
+INFO: [Common 17-1381] The checkpoint '/home/linux/ieng6/students/162/mak025/chole_bhature/project_files/project5_bnn/hls_streaming/pynq_bnn/pynq_bnn.runs/chole_bhature_bnn_0_0_synth_1/chole_bhature_bnn_0_0.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file chole_bhature_bnn_0_0_utilization_synth.rpt -pb chole_bhature_bnn_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Dec 13 17:15:48 2025...
