@@ -10,17 +10,6 @@
 
 using namespace std;
 
-int verify_output(string name, const int golden[10], int predicted[10]){
-    int PASS = 1;
-    for(int i=0;i<10;i++) {
-        if (golden[i]!=predicted[i]) {
-            PASS=0;
-            cout << "  " << name << " Wrong output: Expected: " << golden[i] << " Obtained: " << predicted[i] << endl;
-        }
-    }
-    return PASS;
-}
-
 int golden_pop_3(int a, int b) {
     int x = (~(a ^ b)) & 0x7;
     return __builtin_popcount(x);
@@ -111,35 +100,40 @@ int test_streaming_size(int stream_size) {
 
     for(size_t b = 0; b < sample_indices.size(); b++) {
         int s = sample_indices[b];
-        int32_t hw_out[10];
+        
+        if(out_stream.empty()) {
+            cout << "Error: Stream empty early at Sample " << s << endl;
+            return 0;
+        }
+        
+        transPktOut pkt = out_stream.read();
+        int hw_prediction = pkt.data;
 
-        for(int i = 0; i < 10; i++) {
-            if(out_stream.empty()) {
-                cout << "Error: Stream empty early at Sample " << s << endl;
-                return 0;
-            }
-            
-            transPktOut pkt = out_stream.read();
-            hw_out[i] = pkt.data;
+        if (pkt.id != (uint32_t)s) {
+            cout << "Error: ID Mismatch! Expected " << s << " Got " << pkt.id << endl;
+            pass = 0;
+        }
+        
+        bool expected_last = (b == sample_indices.size() - 1);
+        if (pkt.last != expected_last) {
+            cout << "Error: TLAST mismatch at Sample " << s 
+                 << ". Expected " << expected_last << " Got " << pkt.last << endl;
+            pass = 0;
+        }
 
-            if (pkt.id != (uint32_t)s) {
-                cout << "Error: ID Mismatch! Expected " << s << " Got " << pkt.id << endl;
-                pass = 0;
-            }
-            
-            bool is_last_sample = (b == sample_indices.size() - 1);
-            bool is_last_word   = (i == 9); 
-            bool expected_last  = (is_last_sample && is_last_word);
-            
-            if (pkt.last != expected_last) {
-                cout << "Error: TLAST mismatch at Sample " << s << " index " << i 
-                     << ". Expected " << expected_last << " Got " << pkt.last << endl;
-                pass = 0;
+        int golden_max_val = -999999;
+        int golden_prediction = -1;
+        for(int i=0; i<10; i++) {
+            if (GOLDEN_FINAL_SCORES[s][i] > golden_max_val) {
+                golden_max_val = GOLDEN_FINAL_SCORES[s][i];
+                golden_prediction = i;
             }
         }
 
-        if (!verify_output("Sample " + to_string(s), GOLDEN_FINAL_SCORES[s], hw_out)) {
+        if (hw_prediction != golden_prediction) {
             pass = 0;
+            cout << "  Sample " << s << " Wrong Prediction! Expected: " << golden_prediction 
+                 << " Obtained: " << hw_prediction << endl;
         }
     }
 

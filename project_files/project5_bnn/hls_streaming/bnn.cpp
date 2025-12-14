@@ -151,6 +151,7 @@ void compute_L3(hls::stream<InternalPkt> &in, hls::stream<transPktOut> &out) {
 
         STREAM_L3: 
         for(uint32_t k=0; k<L2_OUT_PACKED; k++) {
+            #pragma HLS PIPELINE II=1
             InternalPkt pkt = in.read();
             uint32_t in_val = pkt.data;
             if (k == 0) current_id = pkt.id;
@@ -158,22 +159,30 @@ void compute_L3(hls::stream<InternalPkt> &in, hls::stream<transPktOut> &out) {
 
             UPDATE_L3: 
             for(uint32_t n=0; n<L3_NEURONS; n++) {
-                #pragma HLS PIPELINE II=1
+                #pragma HLS UNROLL
                 acc[n] += xnor_popcount_32(in_val, WEIGHTS_L3[(int)(n*L2_OUT_PACKED + k)]);
             }
         }
 
-        WRITE_L3: 
-        for(uint32_t n=0; n<L3_NEURONS; n++) {
+        ap_int<16> max_val = -32768;
+        int max_idx = 0;
+
+        FIND_MAX:
+        for(int n=0; n<L3_NEURONS; n++) {
             #pragma HLS PIPELINE II=1
-            transPktOut packet;
-            packet.data = acc[n];
-            packet.id = current_id;
-            packet.keep = -1;
-            packet.strb = -1;
-            packet.last = (n == L3_NEURONS - 1 && is_last_sample) ? 1 : 0;
-            out.write(packet);
+            if (acc[n] > max_val) {
+                max_val = acc[n];
+                max_idx = n;
+            }
         }
+
+        transPktOut packet;
+        packet.data = max_idx;
+        packet.id = current_id;
+        packet.keep = -1;
+        packet.strb = -1;
+        packet.last = is_last_sample ? 1 : 0;
+        out.write(packet);
     }
 }
 
